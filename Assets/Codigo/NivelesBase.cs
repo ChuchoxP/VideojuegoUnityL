@@ -1,0 +1,186 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Drawing;
+using UnityEngine;
+
+public class NivelesBase : MonoBehaviour
+{
+    public Renderer fondo;
+    public GameObject Columna;
+    private float velocidad = 4;
+
+    public GameObject moneda;
+    public List<GameObject> col;
+    public List<GameObject> mon;
+
+    public int contlt = 1;
+
+    public GameObject L1;
+    public GameObject L2;
+    public GameObject L3;
+    public GameObject L4;
+
+    public GameObject LA1;
+    public GameObject LA2;
+    public GameObject LA3;
+    public GameObject LA4;
+    /*public GameObject L5;
+    public GameObject L6;
+    public GameObject L7;
+    public GameObject L8;*/
+
+    public GameObject SL1;
+    public GameObject SL2;
+    public GameObject SL3;
+    public GameObject SL4;
+
+    public List<GameObject> LL1;
+    public List<GameObject> LL2;
+    public List<GameObject> LL3;
+    public List<GameObject> LL4;
+    /*public List<GameObject> LL5;
+    public List<GameObject> LL6;
+    public List<GameObject> LL7;
+    public List<GameObject> LL8;*/
+
+    // Start is called before the first frame update
+    void Start()
+
+    {
+
+        //Crear mapa
+        for (int  i = 0;  i < 26;  i++)
+        {
+            col.Add(Instantiate(Columna,new Vector2(-12+i,-3),Quaternion.identity));
+        }
+
+        //crear monedas
+
+        mon.Add(Instantiate(moneda, new Vector2(13, -2), Quaternion.identity));
+
+        LL1.Add(Instantiate(L1, new Vector2(13, 0), Quaternion.identity));
+        LL2.Add(Instantiate(L2, new Vector2(13, 0), Quaternion.identity));
+        LL3.Add(Instantiate(L3, new Vector2(13, 0), Quaternion.identity));
+        LL4.Add(Instantiate(L4, new Vector2(13, 0), Quaternion.identity));
+        /*LL5.Add(Instantiate(L5, new Vector2(13, 0), Quaternion.identity));
+        LL6.Add(Instantiate(L6, new Vector2(13, 0), Quaternion.identity));
+        LL7.Add(Instantiate(L7, new Vector2(13, 0), Quaternion.identity));
+        LL8.Add(Instantiate(L8, new Vector2(13, 0), Quaternion.identity));*/
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.2f,0) * Time.deltaTime;
+
+        //mover mapa
+        for (int i = 0; i < col.Count; i++)
+        {
+
+            if (col[i].transform.position.x <=-11)
+            {
+                col[i].transform.position = new Vector3(12,-3,0);
+            }
+
+            col[i].transform.position = col[i].transform.position + new Vector3 (-1,0,0) * Time.deltaTime * velocidad;
+        }
+
+        //mover moneda1
+        for (int i = 0; i < mon.Count; i++)
+        {
+
+            if (mon[i].transform.position.x <= -13)
+            {
+                float randomObs = Random.Range(-2,2);
+                mon[i].transform.position = new Vector3(13, randomObs, 0);
+            }
+
+            mon[i].transform.position = mon[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+        }
+
+        //Mover Letras
+
+        
+
+
+
+
+            //float randomlts = Random.Range(1, 4);
+
+            switch (contlt)
+            {
+                case 1:
+                    {
+                        for (int i = 0; i < LL1.Count; i++)
+                        {
+
+                            if (LL1[i].transform.position.x <= -13)
+                            {
+                                LL1[i].transform.position = new Vector3(13, 0, 0);
+                            }
+
+                            LL1[i].transform.position = LL1[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                        }
+                    };
+                    break;
+
+                case 2:
+                    {
+                        for (int i = 0; i < LL2.Count; i++)
+                        {
+
+                            if (LL2[i].transform.position.x <= -13)
+                            {
+                                LL2[i].transform.position = new Vector3(13, 0, 0);
+                            }
+
+                            LL2[i].transform.position = LL2[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                        }
+                    };
+                    break;
+                case 3:
+                    {
+                        for (int i = 0; i < LL3.Count; i++)
+                        {
+
+                            if (LL3[i].transform.position.x <= -13)
+                            {
+                                LL3[i].transform.position = new Vector3(13, 0, 0);
+                            }
+
+                            LL3[i].transform.position = LL3[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                        }
+                    };
+                    break;
+
+                case 4:
+                    {
+                        for (int i = 0; i < LL4.Count; i++)
+                        {
+
+                            if (LL4[i].transform.position.x <= -13)
+                            {
+                                LL4[i].transform.position = new Vector3(13, 0, 0);
+                            }
+
+                            LL4[i].transform.position = LL4[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                        }
+                    };
+                    break;
+
+            }
+        
+
+
+        
+
+
+
+    }
+
+
+
+}

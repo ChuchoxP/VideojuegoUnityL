@@ -1,0 +1,755 @@
+fileFormatVersion: 2
+guid: c7fc78e82ec0e4f8d94421658d7e9d69
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tripfive-EX_14
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98042ae4ababc294eaf2ea4b40934ba0
+      internalID: -1416176307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_15
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc55ee72a8ab460489bb7cabf12c5fc6
+      internalID: -1123911791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_16
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c0e44d30789bf4f8f9cc44e335c63e
+      internalID: 118007254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_17
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f497cfac37fe25945ba9bf5ee1568e91
+      internalID: 1732546911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_22
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e748d04485ca6f44b2a3e66ad44eb58
+      internalID: 1762232186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_23
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852c80d9385b0d441b2ec57d1c810237
+      internalID: -1984700681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_24
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f15b5fa4c387f4483a3dd7a5d2fffd
+      internalID: -1590384148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_25
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77471e916ef1c741ba758d2af6cf6c9
+      internalID: -527371624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_26
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1cfcbd41912b84b934fa276c3a758f
+      internalID: 692664166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_27
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d94f5c555f3484faf018c9d64989f5
+      internalID: 1616269465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_28
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe5bb11b783f31469eb5da439a24d1a
+      internalID: -2013102609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_29
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ae24647329e2346a305c8bbcab838a
+      internalID: 690447795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_30
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c1c23ec24793f4a9dc08abd5bc7566
+      internalID: -1708293608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24239923edcd5a4aac6f53f063512ef
+      internalID: -1711101761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_32
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36803c75068ec64ead71485f437450d
+      internalID: 947580846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_33
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38938f3b33686f94c9b011b5d8850195
+      internalID: 1024069941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_34
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6161eae923e379042b33f99721014651
+      internalID: 469184804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_35
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0fd23f2e85396d4a901146d4a206db1
+      internalID: 129675507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_36
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1940a0aa4ac0d724e8604367f7b34b03
+      internalID: -1860106032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_47
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4bf54f4b8a85145a887aab5376bea0
+      internalID: 140941712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_48
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ba769145e42504daea34de8608ad7d
+      internalID: 253482584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_49
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15fc2f0d52527c4e96ea1444c67ba67
+      internalID: -1157569207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_52
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9847504d973d5124f87fca5f5994d618
+      internalID: -369962270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_53
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e899b075ba61c643ab98f2c74f19a3d
+      internalID: 187515917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_54
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0411ac85b0c9d1041b084f0931a65286
+      internalID: 1738851317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripfive-EX_55
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 2
+        width: 3
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da8c0a2c55e3be4788e446b85e17909
+      internalID: -785726398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tripfive-EX_60: -820481772
+      Tripfive-EX_2: -1745390198
+      Tripfive-EX_57: 745885938
+      Tripfive-EX_28: -2013102609
+      Tripfive-EX_24: -1590384148
+      Tripfive-EX_40: -1127063095
+      Tripfive-EX_30: -1708293608
+      Tripfive-EX_12: 931472072
+      Tripfive-EX_47: 140941712
+      Tripfive-EX_41: -1594032180
+      Tripfive-EX_16: 118007254
+      Tripfive-EX_49: -1157569207
+      Tripfive-EX_31: -1711101761
+      Tripfive-EX_52: -369962270
+      Tripfive-EX_45: -643730946
+      Tripfive-EX_5: -882010948
+      Tripfive-EX_61: -904023197
+      Tripfive-EX_7: 189714158
+      Tripfive-EX_9: -307825597
+      Tripfive-EX_23: -1984700681
+      Tripfive-EX_43: 1389498414
+      Tripfive-EX_53: 187515917
+      Tripfive-EX_50: 1570404933
+      Tripfive-EX_32: 947580846
+      Tripfive-EX_33: 1024069941
+      Tripfive-EX_0: -267743406
+      Tripfive-EX_4: 1399321855
+      Tripfive-EX_35: 129675507
+      Tripfive-EX_34: 469184804
+      Tripfive-EX_20: 1907288792
+      Tripfive-EX_22: 1762232186
+      Tripfive-EX_38: 460270428
+      Tripfive-EX_19: -1372794091
+      Tripfive-EX_59: -1148001431
+      Tripfive-EX_17: 1732546911
+      Tripfive-EX_25: -527371624
+      Tripfive-EX_11: -1094412358
+      Tripfive-EX_15: -1123911791
+      Tripfive-EX_29: 690447795
+      Tripfive-EX_39: -42650972
+      Tripfive-EX_46: -582891009
+      Tripfive-EX_44: -2131477030
+      Tripfive-EX_21: 841061880
+      Tripfive-EX_13: 1938298075
+      Tripfive-EX_36: -1860106032
+      Tripfive-EX_6: -1743148712
+      Tripfive-EX_10: -298349245
+      Tripfive-EX_3: 921759434
+      Tripfive-EX_48: 253482584
+      Tripfive-EX_14: -1416176307
+      Tripfive-EX_55: -785726398
+      Tripfive-EX_18: 943809493
+      Tripfive-EX_54: 1738851317
+      Tripfive-EX_8: 1125494110
+      Tripfive-EX_58: 1484557954
+      Tripfive-EX_37: -1398078890
+      Tripfive-EX_56: 2010792081
+      Tripfive-EX_51: 1818336594
+      Tripfive-EX_26: 692664166
+      Tripfive-EX_42: 621736722
+      Tripfive-EX_27: 1616269465
+      Tripfive-EX_1: -1875335936
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
