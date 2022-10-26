@@ -6,18 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class Sesiones : MonoBehaviour
 {
-    [SerializeField] private GameObject btnjugar;
+    [SerializeField] public GameObject btnjugar;
     [SerializeField] private GameObject btnajustes;
-    [SerializeField] private GameObject menulogeo;
-    [SerializeField] private GameObject btniniciarsesion;
-    [SerializeField] private GameObject btnfaccebook;
+    [SerializeField] public GameObject menulogeo;
+    [SerializeField] public GameObject btniniciarsesion;
+    [SerializeField] public GameObject btnfaccebook;
     [SerializeField] private GameObject menuregistro;
     [SerializeField] public GameObject menuajustes;
-    [SerializeField] private GameObject texto;
-
+    [SerializeField] public GameObject texto;
+    [SerializeField] public TMP_Text m_validarInput = null;
     [SerializeField] private GameObject objjsonidomenu;
-    private AudioSource Sonidomenu;
-
+    public AudioSource Sonidomenu;
 
     public TMP_InputField txtuser;
     public TMP_InputField txtpsw;
@@ -56,6 +55,7 @@ public class Sesiones : MonoBehaviour
 
     public void cerrarlogeo()
     {
+        m_validarInput.text = null;
         btnjugar.SetActive(true);
         menulogeo.SetActive(false);
         btniniciarsesion.SetActive(true);
