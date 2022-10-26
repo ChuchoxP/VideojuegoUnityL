@@ -7,11 +7,15 @@ public class NivelesBase : MonoBehaviour
 {
     public Renderer fondo;
     public GameObject Columna;
+    public List<GameObject> col;
+
     private float velocidad = 4;
 
     public GameObject moneda;
-    public List<GameObject> col;
     public List<GameObject> mon;
+
+    public GameObject enemigo1;
+    public List<GameObject> ene1;
 
     public int contlt = 1;
 
@@ -57,6 +61,7 @@ public class NivelesBase : MonoBehaviour
         //crear monedas
 
         mon.Add(Instantiate(moneda, new Vector2(13, -2), Quaternion.identity));
+        ene1.Add(Instantiate(enemigo1, new Vector2(18, -2), Quaternion.identity));
 
         LL1.Add(Instantiate(L1, new Vector2(13, 0), Quaternion.identity));
         LL2.Add(Instantiate(L2, new Vector2(13, 0), Quaternion.identity));
@@ -101,16 +106,28 @@ public class NivelesBase : MonoBehaviour
             mon[i].transform.position = mon[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
         }
 
+        for (int i = 0; i < ene1.Count; i++)
+        {
+
+            if (ene1[i].transform.position.x <= -13)
+            {
+                float randomObs = Random.Range(-2, 2);
+                ene1[i].transform.position = new Vector3(13, randomObs, 0);
+            }
+
+            ene1[i].transform.position = ene1[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+        }
+
         //Mover Letras
 
-        
 
 
 
 
-            //float randomlts = Random.Range(1, 4);
 
-            switch (contlt)
+        //float randomlts = Random.Range(1, 4);
+
+        switch (contlt)
             {
                 case 1:
                     {

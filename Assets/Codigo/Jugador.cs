@@ -176,9 +176,9 @@ public class Jugador : MonoBehaviour
                 N.LL4[c].transform.position = new Vector3(-13, 0, 0);
             }
         }
-        if (collision.CompareTag("letratrampa"))
+        if (collision.CompareTag("obstaculo"))
         {
-
+            v--;
         }
 
     }
