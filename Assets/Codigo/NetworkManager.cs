@@ -26,7 +26,7 @@ public class NetworkManager : MonoBehaviour
         form.AddField("correo", email);
         form.AddField("contraseña", pass);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/apiuser/apiuser.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("https://apigameus.000webhostapp.com/apiuser/apiuser.php", form);
 
         yield return www.SendWebRequest();
         //Debug.Log(www.downloadHandler.text);
@@ -46,7 +46,7 @@ public class NetworkManager : MonoBehaviour
         form.AddField("usuario", username);
         form.AddField("contraseña", pass);
 
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost/apiuser/checkUser.php", form);
+        UnityWebRequest www = UnityWebRequest.Post("https://apigameus.000webhostapp.com/apiuser/checkUser.php", form);
 
         yield return www.SendWebRequest();
         //Debug.Log(www.downloadHandler.text);
