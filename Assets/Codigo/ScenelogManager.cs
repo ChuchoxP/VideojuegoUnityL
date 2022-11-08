@@ -104,8 +104,15 @@ public class ScenelogManager : MonoBehaviour
                 if (response.done == true)
                 {
                     clearInput();
-                    SceneManager.LoadScene(3);
-                    ses.Sonidomenu.Pause();
+                    m_validarInput.text = null;
+                    m_registerUI.SetActive(false);
+                    m_loginUI.SetActive(false);
+                    ses.btnjugar.SetActive(true);
+                    ses.menulogeo.SetActive(false);
+                    ses.btniniciarsesion.SetActive(true);
+                    ses.btnfaccebook.SetActive(true);
+                    ses.texto.SetActive(true);
+
                 }
                 else
                 {
