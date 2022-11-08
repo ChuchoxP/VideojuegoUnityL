@@ -78,6 +78,17 @@ public class Jugador : MonoBehaviour
         else if (v==0)
         {
             gameover();
+
+            N.SL1.SetActive(false);
+            N.SL2.SetActive(false);
+            N.SL3.SetActive(false);
+            N.SL4.SetActive(false);
+
+
+            N.LA1.SetActive(false);
+            N.LA2.SetActive(false);
+            N.LA3.SetActive(false);
+            N.LA4.SetActive(false);
         }
 
 

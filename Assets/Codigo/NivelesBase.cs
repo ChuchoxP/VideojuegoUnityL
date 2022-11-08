@@ -121,10 +121,6 @@ public class NivelesBase : MonoBehaviour
         //Mover Letras
 
 
-
-
-
-
         //float randomlts = Random.Range(1, 4);
 
         switch (contlt)
