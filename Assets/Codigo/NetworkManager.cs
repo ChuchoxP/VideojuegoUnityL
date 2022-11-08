@@ -27,7 +27,9 @@ public class NetworkManager : MonoBehaviour
         form.AddField("contraseña", pass);
 
         UnityWebRequest www = UnityWebRequest.Post("http://localhost/apiuser/apiuser.php", form);
+
         yield return www.SendWebRequest();
+        //Debug.Log(www.downloadHandler.text);
         response(JsonUtility.FromJson<Response>(www.downloadHandler.text));
 
     }

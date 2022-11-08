@@ -73,7 +73,7 @@ public class ScenelogManager : MonoBehaviour
             m_validarInput.text = "Por favor llena todos los campos";
             return;
         }
-        m_validarInput.text = "Problemas con la conexión.....";
+        m_validarInput.text = "Cargando.....";
         m_networkManager.CheckUser(m_loginUserNameImput.text, m_loginPasswordImput.text, delegate (Response response)
         {
 
@@ -112,7 +112,7 @@ public class ScenelogManager : MonoBehaviour
         }
         else
         {
-            m_validarInput.text = "Contrasenas no son iguales";
+            m_validarInput.text = "Las contraseñas no son iguales";
         }
 
     }
