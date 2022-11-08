@@ -100,12 +100,16 @@ public class ScenelogManager : MonoBehaviour
             m_networkManager.CreateUser(m_userNameInput.text, m_emailInput.text, m_pswInput.text, delegate (Response response)
             {
                 m_validarInput.text = response.message;
-                m_validarInput.text = "Se registro correctamente";
-                clearInput();
+                
                 if (response.done == true)
                 {
+                    clearInput();
                     SceneManager.LoadScene(3);
                     ses.Sonidomenu.Pause();
+                }
+                else
+                {
+                    m_validarInput.text = response.message;
                 }
 
             });
