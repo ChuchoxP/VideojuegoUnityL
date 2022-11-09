@@ -46,9 +46,11 @@ public class Jugador : MonoBehaviour
 
     private int v=3;
 
+    int x =0;
+
     public int plbrdm;
 
-    public string uno;
+    public GameObject uno;
     public string dos;
     public string tres;
     public string cuatro;
@@ -58,7 +60,8 @@ public class Jugador : MonoBehaviour
     {
 
 
-        plbrdm = Random.Range(1, 4);
+        //plbrdm = Random.Range(1, 4);
+        plbrdm = 1;
 
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -102,10 +105,12 @@ public class Jugador : MonoBehaviour
                 break;
         }
 
-        uno = SL1.text;
+        uno = SL1;
         dos = SL2.text;
         tres = SL3.text;
         cuatro = SL4.text;
+
+
 
 
 
@@ -197,7 +202,7 @@ public class Jugador : MonoBehaviour
         if (collision.CompareTag("A1"))
         {
             SL2.text = "";
-            N.LA2.text = "A";
+            N.LA2.text = dos;
 
             N.contlt++;
 
@@ -210,7 +215,7 @@ public class Jugador : MonoBehaviour
         if (collision.CompareTag("T2"))
         {
             SL3.text = "";
-            N.LA3.text = "V";
+            N.LA3.text = tres;
 
             N.contlt++;
 
@@ -222,18 +227,23 @@ public class Jugador : MonoBehaviour
         if (collision.CompareTag("A2"))
         {
             SL4.text = "";
-            N.LA4.text = "O";
+            N.LA4.text = cuatro;
 
             N.contlt++;
+
+            plbrdm++;
+
+            x = 4;
 
             for (int c = 0; c < N.LL4.Count; c++)
             {
                 N.LL4[c].transform.position = new Vector3(-13, 0, 0);
             }
         }
+
         if (collision.CompareTag("obstaculo"))
         {
-            v--;
+           // v--;
         }
 
     }

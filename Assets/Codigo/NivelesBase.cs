@@ -36,10 +36,15 @@ public class NivelesBase : MonoBehaviour
     public List<GameObject> LL3;
     public List<GameObject> LL4;
 
+    Jugador J;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        J = FindObjectOfType<Jugador>();
+
 
         //Crear mapa
         for (int  i = 0;  i < 26;  i++)
@@ -52,10 +57,10 @@ public class NivelesBase : MonoBehaviour
         mon.Add(Instantiate(moneda, new Vector2(13, -2), Quaternion.identity));
         ene1.Add(Instantiate(enemigo1, new Vector2(18, -2), Quaternion.identity));
 
-        LL1.Add(Instantiate(L1, new Vector2(90, 0), Quaternion.identity));
-        LL2.Add(Instantiate(L2, new Vector2(90, 0), Quaternion.identity));
-        LL3.Add(Instantiate(L3, new Vector2(90, 0), Quaternion.identity));
-        LL4.Add(Instantiate(L4, new Vector2(90, 0), Quaternion.identity));
+        LL1.Add(Instantiate(J.uno, new Vector2(10, 0), Quaternion.identity));
+        LL2.Add(Instantiate(L2, new Vector2(10, 0), Quaternion.identity));
+        LL3.Add(Instantiate(L3, new Vector2(10, 0), Quaternion.identity));
+        LL4.Add(Instantiate(L4, new Vector2(10, 0), Quaternion.identity));
 
 
     }
@@ -109,7 +114,7 @@ public class NivelesBase : MonoBehaviour
         //float randomlts = Random.Range(1, 4);
 
         switch (contlt)
-            {
+        {
                 case 1:
                     {
                         for (int i = 0; i < LL1.Count; i++)
@@ -169,7 +174,7 @@ public class NivelesBase : MonoBehaviour
                     };
                     break;
 
-            }
+        }
         
 
 
