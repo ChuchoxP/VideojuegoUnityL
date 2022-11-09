@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using UnityEngine;
 
 public class NivelesBase : MonoBehaviour
@@ -24,32 +25,20 @@ public class NivelesBase : MonoBehaviour
     public GameObject L3;
     public GameObject L4;
 
-    public GameObject LA1;
-    public GameObject LA2;
-    public GameObject LA3;
-    public GameObject LA4;
-    /*public GameObject L5;
-    public GameObject L6;
-    public GameObject L7;
-    public GameObject L8;*/
+    public TextMeshProUGUI LA1;
+    public TextMeshProUGUI LA2;
+    public TextMeshProUGUI LA3;
+    public TextMeshProUGUI LA4;
 
-    public GameObject SL1;
-    public GameObject SL2;
-    public GameObject SL3;
-    public GameObject SL4;
 
     public List<GameObject> LL1;
     public List<GameObject> LL2;
     public List<GameObject> LL3;
     public List<GameObject> LL4;
-    /*public List<GameObject> LL5;
-    public List<GameObject> LL6;
-    public List<GameObject> LL7;
-    public List<GameObject> LL8;*/
+
 
     // Start is called before the first frame update
     void Start()
-
     {
 
         //Crear mapa
@@ -63,14 +52,10 @@ public class NivelesBase : MonoBehaviour
         mon.Add(Instantiate(moneda, new Vector2(13, -2), Quaternion.identity));
         ene1.Add(Instantiate(enemigo1, new Vector2(18, -2), Quaternion.identity));
 
-        LL1.Add(Instantiate(L1, new Vector2(13, 0), Quaternion.identity));
-        LL2.Add(Instantiate(L2, new Vector2(13, 0), Quaternion.identity));
-        LL3.Add(Instantiate(L3, new Vector2(13, 0), Quaternion.identity));
-        LL4.Add(Instantiate(L4, new Vector2(13, 0), Quaternion.identity));
-        /*LL5.Add(Instantiate(L5, new Vector2(13, 0), Quaternion.identity));
-        LL6.Add(Instantiate(L6, new Vector2(13, 0), Quaternion.identity));
-        LL7.Add(Instantiate(L7, new Vector2(13, 0), Quaternion.identity));
-        LL8.Add(Instantiate(L8, new Vector2(13, 0), Quaternion.identity));*/
+        LL1.Add(Instantiate(L1, new Vector2(90, 0), Quaternion.identity));
+        LL2.Add(Instantiate(L2, new Vector2(90, 0), Quaternion.identity));
+        LL3.Add(Instantiate(L3, new Vector2(90, 0), Quaternion.identity));
+        LL4.Add(Instantiate(L4, new Vector2(90, 0), Quaternion.identity));
 
 
     }

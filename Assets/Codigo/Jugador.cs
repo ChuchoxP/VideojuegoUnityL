@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class Jugador : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Jugador : MonoBehaviour
     public GameObject sv2;
     public GameObject sv3;
 
+    public TextMeshProUGUI SL1;
+    public TextMeshProUGUI SL2;
+    public TextMeshProUGUI SL3;
+    public TextMeshProUGUI SL4;
+
     [SerializeField] private GameObject objjsonidomoneda;
     private AudioSource Sonidomoneda;
 
@@ -38,13 +44,21 @@ public class Jugador : MonoBehaviour
     [SerializeField] private GameObject btnsalir;
     [SerializeField] private GameObject menupago;
 
-    private int v=4;
+    private int v=3;
 
+    public int plbrdm;
+
+    public string uno;
+    public string dos;
+    public string tres;
+    public string cuatro;
 
     // Start is called before the first frame update
     void Start()
     {
 
+
+        plbrdm = Random.Range(1, 4);
 
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -58,38 +72,68 @@ public class Jugador : MonoBehaviour
 
     private void Update()
     {
-        if(v==3)
+
+        switch (plbrdm)
+        {
+            case 1:
+                {
+                    SL1.text = "T";
+                    SL2.text = "A";
+                    SL3.text = "V";
+                    SL4.text = "O";
+                };
+                break;
+
+            case 2:
+                {
+                    SL1.text = "P";
+                    SL2.text = "A";
+                    SL3.text = "C";
+                    SL4.text = "O";
+                };
+                break;
+            case 3:
+                {
+                    SL1.text = "T";
+                    SL2.text = "A";
+                    SL3.text = "T";
+                    SL4.text = "A";
+                };
+                break;
+        }
+
+        uno = SL1.text;
+        dos = SL2.text;
+        tres = SL3.text;
+        cuatro = SL4.text;
+
+
+
+        if (v==2)
         {
             Destroy(v3.gameObject);
             sv3.SetActive(true);
         }
-        else if (v==2)
+        else if (v==1)
         {
             Destroy(v2.gameObject);
             sv2.SetActive(true);
         }
-        else if(v==1)
+        else if(v==0)
         {
             Destroy(v1.gameObject);
             sv1.SetActive(true);
-            
 
-        }
-        else if (v==0)
-        {
             gameover();
 
-            N.SL1.SetActive(false);
-            N.SL2.SetActive(false);
-            N.SL3.SetActive(false);
-            N.SL4.SetActive(false);
+            N.LA1.text = "";
+            N.LA2.text = "";
+            N.LA3.text = "";
+            N.LA4.text = "";
 
 
-            N.LA1.SetActive(false);
-            N.LA2.SetActive(false);
-            N.LA3.SetActive(false);
-            N.LA4.SetActive(false);
         }
+
 
 
         totmonedas.text = tot.ToString();
@@ -138,8 +182,8 @@ public class Jugador : MonoBehaviour
 
         if (collision.CompareTag("T1"))
         {
-            Destroy(N.SL1.gameObject);
-            N.LA1.SetActive(true);
+            SL1.text = "";
+            N.LA1.text = uno;
 
             N.contlt++;
 
@@ -152,8 +196,8 @@ public class Jugador : MonoBehaviour
         }
         if (collision.CompareTag("A1"))
         {
-            Destroy(N.SL2.gameObject);
-            N.LA2.SetActive(true);
+            SL2.text = "";
+            N.LA2.text = "A";
 
             N.contlt++;
 
@@ -165,8 +209,8 @@ public class Jugador : MonoBehaviour
         }
         if (collision.CompareTag("T2"))
         {
-            Destroy(N.SL3.gameObject);
-            N.LA3.SetActive(true);
+            SL3.text = "";
+            N.LA3.text = "V";
 
             N.contlt++;
 
@@ -177,8 +221,8 @@ public class Jugador : MonoBehaviour
         }
         if (collision.CompareTag("A2"))
         {
-            Destroy(N.SL4.gameObject);
-            N.LA4.SetActive(true);
+            SL4.text = "";
+            N.LA4.text = "O";
 
             N.contlt++;
 
