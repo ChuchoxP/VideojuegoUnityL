@@ -3284,8 +3284,8 @@ MonoBehaviour:
   col: []
   moneda: {fileID: 7651207131689774318, guid: 8768425e12c47504fa1a04408cfd8722, type: 3}
   mon: []
-  enemigo1: {fileID: 8990890022831234439, guid: faf9beea99abc5845a0673b0c1029a42, type: 3}
-  ene1: []
+  murcielago: {fileID: 3318811028325047636, guid: b91842c9a74bcdf41865dd84aa5b1d1c, type: 3}
+  murci: []
   contlt: 1
   L1: {fileID: 3922120577779826214, guid: e15d7b70cb1964141a0ecae0b3508d23, type: 3}
   L2: {fileID: 7760255037942563730, guid: dace0fb4b6f9ae147ac59c68d735dc4f, type: 3}

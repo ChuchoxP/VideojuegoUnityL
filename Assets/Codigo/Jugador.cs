@@ -24,10 +24,7 @@ public class Jugador : MonoBehaviour
     public GameObject sv2;
     public GameObject sv3;
 
-    public TextMeshProUGUI SL1;
-    public TextMeshProUGUI SL2;
-    public TextMeshProUGUI SL3;
-    public TextMeshProUGUI SL4;
+    public TextMeshProUGUI SNL;
 
     [SerializeField] private GameObject objjsonidomoneda;
     private AudioSource Sonidomoneda;
@@ -50,10 +47,7 @@ public class Jugador : MonoBehaviour
 
     public int plbrdm;
 
-    public GameObject uno;
-    public string dos;
-    public string tres;
-    public string cuatro;
+    public string letra;
 
     // Start is called before the first frame update
     void Start()
@@ -80,35 +74,23 @@ public class Jugador : MonoBehaviour
         {
             case 1:
                 {
-                    SL1.text = "T";
-                    SL2.text = "A";
-                    SL3.text = "V";
-                    SL4.text = "O";
+                    SNL.text = "TAVO";
                 };
                 break;
 
             case 2:
                 {
-                    SL1.text = "P";
-                    SL2.text = "A";
-                    SL3.text = "C";
-                    SL4.text = "O";
+                    SNL.text = "PACO";
                 };
                 break;
             case 3:
                 {
-                    SL1.text = "T";
-                    SL2.text = "A";
-                    SL3.text = "T";
-                    SL4.text = "A";
+                    SNL.text = "TAXI";
                 };
                 break;
         }
 
-        uno = SL1;
-        dos = SL2.text;
-        tres = SL3.text;
-        cuatro = SL4.text;
+        letra = SNL.text;
 
 
 
@@ -187,7 +169,7 @@ public class Jugador : MonoBehaviour
 
         if (collision.CompareTag("T1"))
         {
-            SL1.text = "";
+            SNL.text = " AVO";
             N.LA1.text = uno;
 
             N.contlt++;
@@ -243,7 +225,7 @@ public class Jugador : MonoBehaviour
 
         if (collision.CompareTag("obstaculo"))
         {
-           // v--;
+           v--;
         }
 
     }
