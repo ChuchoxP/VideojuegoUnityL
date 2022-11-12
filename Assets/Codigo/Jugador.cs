@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -23,8 +24,12 @@ public class Jugador : MonoBehaviour
     public GameObject sv1;
     public GameObject sv2;
     public GameObject sv3;
+    public GameObject cartel;
 
     public TextMeshProUGUI SNL;
+    public TextMeshProUGUI textonahuatl;
+    public TextMeshProUGUI textoespanol;
+
 
     [SerializeField] private GameObject objjsonidomoneda;
     private AudioSource Sonidomoneda;
@@ -43,9 +48,9 @@ public class Jugador : MonoBehaviour
 
     private int v=3;
 
-    int x =0;
+    public int x =0;
 
-    public int plbrdm;
+    public float timer;
 
     public string letra;
 
@@ -55,7 +60,7 @@ public class Jugador : MonoBehaviour
 
 
         //plbrdm = Random.Range(1, 4);
-        plbrdm = 1;
+
 
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -69,30 +74,6 @@ public class Jugador : MonoBehaviour
 
     private void Update()
     {
-
-        switch (plbrdm)
-        {
-            case 1:
-                {
-                    SNL.text = "TAVO";
-                };
-                break;
-
-            case 2:
-                {
-                    SNL.text = "PACO";
-                };
-                break;
-            case 3:
-                {
-                    SNL.text = "TAXI";
-                };
-                break;
-        }
-
-        letra = SNL.text;
-
-
 
 
 
@@ -113,17 +94,17 @@ public class Jugador : MonoBehaviour
 
             gameover();
 
-            N.LA1.text = "";
-            N.LA2.text = "";
-            N.LA3.text = "";
-            N.LA4.text = "";
-
+            SNL.text = "";
 
         }
 
-
-
         totmonedas.text = tot.ToString();
+
+
+        if(x==4)
+        {
+            cartels();
+        }
 
     }
 
@@ -167,65 +148,181 @@ public class Jugador : MonoBehaviour
         }
 
 
-        if (collision.CompareTag("T1"))
+
+
+
+        switch (N.contplb)
         {
-            SNL.text = " AVO";
-            N.LA1.text = uno;
+            case 1:
 
-            N.contlt++;
+                if (collision.CompareTag("T1"))
+                {
+                    SNL.text = "T";
 
-            for (int c = 0; c < N.LL1.Count; c++)
-            {
-               N.LL1[c].transform.position = new Vector3(-13, 0, 0);
-            }
+                    N.contlt++;
+
+                    for (int c = 0; c < N.LL1.Count; c++)
+                    {
+                        N.LL1[c].transform.position = new Vector3(-13, 0, 0);
+                    }
 
 
-        }
-        if (collision.CompareTag("A1"))
-        {
-            SL2.text = "";
-            N.LA2.text = dos;
+                }
+                if (collision.CompareTag("A1"))
+                {
+                    SNL.text = "TA";
 
-            N.contlt++;
+                    N.contlt++;
 
-            for (int c = 0; c < N.LL2.Count; c++)
-            {
-                N.LL2[c].transform.position = new Vector3(-13, 0, 0);
-            }
+                    for (int c = 0; c < N.LL2.Count; c++)
+                    {
+                        N.LL2[c].transform.position = new Vector3(-13, 0, 0);
+                    }
 
-        }
-        if (collision.CompareTag("T2"))
-        {
-            SL3.text = "";
-            N.LA3.text = tres;
+                }
+                if (collision.CompareTag("T2"))
+                {
+                    SNL.text = "TAT";
 
-            N.contlt++;
+                    N.contlt++;
 
-            for (int c = 0; c < N.LL3.Count; c++)
-            {
-                N.LL3[c].transform.position = new Vector3(-13, 0, 0);
-            }
-        }
-        if (collision.CompareTag("A2"))
-        {
-            SL4.text = "";
-            N.LA4.text = cuatro;
+                    for (int c = 0; c < N.LL3.Count; c++)
+                    {
+                        N.LL3[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
+                if (collision.CompareTag("A2"))
+                {
+                    SNL.text = "TATA";
 
-            N.contlt++;
+                    N.contlt++;
 
-            plbrdm++;
+                    x = 4;
 
-            x = 4;
+                    for (int c = 0; c < N.LL4.Count; c++)
+                    {
+                        N.LL4[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
 
-            for (int c = 0; c < N.LL4.Count; c++)
-            {
-                N.LL4[c].transform.position = new Vector3(-13, 0, 0);
-            }
+                break;
+
+            case 2:
+
+                if (collision.CompareTag("N1"))
+                {
+                    SNL.text = "N";
+
+                    N.contlt++;
+
+                    for (int c = 0; c < N.LL5.Count; c++)
+                    {
+                        N.LL5[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+
+
+                }
+                if (collision.CompareTag("A1"))
+                {
+                    SNL.text = "NA";
+
+                    N.contlt++;
+
+                    for (int c = 0; c < N.LL6.Count; c++)
+                    {
+                        N.LL6[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+
+                }
+                if (collision.CompareTag("N2"))
+                {
+                    SNL.text = "NAN";
+
+                    N.contlt++;
+
+                    for (int c = 0; c < N.LL7.Count; c++)
+                    {
+                        N.LL7[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
+                if (collision.CompareTag("A2"))
+                {
+                    SNL.text = "NANA";
+
+
+
+                    N.contlt++;
+
+                    x = 4;
+
+                    for (int c = 0; c < N.LL8.Count; c++)
+                    {
+                        N.LL8[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
+
+                break;
+
+            case 3:
+
+                if (collision.CompareTag("C1"))
+                {
+                    SNL.text = "C";
+
+                    N.contlt++;
+
+
+                    for (int c = 0; c < N.LL9.Count; c++)
+                    {
+                        N.LL9[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+
+
+                }
+                if (collision.CompareTag("A1"))
+                {
+                    SNL.text = "CA";
+
+                    N.contlt++;
+
+                    for (int c = 0; c < N.LL10.Count; c++)
+                    {
+                        N.LL10[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+
+                }
+                if (collision.CompareTag("L1"))
+                {
+                    SNL.text = "CAL";
+
+                    N.contlt++;
+
+                    for (int c = 0; c < N.LL11.Count; c++)
+                    {
+                        N.LL11[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
+                if (collision.CompareTag("I1"))
+                {
+                    SNL.text = "CALI";
+
+
+                    N.contlt++;
+
+                    x = 4;
+
+                    for (int c = 0; c < N.LL12.Count; c++)
+                    {
+                        N.LL12[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
+
+                break;
         }
 
         if (collision.CompareTag("obstaculo"))
         {
-           v--;
+           //v--;
         }
 
     }
@@ -239,6 +336,64 @@ public class Jugador : MonoBehaviour
         menupago.SetActive(true);
 
     }
+
+    public void cartels()
+    {
+
+        timer += Time.deltaTime;
+
+        cartel.SetActive(true);
+
+
+        if (N.contplb == 1)
+        {
+            textonahuatl.text = "TATA";
+
+            textoespanol.text = "PAPÁ";
+
+
+
+        }
+
+        if (N.contplb == 2)
+        {
+            textonahuatl.text = "NANA";
+
+            textoespanol.text = "MAMÁ";
+
+        }
+
+        if (N.contplb == 3)
+        {
+            textonahuatl.text = "CALI";
+
+            textoespanol.text = "CASA";
+        }
+        
+
+        if(timer>3)
+        {
+
+            cartel.SetActive(false);
+
+            textonahuatl.text = "";
+            textoespanol.text = "";
+
+            SNL.text = "";
+
+            x = 0;
+
+            timer = 0;
+
+            N.contplb++;
+
+            N.contlt++;
+
+
+
+        }
+    }
+
 
 
 

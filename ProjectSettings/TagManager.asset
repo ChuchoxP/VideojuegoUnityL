@@ -14,6 +14,11 @@ TagManager:
   - A1
   - A2
   - letratrampa
+  - L1
+  - I1
+  - C1
+  - N1
+  - N2
   layers:
   - Default
   - TransparentFX

@@ -20,21 +20,38 @@ public class NivelesBase : MonoBehaviour
 
     public int contlt = 1;
 
+    public int contplb = 1;
+
     public GameObject L1;
     public GameObject L2;
     public GameObject L3;
     public GameObject L4;
 
-    public TextMeshProUGUI LA1;
-    public TextMeshProUGUI LA2;
-    public TextMeshProUGUI LA3;
-    public TextMeshProUGUI LA4;
+    public GameObject L5;
+    public GameObject L6;
+    public GameObject L7;
+    public GameObject L8;
+
+    public GameObject L9;
+    public GameObject L10;
+    public GameObject L11;
+    public GameObject L12;
 
 
     public List<GameObject> LL1;
     public List<GameObject> LL2;
     public List<GameObject> LL3;
     public List<GameObject> LL4;
+
+    public List<GameObject> LL5;
+    public List<GameObject> LL6;
+    public List<GameObject> LL7;
+    public List<GameObject> LL8;
+
+    public List<GameObject> LL9;
+    public List<GameObject> LL10;
+    public List<GameObject> LL11;
+    public List<GameObject> LL12;
 
     Jugador J;
 
@@ -61,6 +78,16 @@ public class NivelesBase : MonoBehaviour
         LL2.Add(Instantiate(L2, new Vector2(10, 0), Quaternion.identity));
         LL3.Add(Instantiate(L3, new Vector2(10, 0), Quaternion.identity));
         LL4.Add(Instantiate(L4, new Vector2(10, 0), Quaternion.identity));
+
+        LL5.Add(Instantiate(L5, new Vector2(10, 0), Quaternion.identity));
+        LL6.Add(Instantiate(L6, new Vector2(10, 0), Quaternion.identity));
+        LL7.Add(Instantiate(L7, new Vector2(10, 0), Quaternion.identity));
+        LL8.Add(Instantiate(L8, new Vector2(10, 0), Quaternion.identity));
+
+        LL9.Add(Instantiate(L9, new Vector2(10, 0), Quaternion.identity));
+        LL10.Add(Instantiate(L10, new Vector2(10, 0), Quaternion.identity));
+        LL11.Add(Instantiate(L11, new Vector2(10, 0), Quaternion.identity));
+        LL12.Add(Instantiate(L12, new Vector2(10, 0), Quaternion.identity));
 
 
     }
@@ -111,76 +138,218 @@ public class NivelesBase : MonoBehaviour
         //Mover Letras
 
 
-        //float randomlts = Random.Range(1, 4);
+        moverletras();
 
-        switch (contlt)
+    }
+
+    public void moverletras()
+    {
+        switch (contplb)
         {
-                case 1:
+            case 1:
+                {
+                    switch (contlt)
                     {
-                        for (int i = 0; i < LL1.Count; i++)
-                        {
-
-                            if (LL1[i].transform.position.x <= -13)
+                        case 1:
                             {
-                                LL1[i].transform.position = new Vector3(13, 0, 0);
-                            }
+                                for (int i = 0; i < LL1.Count; i++)
+                                {
 
-                            LL1[i].transform.position = LL1[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
-                        }
-                    };
-                    break;
+                                    if (LL1[i].transform.position.x <= -13)
+                                    {
+                                        LL1[i].transform.position = new Vector3(13, 0, 0);
+                                    }
 
-                case 2:
+                                    LL1[i].transform.position = LL1[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                        case 2:
+                            {
+                                for (int i = 0; i < LL2.Count; i++)
+                                {
+
+                                    if (LL2[i].transform.position.x <= -13)
+                                    {
+                                        LL2[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL2[i].transform.position = LL2[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+                        case 3:
+                            {
+                                for (int i = 0; i < LL3.Count; i++)
+                                {
+
+                                    if (LL3[i].transform.position.x <= -13)
+                                    {
+                                        LL3[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL3[i].transform.position = LL3[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                        case 4:
+                            {
+                                for (int i = 0; i < LL4.Count; i++)
+                                {
+
+                                    if (LL4[i].transform.position.x <= -13)
+                                    {
+                                        LL4[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL4[i].transform.position = LL4[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                    }
+                };
+                break;
+
+            case 2:
+                {
+                    switch (contlt)
                     {
-                        for (int i = 0; i < LL2.Count; i++)
-                        {
-
-                            if (LL2[i].transform.position.x <= -13)
+                        case 6:
                             {
-                                LL2[i].transform.position = new Vector3(13, 0, 0);
-                            }
+                                for (int i = 0; i < LL5.Count; i++)
+                                {
 
-                            LL2[i].transform.position = LL2[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
-                        }
-                    };
-                    break;
-                case 3:
+                                    if (LL5[i].transform.position.x <= -13)
+                                    {
+                                        LL5[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL5[i].transform.position = LL5[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                        case 7:
+                            {
+                                for (int i = 0; i < LL6.Count; i++)
+                                {
+
+                                    if (LL6[i].transform.position.x <= -13)
+                                    {
+                                        LL6[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL6[i].transform.position = LL6[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+                        case 8:
+                            {
+                                for (int i = 0; i < LL7.Count; i++)
+                                {
+
+                                    if (LL7[i].transform.position.x <= -13)
+                                    {
+                                        LL7[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL7[i].transform.position = LL7[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                        case 9:
+                            {
+                                for (int i = 0; i < LL8.Count; i++)
+                                {
+
+                                    if (LL8[i].transform.position.x <= -13)
+                                    {
+                                        LL8[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL8[i].transform.position = LL8[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                    }
+                };
+                break;
+            case 3:
+                {
+                    switch (contlt)
                     {
-                        for (int i = 0; i < LL3.Count; i++)
-                        {
-
-                            if (LL3[i].transform.position.x <= -13)
+                        case 11:
                             {
-                                LL3[i].transform.position = new Vector3(13, 0, 0);
-                            }
+                                for (int i = 0; i < LL9.Count; i++)
+                                {
 
-                            LL3[i].transform.position = LL3[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
-                        }
-                    };
-                    break;
+                                    if (LL9[i].transform.position.x <= -13)
+                                    {
+                                        LL9[i].transform.position = new Vector3(13, 0, 0);
+                                    }
 
-                case 4:
-                    {
-                        for (int i = 0; i < LL4.Count; i++)
-                        {
+                                    LL9[i].transform.position = LL9[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
 
-                            if (LL4[i].transform.position.x <= -13)
+                        case 12:
                             {
-                                LL4[i].transform.position = new Vector3(13, 0, 0);
-                            }
+                                for (int i = 0; i < LL10.Count; i++)
+                                {
 
-                            LL4[i].transform.position = LL4[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
-                        }
-                    };
-                    break;
+                                    if (LL10[i].transform.position.x <= -13)
+                                    {
+                                        LL10[i].transform.position = new Vector3(13, 0, 0);
+                                    }
 
+                                    LL10[i].transform.position = LL10[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+                        case 13:
+                            {
+                                for (int i = 0; i < LL11.Count; i++)
+                                {
+
+                                    if (LL11[i].transform.position.x <= -13)
+                                    {
+                                        LL11[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL11[i].transform.position = LL11[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                        case 14:
+                            {
+                                for (int i = 0; i < LL12.Count; i++)
+                                {
+
+                                    if (LL12[i].transform.position.x <= -13)
+                                    {
+                                        LL12[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL12[i].transform.position = LL12[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                    }
+                };
+                break;
         }
+
+
+
         
-
-
-        
-
-
 
     }
 
