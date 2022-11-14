@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Pausa : MonoBehaviour
 {
-
+    public static Pausa instance;
     [SerializeField] private GameObject btnpausa;
     [SerializeField] private GameObject menupausa;
     [SerializeField] private GameObject btnbrincar;
@@ -14,9 +14,21 @@ public class Pausa : MonoBehaviour
     [SerializeField] private GameObject objjsonidopausa;
     private AudioSource Sonidopausa;
 
-    private void Start()
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+    void Start()
     {
         Sonidopausa = objjsonidopausa.GetComponent<AudioSource>();
+            
     }
 
 
@@ -40,6 +52,16 @@ public class Pausa : MonoBehaviour
         menupausa.SetActive(false);
         btnbrincar.SetActive(true);
         btnajustes.SetActive(false);
+    }
+
+    public void continuarEx()
+    {
+        Time.timeScale = 1f;
+        btnpausa.SetActive(true);
+        menupausa.SetActive(false);
+        btnbrincar.SetActive(true);
+        btnajustes.SetActive(false);
+        Jugador.instance.gameoverEx();
     }
 
     public void reinciar()

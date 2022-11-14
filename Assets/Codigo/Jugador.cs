@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 public class Jugador : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
-
+    public static Jugador instance;
     private Animator animator;
 
     public bool jump=false;
@@ -53,7 +53,18 @@ public class Jugador : MonoBehaviour
     public float timer;
 
     public string letra;
-
+    
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -79,17 +90,17 @@ public class Jugador : MonoBehaviour
 
         if (v==2)
         {
-            Destroy(v3.gameObject);
+            v3.SetActive(false);
             sv3.SetActive(true);
         }
         else if (v==1)
         {
-            Destroy(v2.gameObject);
+            v2.SetActive(false);
             sv2.SetActive(true);
         }
         else if(v==0)
         {
-            Destroy(v1.gameObject);
+            v1.SetActive(false);
             sv1.SetActive(true);
 
             gameover();
@@ -322,7 +333,7 @@ public class Jugador : MonoBehaviour
 
         if (collision.CompareTag("obstaculo"))
         {
-           //v--;
+           v--;
         }
 
     }
@@ -336,6 +347,19 @@ public class Jugador : MonoBehaviour
         menupago.SetActive(true);
 
     }
+    public void gameoverEx()
+    {
+        v = 1;
+        Time.timeScale = 1f;
+        sv1.SetActive(false);
+        v1.SetActive(true);
+        btnyoutube.SetActive(false);
+        btnpaypal.SetActive(false);
+        btnsalir.SetActive(false);
+        menupago.SetActive(false);
+
+    }
+
 
     public void cartels()
     {

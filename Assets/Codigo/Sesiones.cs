@@ -37,6 +37,10 @@ public class Sesiones : MonoBehaviour
         btniniciarsesion.SetActive(false);
         btnfaccebook.SetActive(false);
     }
+    public void anuncios()
+    {
+        SceneManager.LoadScene(4);
+    }
 
     public void logeoexitoso()
     {
