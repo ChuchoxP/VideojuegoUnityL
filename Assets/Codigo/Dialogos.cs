@@ -75,17 +75,6 @@ public class Dialogos : MonoBehaviour
         btnOmitir.SetActive(true);
         btnsiguiente.SetActive(false);
 
-        if(niño.activeSelf)
-        {
-            niño.SetActive(false);
-            forastero.SetActive(true);
-        }
-        else
-        {
-            forastero.SetActive(false);
-            niño.SetActive(true);
-        }
-
         lineindex++;
 
         if (lineindex < lineadialogo.Length)
@@ -101,7 +90,6 @@ public class Dialogos : MonoBehaviour
     public void comenzarJuego()
     {
         forastero.SetActive(false);
-        niño.SetActive(true);
         J.animator.SetBool("Corriendo", true);
         dialogaux = true;
         paneldialogo.SetActive(false);

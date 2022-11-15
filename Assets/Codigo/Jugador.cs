@@ -58,6 +58,8 @@ public class Jugador : MonoBehaviour
 
     public int x =0;
 
+    private int fuerzasalto = 500;
+
 
     public float timer;
 
@@ -165,7 +167,7 @@ public class Jugador : MonoBehaviour
         if(jump)
         {
             animator.SetBool("Estasaltando", true);
-            rigidbody2D.AddForce(new Vector2(0, 300));
+            rigidbody2D.AddForce(new Vector2(0, fuerzasalto));
             Sonidosalto.Play();
             jump =false;
         }

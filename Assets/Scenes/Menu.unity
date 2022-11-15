@@ -1348,6 +1348,34 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6535943712154219984, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535943712154219984, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535943712154219984, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 181202165}
+    - target: {fileID: 6535943712154219984, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535943712154219984, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: cerrarajustes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535943712154219984, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Sesiones, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535943712154219984, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6660646201872034897, guid: 36333ea1628cbb44fb08892335206f5d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
