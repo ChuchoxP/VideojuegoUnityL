@@ -11,6 +11,18 @@ public class Escenas : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void LoadScenenivel2()
+    {
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
+    }
+
+    public void LoadScenenivel3()
+    {
+        SceneManager.LoadScene(5);
+        Time.timeScale = 1;
+    }
+
     public void LoadScenemenu()
     {
         SceneManager.LoadScene(3);

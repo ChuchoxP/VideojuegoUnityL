@@ -10,6 +10,7 @@ public class Dialogos : MonoBehaviour
     [SerializeField] private GameObject paneldialogo;
     [SerializeField] private TextMeshProUGUI Txtpanel;
 
+    public GameObject btnOmitir;
     public GameObject paneljueego;
     public GameObject confjuego;
     public GameObject moneda;
@@ -17,7 +18,7 @@ public class Dialogos : MonoBehaviour
     public GameObject niño;
     public GameObject forastero;
 
-    float time=0.05f;
+    float time=0.03f;
 
     public bool dialogaux;
 
@@ -41,6 +42,7 @@ public class Dialogos : MonoBehaviour
             paneldialogo.SetActive(true);
             paneljueego.SetActive(false);
             confjuego.SetActive(false);
+            btnOmitir.SetActive(false);
             moneda.SetActive(false);
         }
         else if (Txtpanel.text == lineadialogo[lineindex])
@@ -70,7 +72,7 @@ public class Dialogos : MonoBehaviour
 
     public void siguientedialogo()
     {
-
+        btnOmitir.SetActive(true);
         btnsiguiente.SetActive(false);
 
         if(niño.activeSelf)
@@ -92,14 +94,20 @@ public class Dialogos : MonoBehaviour
         }
         else
         {
-            J.animator.SetBool("Corriendo", true);
-            dialogaux =true;
-            paneldialogo.SetActive(false);
-            paneljueego.SetActive(true);
-            confjuego.SetActive(true);
-            moneda.SetActive(true);
-            lineindex = 0;
-
+            comenzarJuego();
         }
+    }
+
+    public void comenzarJuego()
+    {
+        forastero.SetActive(false);
+        niño.SetActive(true);
+        J.animator.SetBool("Corriendo", true);
+        dialogaux = true;
+        paneldialogo.SetActive(false);
+        paneljueego.SetActive(true);
+        confjuego.SetActive(true);
+        moneda.SetActive(true);
+        lineindex = 0;
     }
 }

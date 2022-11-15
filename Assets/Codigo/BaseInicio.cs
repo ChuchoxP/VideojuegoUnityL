@@ -15,11 +15,11 @@ public class BaseInicio : MonoBehaviour
     void Start()
     {
 
-        Time.timeScale = 1f;
-        for (int i = 0; i < 21; i++)
-        {
-            col.Add(Instantiate(Columna, new Vector2(-10 + i, -3), Quaternion.identity));
-        }
+        //Time.timeScale = 1f;
+        //for (int i = 0; i < 21; i++)
+        //{
+        //    col.Add(Instantiate(Columna, new Vector2(-10 + i, -3), Quaternion.identity));
+        //}
     }
 
     // Update is called once per frame
