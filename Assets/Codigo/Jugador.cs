@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
@@ -10,8 +11,9 @@ using static System.Net.Mime.MediaTypeNames;
 public class Jugador : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
+
     public static Jugador instance;
-    private Animator animator;
+    public Animator animator;
 
     public bool jump=false;
 
@@ -38,6 +40,12 @@ public class Jugador : MonoBehaviour
     [SerializeField] private GameObject objjsonidosalto;
     private AudioSource Sonidosalto;
 
+    [SerializeField] private GameObject objjsonidodaño;
+    private AudioSource Sonidodaño;
+
+    [SerializeField] private GameObject objjsonidorevivir;
+    private AudioSource Sonidorevivir;
+
     public TextMeshProUGUI totmonedas;
     public int tot = 0;
 
@@ -50,7 +58,12 @@ public class Jugador : MonoBehaviour
 
     public int x =0;
 
+
     public float timer;
+
+    public float timercartel;
+
+
 
     public string letra;
     
@@ -75,8 +88,13 @@ public class Jugador : MonoBehaviour
 
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+
         Sonidomoneda=objjsonidomoneda.GetComponent<AudioSource>();
         Sonidosalto = objjsonidosalto.GetComponent<AudioSource>();
+        Sonidodaño = objjsonidodaño.GetComponent<AudioSource>();
+        Sonidorevivir = objjsonidorevivir.GetComponent<AudioSource>();
+
         N = FindObjectOfType<NivelesBase>();
 
 
@@ -88,26 +106,8 @@ public class Jugador : MonoBehaviour
 
 
 
-        if (v==2)
-        {
-            v3.SetActive(false);
-            sv3.SetActive(true);
-        }
-        else if (v==1)
-        {
-            v2.SetActive(false);
-            sv2.SetActive(true);
-        }
-        else if(v==0)
-        {
-            v1.SetActive(false);
-            sv1.SetActive(true);
+        vidas();
 
-            gameover();
-
-            SNL.text = "";
-
-        }
 
         totmonedas.text = tot.ToString();
 
@@ -117,6 +117,37 @@ public class Jugador : MonoBehaviour
             cartels();
         }
 
+        timer += Time.deltaTime;
+
+        if (timer > 1)
+        {
+            animator.SetBool("Dañado", false);
+        }
+
+    }
+
+    public void vidas()
+    {
+        if (v == 2)
+        {
+            v3.SetActive(false);
+            sv3.SetActive(true);
+        }
+        else if (v == 1)
+        {
+            v2.SetActive(false);
+            sv2.SetActive(true);
+        }
+        else if (v == 0)
+        {
+            v1.SetActive(false);
+            sv1.SetActive(true);
+
+            gameover();
+
+            SNL.text = "";
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -333,7 +364,16 @@ public class Jugador : MonoBehaviour
 
         if (collision.CompareTag("obstaculo"))
         {
-           v--;
+
+            v--;
+
+            timer = 0;
+
+            animator.SetBool("Dañado", true);
+
+            Sonidodaño.Play();
+            
+
         }
 
     }
@@ -357,6 +397,9 @@ public class Jugador : MonoBehaviour
         btnpaypal.SetActive(false);
         btnsalir.SetActive(false);
         menupago.SetActive(false);
+        Sonidorevivir.Play();
+
+
 
     }
 
@@ -364,7 +407,7 @@ public class Jugador : MonoBehaviour
     public void cartels()
     {
 
-        timer += Time.deltaTime;
+        timercartel+=Time.deltaTime;
 
         cartel.SetActive(true);
 
@@ -395,7 +438,7 @@ public class Jugador : MonoBehaviour
         }
         
 
-        if(timer>3)
+        if(timercartel>3)
         {
 
             cartel.SetActive(false);
@@ -405,9 +448,9 @@ public class Jugador : MonoBehaviour
 
             SNL.text = "";
 
-            x = 0;
+            timercartel = 0;
 
-            timer = 0;
+            x=0;
 
             N.contplb++;
 
