@@ -11,6 +11,8 @@ public class AudioSettings : MonoBehaviour
     private float musicVolume;
     [SerializeField]
     private float sfxVolume;
+    [SerializeField]
+    private float BrilloValue;
 
     float musicDefaultVolume=0.7f;
     float sfxDefaultVolume = 0.9f;
@@ -20,6 +22,7 @@ public class AudioSettings : MonoBehaviour
 
     string musicVolumeDataName = "music-volume";
     string sfxVolumeDataName = "sfx-volume";
+    string brilloValueDataName = "Brillo";
 
     List<AudioSource> musicAudioSources;
     List<AudioSource> sfxAudioSources;
@@ -41,6 +44,7 @@ public class AudioSettings : MonoBehaviour
     {
         musicVolume = PlayerPrefs.GetFloat(musicVolumeDataName,musicDefaultVolume);
         sfxVolume = PlayerPrefs.GetFloat(sfxVolumeDataName, sfxDefaultVolume);
+        BrilloValue = PlayerPrefs.GetFloat(brilloValueDataName, BrilloSettings.brilloSettings.sliderValue);
 
     }
 
@@ -77,6 +81,10 @@ public class AudioSettings : MonoBehaviour
         return sfxVolume;
     }
 
+    public float GetBrilloValue()
+    {
+        return BrilloValue;
+    }
     public void AddMeToMusicAudioSources(AudioSource a)
     {
         musicAudioSources.Add(a);

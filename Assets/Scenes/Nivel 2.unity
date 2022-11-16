@@ -1477,6 +1477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuajustes: {fileID: 315398148}
   menupausa: {fileID: 10913970}
+  menuinicial: {fileID: 0}
 --- !u!114 &486504463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,7 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fondo: {fileID: 1512504802}
-  Columna: {fileID: 4238463100095655926, guid: ed2cc302a6f9d6f4e8bdb04204fe673d, type: 3}
+  Columna: {fileID: 2485767403812884281, guid: e1ca0180d22c6db42a2b714650ffb911, type: 3}
   col: []
   moneda: {fileID: 7651207131689774318, guid: 8768425e12c47504fa1a04408cfd8722, type: 3}
   mon: []

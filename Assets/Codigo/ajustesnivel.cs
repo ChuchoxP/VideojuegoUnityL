@@ -7,7 +7,6 @@ public class ajustesnivel : MonoBehaviour
 
     [SerializeField] private GameObject menuajustes;
     [SerializeField] private GameObject menupausa;
-    [SerializeField] private GameObject menuinicial;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +23,11 @@ public class ajustesnivel : MonoBehaviour
     {
         menuajustes.SetActive(true);
         menupausa.SetActive(false);
-        menuinicial.SetActive(false);
     }
 
     public void cerrarajustes()
     {
         menupausa.SetActive(true);
         menuajustes.SetActive(false);
-        menuinicial.SetActive(true);
     }
 }

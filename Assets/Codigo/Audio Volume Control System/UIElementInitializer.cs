@@ -5,7 +5,8 @@ public class UIElementInitializer : MonoBehaviour
 {
     public enum UIElementType { 
        SFX_Slider,
-       MUSIC_Slider
+       MUSIC_Slider,
+ 
     }
 
     public UIElementType type;
@@ -24,6 +25,7 @@ public class UIElementInitializer : MonoBehaviour
                 slider = GetComponent<Slider>();
                 slider.value = AudioSettings.audioSettings.GetMusicVolume();
                 break;
+
         }
 
     }
