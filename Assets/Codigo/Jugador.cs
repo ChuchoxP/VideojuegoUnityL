@@ -18,6 +18,7 @@ public class Jugador : MonoBehaviour
     public bool jump=false;
 
     NivelesBase N;
+    Dialogos D;
 
     public GameObject v1;
     public GameObject v2;
@@ -98,6 +99,7 @@ public class Jugador : MonoBehaviour
         Sonidorevivir = objjsonidorevivir.GetComponent<AudioSource>();
 
         N = FindObjectOfType<NivelesBase>();
+        D = FindObjectOfType<Dialogos>();
 
 
 
@@ -105,8 +107,7 @@ public class Jugador : MonoBehaviour
 
     private void Update()
     {
-
-
+        caminar();
 
         vidas();
 
@@ -461,6 +462,30 @@ public class Jugador : MonoBehaviour
 
 
         }
+    }
+
+    public void caminar()
+    {
+        if (gameObject.transform.position.x < -6)
+        {
+            gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+        }
+        else
+        {
+            animator.SetBool("quieto", true);
+        }
+
+        if(D.lineindex==6)
+        {
+            gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+            animator.SetBool("quieto", false);
+        }
+
+        if(gameObject.transform.position.x > -4)
+        {
+            D.comenzarJuego();
+        }
+
     }
 
 

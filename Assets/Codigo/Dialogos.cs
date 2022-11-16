@@ -6,9 +6,12 @@ using TMPro;
 public class Dialogos : MonoBehaviour
 {
 
-    [SerializeField, TextArea(4, 6)] private string[] lineadialogo;
+    [SerializeField, TextArea(4, 6)] public string[] lineadialogo;
     [SerializeField] private GameObject paneldialogo;
     [SerializeField] private TextMeshProUGUI Txtpanel;
+
+    [SerializeField] private GameObject objjsonidoescribir;
+    private AudioSource escribir;
 
     public GameObject btnOmitir;
     public GameObject paneljueego;
@@ -18,6 +21,7 @@ public class Dialogos : MonoBehaviour
     public GameObject niño;
     public GameObject forastero;
 
+
     float time=0.03f;
 
     public bool dialogaux;
@@ -25,29 +29,44 @@ public class Dialogos : MonoBehaviour
     public int lineindex=0;
 
     Jugador J;
+    Apache A;
 
 
     // Update is called once per frame
     private void Start()
     {
         J = FindObjectOfType<Jugador>();
+        A = FindObjectOfType<Apache>();
+
+        escribir = objjsonidoescribir.GetComponent<AudioSource>();
+
+
     }
 
     void Update()
     {
         if (!dialogaux)
         {
-            iniciardialogo();
+            if(J.gameObject.transform.position.x > -6)
+            {
+                iniciardialogo();
+                escribir.Play();
+                paneldialogo.SetActive(true);
+            }
 
-            paneldialogo.SetActive(true);
+            
             paneljueego.SetActive(false);
             confjuego.SetActive(false);
             btnOmitir.SetActive(false);
             moneda.SetActive(false);
+
         }
         else if (Txtpanel.text == lineadialogo[lineindex])
         {
             btnsiguiente.SetActive(true);
+            A.animator.SetBool("hablapache", false);
+            escribir.Pause();
+
         }
     }
 
@@ -75,27 +94,52 @@ public class Dialogos : MonoBehaviour
         btnOmitir.SetActive(true);
         btnsiguiente.SetActive(false);
 
+
+        escribir.Play();
+
+        if (lineindex == 0||lineindex==2||lineindex==4)
+        {
+            A.animator.SetBool("hablapache", true);
+        }
+
         lineindex++;
+
+
 
         if (lineindex < lineadialogo.Length)
         {
             StartCoroutine(verlineas());
         }
-        else
-        {
-            comenzarJuego();
-        }
     }
 
     public void comenzarJuego()
     {
+        J.animator.SetBool("quieto", false);
+        escribir.Pause();
         forastero.SetActive(false);
-        J.animator.SetBool("Corriendo", true);
         dialogaux = true;
         paneldialogo.SetActive(false);
         paneljueego.SetActive(true);
         confjuego.SetActive(true);
         moneda.SetActive(true);
         lineindex = 0;
+    }
+
+    public void omitir()
+    {
+        J.gameObject.transform.position = J.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+        J.animator.SetBool("quieto", false);
+
+        if(J.gameObject.transform.position.x>-4)
+        {
+            escribir.Pause();
+            forastero.SetActive(false);
+            dialogaux = true;
+            paneldialogo.SetActive(false);
+            paneljueego.SetActive(true);
+            confjuego.SetActive(true);
+            moneda.SetActive(true);
+            lineindex = 0;
+        }
     }
 }
