@@ -102,7 +102,7 @@ public class NivelesBase : MonoBehaviour
         for (int i = 0; i < col.Count; i++)
         {
 
-            if (col[i].transform.position.x <=-11)
+            if (col[i].transform.position.x <=-12)
             {
                 col[i].transform.position = new Vector3(12,-3,0);
             }

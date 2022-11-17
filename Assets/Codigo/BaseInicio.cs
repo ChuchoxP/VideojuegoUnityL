@@ -16,9 +16,9 @@ public class BaseInicio : MonoBehaviour
     {
 
         Time.timeScale = 1f;
-        for (int i = 0; i < 21; i++)
+        for (int i = 0; i < 26; i++)
         {
-            col.Add(Instantiate(Columna, new Vector2(-10 + i, -3), Quaternion.identity));
+            col.Add(Instantiate(Columna, new Vector2(-12 + i, -3), Quaternion.identity));
         }
     }
 
