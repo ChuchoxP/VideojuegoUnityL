@@ -52,6 +52,10 @@ public class Dialogos : MonoBehaviour
                 iniciardialogo();
                 escribir.Play();
                 paneldialogo.SetActive(true);
+
+                J.animator.SetBool("estahablando", true);
+
+
             }
 
             
@@ -65,6 +69,7 @@ public class Dialogos : MonoBehaviour
         {
             btnsiguiente.SetActive(true);
             A.animator.SetBool("hablapache", false);
+            J.animator.SetBool("estahablando", false);
             escribir.Pause();
 
         }
@@ -102,6 +107,12 @@ public class Dialogos : MonoBehaviour
             A.animator.SetBool("hablapache", true);
         }
 
+        if (lineindex == 1 || lineindex == 3 )
+        {
+            J.animator.SetBool("estahablando", true);
+        }
+
+
         lineindex++;
 
 
@@ -127,10 +138,11 @@ public class Dialogos : MonoBehaviour
 
     public void omitir()
     {
-        J.gameObject.transform.position = J.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-        J.animator.SetBool("quieto", false);
+        lineindex = 6;
 
-        if(J.gameObject.transform.position.x>-4)
+        A.GetComponent<BoxCollider2D>().enabled = false;
+
+        if (J.gameObject.transform.position.x>-4)
         {
             escribir.Pause();
             forastero.SetActive(false);
@@ -141,5 +153,12 @@ public class Dialogos : MonoBehaviour
             moneda.SetActive(true);
             lineindex = 0;
         }
+
+        if (lineindex == 6)
+        {
+            J.gameObject.transform.position = J.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+            J.animator.SetBool("quieto", false);
+        }
+
     }
 }

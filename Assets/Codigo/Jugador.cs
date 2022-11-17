@@ -19,6 +19,7 @@ public class Jugador : MonoBehaviour
 
     NivelesBase N;
     Dialogos D;
+    Apache A;
 
     public GameObject v1;
     public GameObject v2;
@@ -100,6 +101,7 @@ public class Jugador : MonoBehaviour
 
         N = FindObjectOfType<NivelesBase>();
         D = FindObjectOfType<Dialogos>();
+        A = FindObjectOfType<Apache>();
 
 
 
@@ -475,10 +477,11 @@ public class Jugador : MonoBehaviour
             animator.SetBool("quieto", true);
         }
 
-        if(D.lineindex==6)
+        if (D.lineindex == 6)
         {
             gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
             animator.SetBool("quieto", false);
+                    
         }
 
         if(gameObject.transform.position.x > -4)

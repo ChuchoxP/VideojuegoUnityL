@@ -8,6 +8,8 @@ public class Apache : MonoBehaviour
 
     public Animator animator;
 
+    public BoxCollider2D boxcolider;
+
     // Start is called before the first frame update
     void Start()
     {

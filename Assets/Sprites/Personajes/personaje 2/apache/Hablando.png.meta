@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1314342098bc4b40be2976e753231d0
+guid: c2c8df6e3a297e048bc11781d781337f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,11 +113,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hablando_0
+      name: Hablando_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4692fe50b4681e4082353a58cc132c3
-      internalID: -1452381409
+      spriteID: cf7d7fc5d3fed5b4c8b1791c3083d5f6
+      internalID: 350393342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hablando_1
+      name: Hablando_1
       rect:
         serializedVersion: 2
         x: 384
@@ -152,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89998f869fb3a1e49be8909dace001f2
-      internalID: -1543699922
+      spriteID: bf784f9b38056674ba99ddabf741fb95
+      internalID: -1074386428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hablando_2
+      name: Hablando_2
       rect:
         serializedVersion: 2
         x: 768
@@ -173,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5878215cc6d4cf04cb3bd82f4e048cf1
-      internalID: -2097031275
+      spriteID: 8e45e1d334fd8194589066c07c136d37
+      internalID: -28759995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hablando_3
+      name: Hablando_3
       rect:
         serializedVersion: 2
         x: 1152
@@ -194,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50301244af957e74780243b7c2894027
-      internalID: -213412172
+      spriteID: 473b941edf65a5142bcb2d4576fec6cd
+      internalID: 867623404
       vertices: []
       indices: 
       edges: []
@@ -211,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hablando_2: -2097031275
-      hablando_0: -1452381409
-      hablando_1: -1543699922
-      hablando_3: -213412172
+      Hablando_2: -28759995
+      Hablando_0: 350393342
+      Hablando_1: -1074386428
+      Hablando_3: 867623404
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

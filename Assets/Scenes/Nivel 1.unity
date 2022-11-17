@@ -3007,7 +3007,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3026,6 +3026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  boxcolider: {fileID: 0}
 --- !u!1 &934065510
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,11 +5367,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineadialogo:
   - 'Sinti: Joder tio donde me encuentro!!'
-  - 'Aguila: Bienvenido al nuevo mundo'
+  - 'Kulkaan: Bienvenido al nuevo mundo'
   - 'Sinti: Que es lo que estas diciendo !!'
-  - 'Aguila: Claro , talvez tu no me entiendas'
+  - 'Kulkaan: Claro , talvez tu no me entiendas'
   - 'Sinti: Que es lo que estas buscando ?'
-  - 'Aguila: Deberas correr para averiguarlo'
+  - 'Kulkaan: Deberas correr para averiguarlo'
   paneldialogo: {fileID: 1515829165}
   Txtpanel: {fileID: 1578085585}
   objjsonidoescribir: {fileID: 718530310}
