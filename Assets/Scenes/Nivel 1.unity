@@ -1871,6 +1871,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 68c502d45029cff4fb0adef7faf8d3fe, type: 3}
+    - target: {fileID: 2571000403245068217, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571000403245068217, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571000403245068217, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1816359710}
+    - target: {fileID: 2571000403245068217, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571000403245068217, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ajustes
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571000403245068217, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ajustesnivel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571000403245068217, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2571000403245068218, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -1937,7 +1965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571000403245068218, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -61.30432
+      value: -61.304443
       objectReference: {fileID: 0}
     - target: {fileID: 2571000403245068218, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4706,6 +4734,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 154065561322767295, guid: 95ae998a73b448a41a444c5b7b301c45, type: 3}
   m_PrefabInstance: {fileID: 1302872816}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1352676964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2571000403245068219, guid: 05d2050dcc12b9c48b536cc478db2ea1, type: 3}
+  m_PrefabInstance: {fileID: 589872540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404981918
 GameObject:
   m_ObjectHideFlags: 0
@@ -5105,7 +5138,7 @@ MonoBehaviour:
   btnpausa: {fileID: 979913494}
   menupausa: {fileID: 317383787}
   btnbrincar: {fileID: 2103607609}
-  btnajustes: {fileID: 0}
+  btnajustes: {fileID: 1352676964}
   objjsonidopausa: {fileID: 998451270}
 --- !u!114 &1477153874
 MonoBehaviour:
@@ -5387,8 +5420,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5467,15 +5500,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineadialogo:
-  - 'Sinti: Joder tio donde me encuentro!!'
-  - 'Kulkaan: Bienvenido al nuevo mundo'
-  - 'Sinti: Que es lo que estas diciendo !!'
-  - 'Kulkaan: Claro , talvez tu no me entiendas'
-  - 'Sinti: Que es lo que estas buscando ?'
-  - 'Kulkaan: Deberas correr para averiguarlo'
+  - 'Sinti: Pero que es este lugar, como es que he llegado aqui...'
+  - 'Kulkaan: Bienvenido al nuevo mundo, el dia en que todo comenzo.'
+  - 'Sinti: Que es lo que estas diciendo, como es que todo esto sucedio.'
+  - 'Kulkaan: Todo esto es debido, a una alteracion en trayecto del tiempo.'
+  - 'Sinti: Pero y como se soluciona esto, que puedo hacer yo para poder regresar
+    a mi epoca.'
+  - 'Kulkaan: Toma este mensaje, te ayudara para poder resolver este gran problema
+    que causaron en tu presente.'
   paneldialogo: {fileID: 1515829165}
   Txtpanel: {fileID: 1578085585}
   objjsonidoescribir: {fileID: 718530310}
+  escribir: {fileID: 0}
   btnOmitir: {fileID: 126962063}
   paneljueego: {fileID: 570000673}
   confjuego: {fileID: 1816359707}

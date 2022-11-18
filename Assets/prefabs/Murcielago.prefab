@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3869926480783269548}
   - component: {fileID: 3596128736583557980}
   - component: {fileID: 8568876318647021651}
-  - component: {fileID: 3295806257639875636}
+  - component: {fileID: 3265002870395296728}
   m_Layer: 0
   m_Name: Murcielago
   m_TagString: obstaculo
@@ -106,8 +106,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &3295806257639875636
-PolygonCollider2D:
+--- !u!58 &3265002870395296728
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,44 +119,6 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 3.84, y: 3.84}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.7, y: 0.20666668}
-      - {x: 0.6890935, y: 0.43790153}
-      - {x: 0.67645967, y: 0.73543185}
-      - {x: 0.6624268, y: 0.80279815}
-      - {x: 0.5, y: 0.94}
-      - {x: 0.49333334, y: 0.71333337}
-      - {x: 0.45333335, y: 0.5733333}
-      - {x: 0.46666667, y: 0.8866667}
-      - {x: 0.42000002, y: 0.97333336}
-      - {x: 0.19333334, y: 0.97333336}
-      - {x: 0.06666667, y: 0.93333334}
-      - {x: -0.04, y: 0.97333336}
-      - {x: -0.29333335, y: 0.97333336}
-      - {x: -0.46, y: 0.8266667}
-      - {x: -0.45333335, y: 0.8}
-      - {x: -0.5866667, y: 0.5733333}
-      - {x: -0.50666666, y: 0.72}
-      - {x: -0.50666666, y: 0.88}
-      - {x: -0.52000004, y: 0.8933334}
-      - {x: -0.46732354, y: 0.8933334}
-      - {x: -0.58802307, y: 0.7034976}
-      - {x: -0.63855827, y: 0.39790142}
-      - {x: -0.61333334, y: 0.12666667}
-      - {x: -0.23333333, y: 0.046666667}
-      - {x: -0.20666668, y: -0.013333334}
-      - {x: 0.22666667, y: -0.013333334}
-      - {x: 0.3, y: 0.046666667}
-      - {x: 0.30666667, y: 0.14}
-      - {x: 0.6066667, y: 0.13333334}
+  m_Offset: {x: 0, y: 0.43448}
+  serializedVersion: 2
+  m_Radius: 0.36082548

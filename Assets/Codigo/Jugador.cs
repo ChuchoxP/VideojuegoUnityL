@@ -481,7 +481,9 @@ public class Jugador : MonoBehaviour
         {
             gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
             animator.SetBool("quieto", false);
-                    
+            D.escribir.Pause();
+            A.GetComponent<BoxCollider2D>().enabled = false;
+
         }
 
         if(gameObject.transform.position.x > -4)

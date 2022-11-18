@@ -11,7 +11,7 @@ public class Dialogos : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Txtpanel;
 
     [SerializeField] private GameObject objjsonidoescribir;
-    private AudioSource escribir;
+    public AudioSource escribir;
 
     public GameObject btnOmitir;
     public GameObject paneljueego;
