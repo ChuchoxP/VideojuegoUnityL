@@ -412,7 +412,9 @@ public class Jugador : MonoBehaviour
     public void cartels()
     {
 
-        timercartel+=Time.deltaTime;
+        Time.timeScale = 0.1f;
+
+        timercartel +=Time.deltaTime;
 
         cartel.SetActive(true);
 
@@ -443,8 +445,9 @@ public class Jugador : MonoBehaviour
         }
         
 
-        if(timercartel>3)
+        if(timercartel>0.2f)
         {
+            Time.timeScale = 1f;
 
             cartel.SetActive(false);
 
