@@ -55,11 +55,15 @@ public class NivelesBase : MonoBehaviour
 
     Jugador J;
 
-
+    AudioUI sonido;
+    private void Awake()
+    {
+        sonido = GameObject.FindObjectOfType<AudioUI>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-
+        
         J = FindObjectOfType<Jugador>();
 
 

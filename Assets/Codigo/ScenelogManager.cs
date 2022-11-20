@@ -21,8 +21,19 @@ public class ScenelogManager : MonoBehaviour
     [SerializeField] private TMP_InputField m_loginPasswordImput = null;
 
     Sesiones ses;
+    AudioUI sonido;
+
+    private NetworkManager m_networkManager = null;
+
+    private void Awake()
+    {
+        m_networkManager = GameObject.FindObjectOfType<NetworkManager>();
+        ses = GameObject.FindObjectOfType<Sesiones>();
+        sonido = GameObject.FindObjectOfType<AudioUI>();
+    }
     public void ShowLogin()
     {
+        sonido.sonSwitch.Play();
         clearInput();
         m_validarInput.text = null;
         m_registerUI.SetActive(false);
@@ -30,6 +41,7 @@ public class ScenelogManager : MonoBehaviour
     }
     public void ShowIni()
     {
+        sonido.sonSwitch.Play();
         clearInput();
         m_validarInput.text = null;
         m_registerUI.SetActive(false);
@@ -52,22 +64,15 @@ public class ScenelogManager : MonoBehaviour
     }
     public void ShowRegister()
     {
+        sonido.sonSelect.Play();
         m_validarInput.text = null;
         m_registerUI.SetActive(true);
         m_loginUI.SetActive(false);
     }
     
-    
-
-    private NetworkManager m_networkManager = null;
-
-    private void Awake()
-    {
-        m_networkManager = GameObject.FindObjectOfType<NetworkManager>();
-        ses = GameObject.FindObjectOfType<Sesiones>();
-    }
     public void SubmitLogin()
     {
+        sonido.sonSelect.Play();
         if (m_loginUserNameImput.text == "" || m_loginPasswordImput.text == "")
         {
             m_validarInput.text = "Por favor llena todos los campos";
@@ -90,6 +95,7 @@ public class ScenelogManager : MonoBehaviour
     }
     public void SubmitRegister()
     {
+        sonido.sonSelect.Play();
         if (m_userNameInput.text == "" || m_emailInput.text == "" || m_pswInput.text == "" || m_ppswInput.text == "")
         {
             m_validarInput.text = "Por favor llena todos los campos";

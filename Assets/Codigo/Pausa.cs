@@ -13,9 +13,11 @@ public class Pausa : MonoBehaviour
 
     [SerializeField] private GameObject objjsonidopausa;
     private AudioSource Sonidopausa;
+    AudioUI sonido;
 
     private void Awake()
     {
+        sonido = GameObject.FindObjectOfType<AudioUI>();
         if (instance == null)
         {
             instance = this;
@@ -42,11 +44,14 @@ public class Pausa : MonoBehaviour
         btnbrincar.SetActive(false);
         btnajustes.SetActive(true);
         Sonidopausa.Play();
+        sonido.sonFond.Pause();
 
     }
 
     public void continuar()
     {
+        sonido.sonSelect.Play();
+        sonido.sonFond.Play();
         Time.timeScale =1f;
         btnpausa.SetActive(true);
         menupausa.SetActive(false);
@@ -66,6 +71,7 @@ public class Pausa : MonoBehaviour
 
     public void reinciar()
     {
+        sonido.sonSelect.Play();
         Time.timeScale=1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
@@ -73,6 +79,7 @@ public class Pausa : MonoBehaviour
 
     public void salir()
     {
+        sonido.sonSwitch.Play();
         Time.timeScale = 1f;
         SceneManager.LoadScene(3);
     }

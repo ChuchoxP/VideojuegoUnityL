@@ -30,11 +30,17 @@ public class Dialogos : MonoBehaviour
 
     Jugador J;
     Apache A;
+    AudioUI sonido;
 
+    private void Awake()
+    {
+        sonido = GameObject.FindObjectOfType<AudioUI>();
+    }
 
     // Update is called once per frame
     private void Start()
     {
+        sonido.sonDialogo.Play();
         J = FindObjectOfType<Jugador>();
         A = FindObjectOfType<Apache>();
 
@@ -45,6 +51,7 @@ public class Dialogos : MonoBehaviour
 
     void Update()
     {
+        
         if (!dialogaux)
         {
             if(J.gameObject.transform.position.x > -6)
@@ -71,6 +78,7 @@ public class Dialogos : MonoBehaviour
             A.animator.SetBool("hablapache", false);
             J.animator.SetBool("estahablando", false);
             escribir.Pause();
+            btnOmitir.SetActive(true);
 
         }
     }
@@ -96,11 +104,13 @@ public class Dialogos : MonoBehaviour
 
     public void siguientedialogo()
     {
-        btnOmitir.SetActive(true);
+        sonido.sonSelect.Play();
+        btnOmitir.SetActive(false);
         btnsiguiente.SetActive(false);
 
-
+  
         escribir.Play();
+        
 
         if (lineindex == 0||lineindex==2||lineindex==4)
         {
@@ -126,7 +136,6 @@ public class Dialogos : MonoBehaviour
     public void comenzarJuego()
     {
         J.animator.SetBool("quieto", false);
-        escribir.Pause();
         forastero.SetActive(false);
         dialogaux = true;
         paneldialogo.SetActive(false);
@@ -134,11 +143,17 @@ public class Dialogos : MonoBehaviour
         confjuego.SetActive(true);
         moneda.SetActive(true);
         lineindex = 0;
+        //sonido.sonFond.Play();
     }
 
     public void omitir()
     {
+        sonido.sonDialogo.Pause();
+        escribir.Pause();
+        sonido.sonSelect.Play();
+
         lineindex = 6;
+        
 
         A.GetComponent<BoxCollider2D>().enabled = false;
 
@@ -158,6 +173,7 @@ public class Dialogos : MonoBehaviour
         {
             J.gameObject.transform.position = J.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
             J.animator.SetBool("quieto", false);
+            //sonido.sonFond.Play();
         }
 
     }

@@ -70,9 +70,12 @@ public class Jugador : MonoBehaviour
 
 
     public string letra;
-    
+
+    AudioUI sonido;
+
     private void Awake()
     {
+        sonido = GameObject.FindObjectOfType<AudioUI>();
         if (instance == null)
         {
             instance = this;
@@ -109,9 +112,9 @@ public class Jugador : MonoBehaviour
 
     private void Update()
     {
-        caminar();
-
+        
         vidas();
+        caminar();
 
 
         totmonedas.text = tot.ToString();
@@ -385,6 +388,7 @@ public class Jugador : MonoBehaviour
 
     public void gameover()
     {
+        sonido.sonFond.Play();
         Time.timeScale = 0f;
         btnyoutube.SetActive(true);
         btnpaypal.SetActive(true);
@@ -482,9 +486,13 @@ public class Jugador : MonoBehaviour
 
         if (D.lineindex == 6)
         {
+            
             gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-            animator.SetBool("quieto", false);
             D.escribir.Pause();
+            sonido.sonDialogo.Pause();
+            animator.SetBool("quieto", false);
+            
+            
             A.GetComponent<BoxCollider2D>().enabled = false;
 
         }

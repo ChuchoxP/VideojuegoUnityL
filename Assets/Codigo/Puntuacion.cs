@@ -11,7 +11,11 @@ public class Puntuacion : MonoBehaviour
     float a;
 
     public TextMeshProUGUI puntuacion;
-
+    AudioUI sonido;
+    private void Awake()
+    {
+        sonido = GameObject.FindObjectOfType<AudioUI>();
+    }
 
 
     // Update is called once per frame
@@ -24,6 +28,11 @@ public class Puntuacion : MonoBehaviour
             puntos += Time.deltaTime;
 
             puntuacion.text = puntos.ToString("f0");
+        }
+        if (puntuacion.text == "0")
+        {
+            sonido.sonFond.Play();
+            
         }
 
 

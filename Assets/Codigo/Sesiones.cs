@@ -8,11 +8,13 @@ public class Sesiones : MonoBehaviour
 {
     [SerializeField] public GameObject btnjugar;
     [SerializeField] private GameObject btnajustes;
+    [SerializeField] private GameObject btninfo;
     [SerializeField] public GameObject menulogeo;
     [SerializeField] public GameObject btniniciarsesion;
     [SerializeField] public GameObject btnfaccebook;
     [SerializeField] private GameObject menuregistro;
     [SerializeField] public GameObject menuajustes;
+    [SerializeField] public GameObject menuinfo;
     [SerializeField] public GameObject texto;
     [SerializeField] public TMP_Text m_validarInput = null;
     [SerializeField] private GameObject objjsonidomenu;
@@ -20,6 +22,12 @@ public class Sesiones : MonoBehaviour
 
     public TMP_InputField txtuser;
     public TMP_InputField txtpsw;
+
+    AudioUI sonido;
+    private void Awake()
+    {
+        sonido = GameObject.FindObjectOfType<AudioUI>();
+    }
 
     private void Start()
     {
@@ -31,6 +39,7 @@ public class Sesiones : MonoBehaviour
 
     public void logear()
     {
+        sonido.sonSelect.Play();
         texto.SetActive(false);
         btnjugar.SetActive(false);
         menulogeo.SetActive(true);
@@ -89,27 +98,56 @@ public class Sesiones : MonoBehaviour
 
     public void ajustes()
     {
+        sonido.sonSelect.Play();
         btnjugar.SetActive(false);
+        btninfo.SetActive(false);
         btnajustes.SetActive(false);
         btniniciarsesion.SetActive(false);
-        btnfaccebook.SetActive(false);
         menuajustes.SetActive(true);
         menulogeo.SetActive(false);
         menuregistro.SetActive(false);
         texto.SetActive(false);
     }
+    public void info()
+    {
+        sonido.sonSelect.Play();
+        btnjugar.SetActive(false);
+        btnajustes.SetActive(false);
+        btninfo.SetActive(false);
+        btniniciarsesion.SetActive(false);
+        menulogeo.SetActive(false);
+        menuregistro.SetActive(false);
+        texto.SetActive(false);
+        menuinfo.SetActive(true);
+    }
+    public void cerrarInfo()
+    {
+        sonido.sonSwitch.Play();
+        btnjugar.SetActive(true);
+        btninfo.SetActive(true);
+        btnajustes.SetActive(true);
+        btniniciarsesion.SetActive(true);
+        texto.SetActive(true);
+        menuinfo.SetActive(false);
+
+    }
 
     public void cerrarajustes()
     {
+        sonido.sonSelect.Play();
         btnjugar.SetActive(true);
+        btninfo.SetActive(true);
         btnajustes.SetActive(true);
         btniniciarsesion.SetActive(true);
-        btnfaccebook.SetActive(true);
         menuajustes.SetActive(false);
         texto.SetActive(true);
     }
 
-
+    public void irTerminosandPriv()
+    {
+        sonido.sonSelect.Play();
+        Application.OpenURL("https://prynahuatltec.000webhostapp.com/notices");
+    }
 
 
 
