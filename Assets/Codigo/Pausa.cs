@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Pausa : MonoBehaviour
 {
     public static Pausa instance;
-    [SerializeField] private GameObject btnpausa;
-    [SerializeField] private GameObject menupausa;
+    [SerializeField] public GameObject btnpausa;
+    [SerializeField] public GameObject menupausa;
     [SerializeField] private GameObject btnbrincar;
     [SerializeField] private GameObject btnajustes;
 
@@ -68,7 +68,10 @@ public class Pausa : MonoBehaviour
         btnajustes.SetActive(false);
         Jugador.instance.gameoverEx();
     }
-
+    public void comprarMoneda()
+    {
+        IAPManager.instance.BuyConsumable();
+    }
     public void reinciar()
     {
         sonido.sonSelect.Play();

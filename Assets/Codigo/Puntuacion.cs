@@ -29,11 +29,11 @@ public class Puntuacion : MonoBehaviour
 
             puntuacion.text = puntos.ToString("f0");
         }
-        if (puntuacion.text == "0")
-        {
-            sonido.sonFond.Play();
+        //if (puntuacion.text == "0")
+        //{
+        //    sonido.sonFond.Play();
             
-        }
+        //}
 
 
     }

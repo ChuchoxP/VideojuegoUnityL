@@ -68,9 +68,9 @@ public class NivelesBase : MonoBehaviour
 
 
         //Crear mapa
-        for (int  i = 0;  i < 26;  i++)
+        for (int  i = 0;  i < 29;  i++)
         {
-            col.Add(Instantiate(Columna,new Vector2(-12+i,-3),Quaternion.identity));
+            col.Add(Instantiate(Columna,new Vector2(-14+i,-3),Quaternion.identity));
         }
 
         //crear monedas

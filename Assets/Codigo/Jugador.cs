@@ -388,12 +388,14 @@ public class Jugador : MonoBehaviour
 
     public void gameover()
     {
-        sonido.sonFond.Play();
+        sonido.sonFond.Pause();
         Time.timeScale = 0f;
         btnyoutube.SetActive(true);
         btnpaypal.SetActive(true);
         btnsalir.SetActive(true);
         menupago.SetActive(true);
+        Pausa.instance.menupausa.SetActive(false);
+        Pausa.instance.btnpausa.SetActive(false);
 
     }
     public void gameoverEx()
@@ -407,6 +409,7 @@ public class Jugador : MonoBehaviour
         btnsalir.SetActive(false);
         menupago.SetActive(false);
         Sonidorevivir.Play();
+        sonido.sonFond.Play();
 
 
 

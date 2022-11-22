@@ -40,7 +40,7 @@ public class Dialogos : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        sonido.sonDialogo.Play();
+        sonido.sonFond.Play();
         J = FindObjectOfType<Jugador>();
         A = FindObjectOfType<Apache>();
 
@@ -148,7 +148,6 @@ public class Dialogos : MonoBehaviour
 
     public void omitir()
     {
-        sonido.sonDialogo.Pause();
         escribir.Pause();
         sonido.sonSelect.Play();
 
