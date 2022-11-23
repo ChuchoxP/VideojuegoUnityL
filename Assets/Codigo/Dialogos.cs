@@ -31,6 +31,7 @@ public class Dialogos : MonoBehaviour
     Jugador J;
     Apache A;
     AudioUI sonido;
+    textopergamino TP;
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class Dialogos : MonoBehaviour
         sonido.sonFond.Play();
         J = FindObjectOfType<Jugador>();
         A = FindObjectOfType<Apache>();
+        TP = FindObjectOfType<textopergamino>();
 
         escribir = objjsonidoescribir.GetComponent<AudioSource>();
 
@@ -142,6 +144,7 @@ public class Dialogos : MonoBehaviour
         paneljueego.SetActive(true);
         confjuego.SetActive(true);
         moneda.SetActive(true);
+        TP.paneldpergamino.SetActive(false);
         lineindex = 0;
         //sonido.sonFond.Play();
     }
@@ -166,13 +169,6 @@ public class Dialogos : MonoBehaviour
             confjuego.SetActive(true);
             moneda.SetActive(true);
             lineindex = 0;
-        }
-
-        if (lineindex == 6)
-        {
-            J.gameObject.transform.position = J.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-            J.animator.SetBool("quieto", false);
-            //sonido.sonFond.Play();
         }
 
     }

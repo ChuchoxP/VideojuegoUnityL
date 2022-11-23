@@ -17,9 +17,12 @@ public class Jugador : MonoBehaviour
 
     public bool jump=false;
 
+    bool ok=false;
+
     NivelesBase N;
     Dialogos D;
     Apache A;
+    textopergamino TP;
 
     public GameObject v1;
     public GameObject v2;
@@ -105,6 +108,7 @@ public class Jugador : MonoBehaviour
         N = FindObjectOfType<NivelesBase>();
         D = FindObjectOfType<Dialogos>();
         A = FindObjectOfType<Apache>();
+        TP = FindObjectOfType<textopergamino>();
 
 
 
@@ -489,23 +493,38 @@ public class Jugador : MonoBehaviour
 
         if (D.lineindex == 6)
         {
-            
+
+            TP.paneldpergamino.SetActive(true);
+            TP.x = true;
+
+        }
+
+        if(ok==true)
+        {
             gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
             D.escribir.Pause();
             sonido.sonDialogo.Pause();
             animator.SetBool("quieto", false);
-            
-            
-            A.GetComponent<BoxCollider2D>().enabled = false;
 
+
+            A.GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        if(gameObject.transform.position.x > -4)
+
+
+        if (gameObject.transform.position.x > -4)
         {
             D.comenzarJuego();
+            ok = false;
         }
 
     }
+
+    public void Ok()
+    {
+        ok= true;
+    }
+
 
 
 
