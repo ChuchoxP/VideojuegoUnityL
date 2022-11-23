@@ -32,10 +32,10 @@ public class Jugador : MonoBehaviour
     public GameObject sv2;
     public GameObject sv3;
     public GameObject cartel;
+    public GameObject pergamino;
 
     public TextMeshProUGUI SNL;
     public TextMeshProUGUI textonahuatl;
-    public TextMeshProUGUI textoespanol;
 
 
     [SerializeField] private GameObject objjsonidomoneda;
@@ -423,9 +423,11 @@ public class Jugador : MonoBehaviour
     public void cartels()
     {
 
-        Time.timeScale = 0.1f;
+        //Time.timeScale = 0.1f;
 
         timercartel +=Time.deltaTime;
+
+        pergamino.SetActive(true);
 
         cartel.SetActive(true);
 
@@ -433,37 +435,28 @@ public class Jugador : MonoBehaviour
         if (N.contplb == 1)
         {
             textonahuatl.text = "TATA";
-
-            textoespanol.text = "PAPÁ";
-
-
-
         }
 
         if (N.contplb == 2)
         {
             textonahuatl.text = "NANA";
-
-            textoespanol.text = "MAMÁ";
-
         }
 
         if (N.contplb == 3)
         {
             textonahuatl.text = "CALI";
-
-            textoespanol.text = "CASA";
         }
         
 
-        if(timercartel>0.2f)
+        if(timercartel>2f)
         {
             Time.timeScale = 1f;
 
             cartel.SetActive(false);
 
+            pergamino.SetActive(false);
+
             textonahuatl.text = "";
-            textoespanol.text = "";
 
             SNL.text = "";
 
