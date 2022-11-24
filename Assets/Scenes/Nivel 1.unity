@@ -1375,6 +1375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   jump: 0
+  ok: 0
   v1: {fileID: 667729128}
   v2: {fileID: 934065510}
   v3: {fileID: 998492248}
@@ -1399,6 +1400,8 @@ MonoBehaviour:
   x: 0
   timer: 0
   timercartel: 0
+  timerpergamino: 0
+  timertexto: 0
   letra: 
 --- !u!95 &440026540
 Animator:
@@ -4718,8 +4721,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4742,7 +4745,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5672,7 +5675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5284, y: -319.95004}
+  m_AnchoredPosition: {x: 0.000018597, y: -108}
   m_SizeDelta: {x: 70.9048, y: 59.0528}
   m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!114 &1410363522
@@ -5744,7 +5747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7230,6 +7233,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7679559927986393551, guid: 7e87e1554e2345a4994c920f6dc13d9d, type: 3}
   m_PrefabInstance: {fileID: 2074429188}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1728908083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728908079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bc3dfd6293f584d812e18dff48da9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1738206718
 GameObject:
   m_ObjectHideFlags: 0
@@ -8381,7 +8396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7679559927986393551, guid: 7e87e1554e2345a4994c920f6dc13d9d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e87e1554e2345a4994c920f6dc13d9d, type: 3}

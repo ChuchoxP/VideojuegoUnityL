@@ -144,9 +144,7 @@ public class Dialogos : MonoBehaviour
         paneljueego.SetActive(true);
         confjuego.SetActive(true);
         moneda.SetActive(true);
-        TP.paneldpergamino.SetActive(false);
         lineindex = 0;
-        //sonido.sonFond.Play();
     }
 
     public void omitir()

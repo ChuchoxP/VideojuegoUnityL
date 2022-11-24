@@ -17,12 +17,13 @@ public class Jugador : MonoBehaviour
 
     public bool jump=false;
 
-    bool ok=false;
+    public bool ok=false;
 
     NivelesBase N;
     Dialogos D;
     Apache A;
     textopergamino TP;
+    Ajustespergamino AP;
 
     public GameObject v1;
     public GameObject v2;
@@ -69,8 +70,10 @@ public class Jugador : MonoBehaviour
 
 
     public float timer;
-
     public float timercartel;
+    public float timerpergamino;
+    public float timertexto;
+
 
 
 
@@ -111,6 +114,7 @@ public class Jugador : MonoBehaviour
         D = FindObjectOfType<Dialogos>();
         A = FindObjectOfType<Apache>();
         TP = FindObjectOfType<textopergamino>();
+        AP=FindObjectOfType<Ajustespergamino>();
 
 
 
@@ -125,13 +129,18 @@ public class Jugador : MonoBehaviour
 
         totmonedas.text = tot.ToString();
 
+        timer += Time.deltaTime;
 
-        if(x==4)
+        if (x==4)
         {
             cartels();
         }
 
-        timer += Time.deltaTime;
+        if(ok==true)
+        {
+            timerpergamino += Time.deltaTime;
+        }
+
 
         if (timer > 1)
         {
@@ -488,30 +497,41 @@ public class Jugador : MonoBehaviour
 
         if (D.lineindex == 6)
         {
+            timertexto+=Time.deltaTime;
 
             TP.paneldpergamino.SetActive(true);
             D.paneldialogo.SetActive(false);
-            TP.x = true;
+
+            if (timertexto > 1)
+            {
+                TP.x = true;
+            }
 
         }
 
-        if(ok==true)
+
+
+        if (timerpergamino>1)
         {
-       
-            //gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-            //D.escribir.Pause();
-            //sonido.sonDialogo.Pause();
-            //animator.SetBool("quieto", false);
+
+            gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+            D.escribir.Pause();
+            sonido.sonDialogo.Pause();
+            TP.paneldpergamino.SetActive(false);
+
+            animator.SetBool("quieto", false);
 
 
-            //A.GetComponent<BoxCollider2D>().enabled = false;
+            A.GetComponent<BoxCollider2D>().enabled= false;
+
         }
 
 
 
         if (gameObject.transform.position.x > -4)
         {
-            //D.comenzarJuego();
+            D.comenzarJuego();
+            timerpergamino = 0;
             ok = false;
         }
 
@@ -520,7 +540,8 @@ public class Jugador : MonoBehaviour
     public void Ok()
     {
         ok= true;
-        A.GetComponent<BoxCollider2D>().enabled = false;
+        TP.Txtpanel.text = ("");
+        TP.btnOk.SetActive(false);
     }
 
 

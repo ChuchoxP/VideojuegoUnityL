@@ -8,7 +8,7 @@ public class textopergamino : MonoBehaviour
 
     [SerializeField, TextArea(4, 12)] public string[] lineadialogo;
     [SerializeField] public GameObject paneldpergamino;
-    [SerializeField] private TextMeshProUGUI Txtpanel;
+    [SerializeField] public TextMeshProUGUI Txtpanel;
 
     float time = 0.03f;
 
