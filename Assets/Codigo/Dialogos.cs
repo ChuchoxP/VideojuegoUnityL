@@ -7,7 +7,7 @@ public class Dialogos : MonoBehaviour
 {
 
     [SerializeField, TextArea(4, 6)] public string[] lineadialogo;
-    [SerializeField] private GameObject paneldialogo;
+    [SerializeField] public GameObject paneldialogo;
     [SerializeField] private TextMeshProUGUI Txtpanel;
 
     [SerializeField] private GameObject objjsonidoescribir;
@@ -155,9 +155,6 @@ public class Dialogos : MonoBehaviour
         sonido.sonSelect.Play();
 
         lineindex = 6;
-        
-
-        A.GetComponent<BoxCollider2D>().enabled = false;
 
         if (J.gameObject.transform.position.x>-4)
         {

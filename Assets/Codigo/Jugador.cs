@@ -34,6 +34,8 @@ public class Jugador : MonoBehaviour
     public GameObject cartel;
     public GameObject pergamino;
 
+    public GameObject pergamino_inicio;
+
     public TextMeshProUGUI SNL;
     public TextMeshProUGUI textonahuatl;
 
@@ -423,7 +425,7 @@ public class Jugador : MonoBehaviour
     public void cartels()
     {
 
-        //Time.timeScale = 0.1f;
+        Time.timeScale = 0.1f;
 
         timercartel +=Time.deltaTime;
 
@@ -448,7 +450,7 @@ public class Jugador : MonoBehaviour
         }
         
 
-        if(timercartel>2f)
+        if(timercartel>0.2f)
         {
             Time.timeScale = 1f;
 
@@ -488,26 +490,28 @@ public class Jugador : MonoBehaviour
         {
 
             TP.paneldpergamino.SetActive(true);
+            D.paneldialogo.SetActive(false);
             TP.x = true;
 
         }
 
         if(ok==true)
         {
-            gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-            D.escribir.Pause();
-            sonido.sonDialogo.Pause();
-            animator.SetBool("quieto", false);
+       
+            //gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+            //D.escribir.Pause();
+            //sonido.sonDialogo.Pause();
+            //animator.SetBool("quieto", false);
 
 
-            A.GetComponent<BoxCollider2D>().enabled = false;
+            //A.GetComponent<BoxCollider2D>().enabled = false;
         }
 
 
 
         if (gameObject.transform.position.x > -4)
         {
-            D.comenzarJuego();
+            //D.comenzarJuego();
             ok = false;
         }
 
@@ -516,6 +520,7 @@ public class Jugador : MonoBehaviour
     public void Ok()
     {
         ok= true;
+        A.GetComponent<BoxCollider2D>().enabled = false;
     }
 
 
