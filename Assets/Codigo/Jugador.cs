@@ -15,9 +15,20 @@ public class Jugador : MonoBehaviour
     public static Jugador instance;
     public Animator animator;
 
+    public GameObject dialogo;
+    public GameObject confjuego;
+    public bool dialogofinal=false;
+
+
+    int vel = 1;
+
+
+
     public bool jump=false;
 
     public bool ok=false;
+
+    public bool Comenzar=true;
 
     NivelesBase N;
     Dialogos D;
@@ -35,7 +46,7 @@ public class Jugador : MonoBehaviour
     public GameObject cartel;
     public GameObject pergamino;
 
-    public GameObject pergamino_inicio;
+    public GameObject panelpergamino;
 
     public TextMeshProUGUI SNL;
     public TextMeshProUGUI textonahuatl;
@@ -125,6 +136,7 @@ public class Jugador : MonoBehaviour
         
         vidas();
         caminar();
+        Final();
 
 
         totmonedas.text = tot.ToString();
@@ -514,36 +526,105 @@ public class Jugador : MonoBehaviour
         if (timerpergamino>1)
         {
 
-            gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+            TP.paneldpergamino.SetActive(false);
             D.escribir.Pause();
             sonido.sonDialogo.Pause();
-            TP.paneldpergamino.SetActive(false);
 
-            animator.SetBool("quieto", false);
+            if (A.gameObject.transform.position.x<11)
+            {
+                A.SpriteRenderer.flipX = false;
 
+                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
 
-            A.GetComponent<BoxCollider2D>().enabled= false;
+                A.animator.SetBool("caminapache", true);
+            }
+            else
+            {
+
+                gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+                animator.SetBool("quieto", false);
+            }
+
 
         }
 
 
+  
+            if (gameObject.transform.position.x > -4)
+            {
+                if(D.aux==true)
+                {
 
-        if (gameObject.transform.position.x > -4)
-        {
-            D.comenzarJuego();
-            timerpergamino = 0;
-            ok = false;
-        }
+                    D.comenzarJuego();
+                    timerpergamino = 0;
+                    ok = false;
+                }
+
+            }
+
+        
+
+        
+
 
     }
 
     public void Ok()
     {
         ok= true;
-        TP.Txtpanel.text = ("");
+        TP.Txtpanel.SetActive(false);
         TP.btnOk.SetActive(false);
+        panelpergamino.SetActive(false);
     }
 
+    public void Final()
+    {
+        if (N.contplb == 4)
+        {
+
+            gameObject.transform.position = gameObject.transform.position + new Vector3(vel, 0, 0) * Time.deltaTime * 2;
+
+            D.paneljueego.SetActive(false);
+            confjuego.SetActive(false);
+            D.moneda.SetActive(false);
+
+            for (int l = 0; l < N.murci.Count; l++)
+            {
+                N.murci[l].SetActive(false);
+            }
+
+            for (int u = 0; u < N.mon.Count; u++)
+            {
+                N.mon[u].SetActive(false);
+            }
+
+            if (gameObject.transform.position.x > 2)
+            {
+                vel = 0;
+                animator.SetBool("quieto", true);
+
+                if(A.gameObject.transform.position.x>5)
+                {
+                    A.SpriteRenderer.flipX = true;
+
+                    A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * 2;
+
+                    
+                }
+                else
+                {
+                    A.animator.SetBool("caminapache", false);
+                    dialogofinal = true;
+
+
+
+                }
+
+
+            }
+
+        }
+    }
 
 
 
