@@ -7,8 +7,8 @@ public class Dialogos : MonoBehaviour
 {
 
     [SerializeField, TextArea(4, 6)] public string[] lineadialogo;
-    [SerializeField] private GameObject paneldialogo;
-    [SerializeField] private TextMeshProUGUI Txtpanel;
+    [SerializeField] public GameObject paneldialogo;
+    [SerializeField] public TextMeshProUGUI Txtpanel;
 
     [SerializeField] private GameObject objjsonidoescribir;
     public AudioSource escribir;
@@ -22,15 +22,18 @@ public class Dialogos : MonoBehaviour
     public GameObject forastero;
 
 
-    float time=0.03f;
+    public float time=0.03f;
 
     public bool dialogaux;
+    public bool aux = true;
 
     public int lineindex=0;
 
+  
+
     Jugador J;
     Apache A;
-    AudioUI sonido;
+    public AudioUI sonido;
     textopergamino TP;
 
     private void Awake()
@@ -125,6 +128,7 @@ public class Dialogos : MonoBehaviour
         }
 
 
+
         lineindex++;
 
 
@@ -135,18 +139,16 @@ public class Dialogos : MonoBehaviour
         }
     }
 
-    public void comenzarJuego()
+    public async void comenzarJuego()
     {
         J.animator.SetBool("quieto", false);
-        forastero.SetActive(false);
         dialogaux = true;
         paneldialogo.SetActive(false);
         paneljueego.SetActive(true);
         confjuego.SetActive(true);
         moneda.SetActive(true);
-        TP.paneldpergamino.SetActive(false);
         lineindex = 0;
-        //sonido.sonFond.Play();
+        aux = false;
     }
 
     public void omitir()
@@ -155,9 +157,7 @@ public class Dialogos : MonoBehaviour
         sonido.sonSelect.Play();
 
         lineindex = 6;
-        
 
-        A.GetComponent<BoxCollider2D>().enabled = false;
 
         if (J.gameObject.transform.position.x>-4)
         {

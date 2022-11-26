@@ -17,23 +17,12 @@ public class BrilloSettings : MonoBehaviour
         
         slider.value = PlayerPrefs.GetFloat("Brillo", 0.5f);
         panelBrillo.color = new Color(panelBrillo.color.r, panelBrillo.color.g, panelBrillo.color.b, sliderValue / 3);
+
+        slider.value = audioSettings.GetMusicVolume();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        slider.value = audioSettings.GetMusicVolume();
-        //valorBlack = 1 - sliderValue - 0.5f;
-        //valorWhite = sliderValue - 0.5f;
-        //if (sliderValue < 0.5f)
-        //{
-        //    panelBrillo.color = new Color(0, 0, 0, valorBlack);
-        //}
-        //if (sliderValue > 0.5f)
-        //{
-        //    panelBrillo.color = new Color(255, 255, 255, valorWhite);
-        //}
-    }
+
     public void ChangeSlider(float valor)
     {
         sliderValue = valor;

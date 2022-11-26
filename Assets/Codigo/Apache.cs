@@ -8,13 +8,19 @@ public class Apache : MonoBehaviour
 
     public Animator animator;
 
-    public BoxCollider2D boxcolider;
+    public SpriteRenderer SpriteRenderer;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
         animator = GetComponent<Animator>();
+
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+   
+
+        
     }
 
     // Update is called once per frame

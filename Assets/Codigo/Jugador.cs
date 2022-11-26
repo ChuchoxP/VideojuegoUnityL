@@ -15,14 +15,26 @@ public class Jugador : MonoBehaviour
     public static Jugador instance;
     public Animator animator;
 
+    public GameObject dialogo;
+    public GameObject confjuego;
+    public bool dialogofinal=false;
+
+
+    int vel = 1;
+
+
+
     public bool jump=false;
 
-    bool ok=false;
+    public bool ok=false;
+
+    public bool Comenzar=true;
 
     NivelesBase N;
     Dialogos D;
     Apache A;
     textopergamino TP;
+    Ajustespergamino AP;
 
     public GameObject v1;
     public GameObject v2;
@@ -32,10 +44,12 @@ public class Jugador : MonoBehaviour
     public GameObject sv2;
     public GameObject sv3;
     public GameObject cartel;
+    public GameObject pergamino;
+
+    public GameObject panelpergamino;
 
     public TextMeshProUGUI SNL;
     public TextMeshProUGUI textonahuatl;
-    public TextMeshProUGUI textoespanol;
 
 
     [SerializeField] private GameObject objjsonidomoneda;
@@ -67,8 +81,10 @@ public class Jugador : MonoBehaviour
 
 
     public float timer;
-
     public float timercartel;
+    public float timerpergamino;
+    public float timertexto;
+
 
 
 
@@ -109,6 +125,7 @@ public class Jugador : MonoBehaviour
         D = FindObjectOfType<Dialogos>();
         A = FindObjectOfType<Apache>();
         TP = FindObjectOfType<textopergamino>();
+        AP=FindObjectOfType<Ajustespergamino>();
 
 
 
@@ -119,17 +136,23 @@ public class Jugador : MonoBehaviour
         
         vidas();
         caminar();
+        Final();
 
 
         totmonedas.text = tot.ToString();
 
+        timer += Time.deltaTime;
 
-        if(x==4)
+        if (x==4)
         {
             cartels();
         }
 
-        timer += Time.deltaTime;
+        if(ok==true)
+        {
+            timerpergamino += Time.deltaTime;
+        }
+
 
         if (timer > 1)
         {
@@ -427,32 +450,24 @@ public class Jugador : MonoBehaviour
 
         timercartel +=Time.deltaTime;
 
+        pergamino.SetActive(true);
+
         cartel.SetActive(true);
 
 
         if (N.contplb == 1)
         {
             textonahuatl.text = "TATA";
-
-            textoespanol.text = "PAPÁ";
-
-
-
         }
 
         if (N.contplb == 2)
         {
             textonahuatl.text = "NANA";
-
-            textoespanol.text = "MAMÁ";
-
         }
 
         if (N.contplb == 3)
         {
             textonahuatl.text = "CALI";
-
-            textoespanol.text = "CASA";
         }
         
 
@@ -462,8 +477,9 @@ public class Jugador : MonoBehaviour
 
             cartel.SetActive(false);
 
+            pergamino.SetActive(false);
+
             textonahuatl.text = "";
-            textoespanol.text = "";
 
             SNL.text = "";
 
@@ -493,38 +509,122 @@ public class Jugador : MonoBehaviour
 
         if (D.lineindex == 6)
         {
+            timertexto+=Time.deltaTime;
 
             TP.paneldpergamino.SetActive(true);
-            TP.x = true;
+            D.paneldialogo.SetActive(false);
+
+            if (timertexto > 1)
+            {
+                TP.x = true;
+            }
 
         }
 
-        if(ok==true)
+
+
+        if (timerpergamino>1)
         {
-            gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
+            TP.paneldpergamino.SetActive(false);
             D.escribir.Pause();
             sonido.sonDialogo.Pause();
-            animator.SetBool("quieto", false);
+
+            if (A.gameObject.transform.position.x<11)
+            {
+                A.SpriteRenderer.flipX = false;
+
+                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
+                A.animator.SetBool("caminapache", true);
+            }
+            else
+            {
+
+                gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+                animator.SetBool("quieto", false);
+            }
 
 
-            A.GetComponent<BoxCollider2D>().enabled = false;
         }
 
 
+  
+            if (gameObject.transform.position.x > -4)
+            {
+                if(D.aux==true)
+                {
 
-        if (gameObject.transform.position.x > -4)
-        {
-            D.comenzarJuego();
-            ok = false;
-        }
+                    D.comenzarJuego();
+                    timerpergamino = 0;
+                    ok = false;
+                }
+
+            }
+
+        
+
+        
+
 
     }
 
     public void Ok()
     {
         ok= true;
+        TP.Txtpanel.SetActive(false);
+        TP.btnOk.SetActive(false);
+        panelpergamino.SetActive(false);
     }
 
+    public void Final()
+    {
+        if (N.contplb == 4)
+        {
+
+            gameObject.transform.position = gameObject.transform.position + new Vector3(vel, 0, 0) * Time.deltaTime * 2;
+
+            D.paneljueego.SetActive(false);
+            confjuego.SetActive(false);
+            D.moneda.SetActive(false);
+
+            for (int l = 0; l < N.murci.Count; l++)
+            {
+                N.murci[l].SetActive(false);
+            }
+
+            for (int u = 0; u < N.mon.Count; u++)
+            {
+                N.mon[u].SetActive(false);
+            }
+
+            if (gameObject.transform.position.x > 2)
+            {
+                vel = 0;
+                animator.SetBool("quieto", true);
+
+                if(A.gameObject.transform.position.x>5)
+                {
+                    A.SpriteRenderer.flipX = true;
+
+                    A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * 2;
+
+                    
+                }
+                else
+                {
+                    A.animator.SetBool("caminapache", false);
+                    dialogofinal = true;
+
+
+
+                }
+
+
+            }
+
+        }
+    }
 
 
 

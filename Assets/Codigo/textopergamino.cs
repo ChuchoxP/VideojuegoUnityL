@@ -8,7 +8,8 @@ public class textopergamino : MonoBehaviour
 
     [SerializeField, TextArea(4, 12)] public string[] lineadialogo;
     [SerializeField] public GameObject paneldpergamino;
-    [SerializeField] private TextMeshProUGUI Txtpanel;
+    [SerializeField] public TextMeshProUGUI Txttexto; 
+    [SerializeField] public GameObject Txtpanel;
 
     float time = 0.03f;
 
@@ -34,9 +35,10 @@ public class textopergamino : MonoBehaviour
             {
                 iniciardialogo();
             }
+
         }
         
-        if (Txtpanel.text == lineadialogo[0])
+        if (Txttexto.text == lineadialogo[0])
         {
             btnOk.SetActive(true);
         }
@@ -51,11 +53,11 @@ public class textopergamino : MonoBehaviour
 
     private IEnumerator verlineas()
     {
-        Txtpanel.text = string.Empty;
+        Txttexto.text = string.Empty;
 
         foreach (char ch in lineadialogo[0])
         {
-            Txtpanel.text += ch;
+            Txttexto.text += ch;
             yield return new WaitForSeconds(time);
         }
     }
