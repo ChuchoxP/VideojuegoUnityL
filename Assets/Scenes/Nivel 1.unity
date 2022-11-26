@@ -1378,7 +1378,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   dialogo: {fileID: 1613577249}
   confjuego: {fileID: 1816359707}
-  prueba: 0
+  dialogofinal: 0
   jump: 0
   ok: 0
   Comenzar: 1
@@ -1555,9 +1555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fda6edb8657d5147a570f908498addc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NB: {fileID: 0}
-  D: {fileID: 0}
-  J: {fileID: 0}
 --- !u!1 &442119964 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7651207131689774318, guid: 8768425e12c47504fa1a04408cfd8722, type: 3}
@@ -2873,6 +2870,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1613577250}
         m_TargetAssemblyTypeName: Dialogos, Assembly-CSharp
+        m_MethodName: siguientedialogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1288474777}
+        m_TargetAssemblyTypeName: DialogoFinal, Assembly-CSharp
         m_MethodName: siguientedialogo
         m_Mode: 1
         m_Arguments:
@@ -6886,6 +6895,7 @@ MonoBehaviour:
   forastero: {fileID: 928361046}
   time: 0.03
   dialogaux: 0
+  aux: 1
   lineindex: 0
   sonido: {fileID: 0}
 --- !u!4 &1613577251

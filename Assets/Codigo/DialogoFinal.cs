@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogoFinal : MonoBehaviour
 {
-    [SerializeField, TextArea(4, 6)] public string[] lineadialogo;
+    [SerializeField, TextArea(4, 4)] public string[] lineadialogo;
     public bool dialogaux;
     public int lineindex = 0;
 
@@ -31,6 +31,7 @@ public class DialogoFinal : MonoBehaviour
             {
                 if (J.dialogofinal == true)
                 {
+                    
                     iniciardialogo();
                     D.escribir.Play();
                     D.paneldialogo.SetActive(true);
@@ -74,32 +75,38 @@ public class DialogoFinal : MonoBehaviour
 
     public void siguientedialogo()
     {
-        D.sonido.sonSelect.Play();
-        D.btnOmitir.SetActive(false);
-        D.btnsiguiente.SetActive(false);
 
-
-        D.escribir.Play();
-
-
-        if (lineindex == 0 || lineindex == 2)
+        if(D.numdialogo==false)
         {
-            A.animator.SetBool("hablapache", true);
+            D.sonido.sonSelect.Play();
+            D.btnOmitir.SetActive(false);
+            D.btnsiguiente.SetActive(false);
+
+
+            D.escribir.Play();
+
+
+            if (lineindex == 0 || lineindex == 2)
+            {
+                J.animator.SetBool("estahablando", true);
+            }
+
+            if (lineindex == 1)
+            {
+                A.animator.SetBool("hablapache", true);
+            }
+
+
+            lineindex++;
+
+
+            if (lineindex < lineadialogo.Length)
+            {
+                StartCoroutine(verlineas());
+            }
         }
 
-        if (lineindex == 1 || lineindex == 3)
-        {
-            J.animator.SetBool("estahablando", true);
-        }
-
-
-        lineindex++;
-
-
-        if (lineindex < lineadialogo.Length)
-        {
-            StartCoroutine(verlineas());
-        }
+        
     }
 
     public void omitir()

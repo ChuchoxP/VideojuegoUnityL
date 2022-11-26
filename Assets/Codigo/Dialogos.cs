@@ -26,6 +26,7 @@ public class Dialogos : MonoBehaviour
 
     public bool dialogaux;
     public bool aux = true;
+    public bool numdialogo = true;
 
     public int lineindex=0;
 
@@ -107,43 +108,50 @@ public class Dialogos : MonoBehaviour
         }
     }
 
+
+    
     public void siguientedialogo()
     {
-        sonido.sonSelect.Play();
-        btnOmitir.SetActive(false);
-        btnsiguiente.SetActive(false);
 
-  
-        escribir.Play();
-        
-
-        if (lineindex == 0||lineindex==2||lineindex==4)
+        if(numdialogo==true)
         {
-            A.animator.SetBool("hablapache", true);
+            sonido.sonSelect.Play();
+            btnOmitir.SetActive(false);
+            btnsiguiente.SetActive(false);
+
+
+            escribir.Play();
+
+
+            if (lineindex == 0 || lineindex == 2 || lineindex == 4)
+            {
+                A.animator.SetBool("hablapache", true);
+            }
+
+            if (lineindex == 1 || lineindex == 3)
+            {
+                J.animator.SetBool("estahablando", true);
+            }
+
+
+
+            lineindex++;
+
+
+
+            if (lineindex < lineadialogo.Length)
+            {
+                StartCoroutine(verlineas());
+            }
+
         }
 
-        if (lineindex == 1 || lineindex == 3 )
-        {
-            J.animator.SetBool("estahablando", true);
-        }
-
-
-
-        lineindex++;
-
-
-
-        if (lineindex < lineadialogo.Length)
-        {
-            StartCoroutine(verlineas());
-        }
     }
 
-    public async void comenzarJuego()
+    public void comenzarJuego()
     {
         J.animator.SetBool("quieto", false);
         dialogaux = true;
-        paneldialogo.SetActive(false);
         paneljueego.SetActive(true);
         confjuego.SetActive(true);
         moneda.SetActive(true);
@@ -164,7 +172,6 @@ public class Dialogos : MonoBehaviour
             escribir.Pause();
             forastero.SetActive(false);
             dialogaux = true;
-            paneldialogo.SetActive(false);
             paneljueego.SetActive(true);
             confjuego.SetActive(true);
             moneda.SetActive(true);

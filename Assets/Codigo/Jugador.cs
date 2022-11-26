@@ -17,7 +17,9 @@ public class Jugador : MonoBehaviour
 
     public GameObject dialogo;
     public GameObject confjuego;
+
     public bool dialogofinal=false;
+    public bool posapache = true;
 
 
     int vel = 1;
@@ -35,6 +37,7 @@ public class Jugador : MonoBehaviour
     Apache A;
     textopergamino TP;
     Ajustespergamino AP;
+    DialogoFinal DF;
 
     public GameObject v1;
     public GameObject v2;
@@ -126,6 +129,7 @@ public class Jugador : MonoBehaviour
         A = FindObjectOfType<Apache>();
         TP = FindObjectOfType<textopergamino>();
         AP=FindObjectOfType<Ajustespergamino>();
+        DF = FindObjectOfType<DialogoFinal>();
 
 
 
@@ -512,7 +516,6 @@ public class Jugador : MonoBehaviour
             timertexto+=Time.deltaTime;
 
             TP.paneldpergamino.SetActive(true);
-            D.paneldialogo.SetActive(false);
 
             if (timertexto > 1)
             {
@@ -532,7 +535,12 @@ public class Jugador : MonoBehaviour
 
             if (A.gameObject.transform.position.x<11)
             {
-                A.SpriteRenderer.flipX = false;
+                if(posapache==true)
+                {
+                    A.SpriteRenderer.flipX = false;
+                    posapache = false;
+                }
+                
 
                 A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
 
@@ -552,15 +560,28 @@ public class Jugador : MonoBehaviour
   
             if (gameObject.transform.position.x > -4)
             {
-                if(D.aux==true)
-                {
 
                     D.comenzarJuego();
                     timerpergamino = 0;
                     ok = false;
-                }
 
             }
+
+        if(DF.lineindex==4)
+        {
+            A.SpriteRenderer.flipX = false;
+            D.paneldialogo.SetActive(false);
+
+            //A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
+            //A.animator.SetBool("caminapache", true);
+
+            //gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
+            //animator.SetBool("quieto", false);
+
+
+        }
 
         
 
@@ -575,12 +596,14 @@ public class Jugador : MonoBehaviour
         TP.Txtpanel.SetActive(false);
         TP.btnOk.SetActive(false);
         panelpergamino.SetActive(false);
+        D.paneldialogo.SetActive(false);
     }
 
     public void Final()
     {
-        if (N.contplb == 4)
+        if (N.contplb == 2)
         {
+            D.numdialogo = false;
 
             gameObject.transform.position = gameObject.transform.position + new Vector3(vel, 0, 0) * Time.deltaTime * 2;
 
