@@ -49,7 +49,6 @@ public class ScenelogManager : MonoBehaviour
         ses.btnjugar.SetActive(true);
         ses.menulogeo.SetActive(false);
         ses.btniniciarsesion.SetActive(true);
-        ses.btnfaccebook.SetActive(true);
         ses.texto.SetActive(true);
     }
     public void clearInput()
@@ -85,7 +84,7 @@ public class ScenelogManager : MonoBehaviour
             m_validarInput.text = response.message;
             if (response.done==true)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(4);
                 ses.Sonidomenu.Pause();
             }
             
@@ -116,7 +115,6 @@ public class ScenelogManager : MonoBehaviour
                     ses.btnjugar.SetActive(true);
                     ses.menulogeo.SetActive(false);
                     ses.btniniciarsesion.SetActive(true);
-                    ses.btnfaccebook.SetActive(true);
                     ses.texto.SetActive(true);
 
                 }

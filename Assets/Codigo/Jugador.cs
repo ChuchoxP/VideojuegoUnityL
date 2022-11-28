@@ -19,10 +19,14 @@ public class Jugador : MonoBehaviour
     public GameObject confjuego;
 
     public bool dialogofinal=false;
-    public bool posapache = true;
+
+    public bool posapache = false;
+
+    bool poseniño = true;
 
 
     int vel = 1;
+
 
 
 
@@ -31,6 +35,8 @@ public class Jugador : MonoBehaviour
     public bool ok=false;
 
     public bool Comenzar=true;
+
+    public bool cualdiag=false;
 
     NivelesBase N;
     Dialogos D;
@@ -86,6 +92,7 @@ public class Jugador : MonoBehaviour
     public float timer;
     public float timercartel;
     public float timerpergamino;
+    public float timerpergaminofinal;
     public float timertexto;
 
 
@@ -128,7 +135,7 @@ public class Jugador : MonoBehaviour
         D = FindObjectOfType<Dialogos>();
         A = FindObjectOfType<Apache>();
         TP = FindObjectOfType<textopergamino>();
-        AP=FindObjectOfType<Ajustespergamino>();
+        AP = FindObjectOfType<Ajustespergamino>();
         DF = FindObjectOfType<DialogoFinal>();
 
 
@@ -141,7 +148,8 @@ public class Jugador : MonoBehaviour
         vidas();
         caminar();
         Final();
-
+        salirfinal();
+        pergaminofinal();
 
         totmonedas.text = tot.ToString();
 
@@ -532,6 +540,7 @@ public class Jugador : MonoBehaviour
             TP.paneldpergamino.SetActive(false);
             D.escribir.Pause();
             sonido.sonDialogo.Pause();
+            
 
             if (A.gameObject.transform.position.x<11)
             {
@@ -540,7 +549,7 @@ public class Jugador : MonoBehaviour
                     A.SpriteRenderer.flipX = false;
                     posapache = false;
                 }
-                
+
 
                 A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
 
@@ -550,7 +559,11 @@ public class Jugador : MonoBehaviour
             {
 
                 gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
                 animator.SetBool("quieto", false);
+             
+
+              
             }
 
 
@@ -558,37 +571,48 @@ public class Jugador : MonoBehaviour
 
 
   
-            if (gameObject.transform.position.x > -4)
-            {
+        if (gameObject.transform.position.x > -4)
+        {
 
                     D.comenzarJuego();
+
                     timerpergamino = 0;
+
                     ok = false;
 
-            }
-
-        if(DF.lineindex==4)
-        {
-            A.SpriteRenderer.flipX = false;
-            D.paneldialogo.SetActive(false);
-
-            //A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-
-            //A.animator.SetBool("caminapache", true);
-
-            //gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-
-            //animator.SetBool("quieto", false);
-
+                    animator.SetBool("quieto", false);
+            
 
         }
 
-        
 
-        
+
+
+
+
 
 
     }
+
+
+    public void salirfinal()
+    {
+        if (DF.lineindex == 4)
+        {
+            A.SpriteRenderer.flipX = false;
+
+            D.paneldialogo.SetActive(false);
+
+            A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(2, 0, 0) * Time.deltaTime * 2;
+
+            A.animator.SetBool("caminapache", true);
+
+            vel = 1;
+
+            poseniño = false;
+
+        }
+    }    
 
     public void Ok()
     {
@@ -597,6 +621,15 @@ public class Jugador : MonoBehaviour
         TP.btnOk.SetActive(false);
         panelpergamino.SetActive(false);
         D.paneldialogo.SetActive(false);
+
+        timerpergaminofinal = 0;
+
+        TP.lineindex++;
+
+        cualdiag = true;
+
+
+
     }
 
     public void Final()
@@ -623,12 +656,18 @@ public class Jugador : MonoBehaviour
 
             if (gameObject.transform.position.x > 2)
             {
-                vel = 0;
-                animator.SetBool("quieto", true);
 
-                if(A.gameObject.transform.position.x>5)
+                    animator.SetBool("quieto", poseniño);
+
+                vel = 0;
+
+                if (A.gameObject.transform.position.x>5)
                 {
-                    A.SpriteRenderer.flipX = true;
+                    if (posapache == false)
+                    {
+                        A.SpriteRenderer.flipX = true;
+                        posapache = true;
+                    }
 
                     A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * 2;
 
@@ -648,6 +687,36 @@ public class Jugador : MonoBehaviour
 
         }
     }
+
+    public void pergaminofinal()
+    {
+        if(gameObject.transform.position.x >11)
+        {
+            panelpergamino.SetActive(true);
+            TP.paneldpergamino.SetActive(true);
+            timerpergaminofinal += Time.deltaTime;
+
+
+            if(timerpergaminofinal > 1)
+            {
+                TP.x = true;
+                TP.Txtpanel.SetActive(true);
+
+                if(cualdiag==true)
+                {
+                    TP.siguientedialogo();
+                    cualdiag = false;
+                }
+                
+
+            }
+        }
+
+        
+
+
+    }
+
 
 
 

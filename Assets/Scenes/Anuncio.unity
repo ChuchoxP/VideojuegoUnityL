@@ -1216,9 +1216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8d7dbdec5998e4bb9d52ba515798ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bannerId: ca-app-pub-3940256099942544/6300978111
-  intersitialId: 'ca-app-pub-3940256099942544/1033173712 '
-  rewardId: ca-app-pub-3940256099942544/5224354917
+  bannerId: ca-app-pub-4095913127544985/9706650466
+  intersitialId: ca-app-pub-4095913127544985/7131129029
+  rewardId: ca-app-pub-4095913127544985/1936859709
 --- !u!4 &1627630603
 Transform:
   m_ObjectHideFlags: 0

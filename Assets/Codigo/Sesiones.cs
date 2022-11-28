@@ -11,7 +11,6 @@ public class Sesiones : MonoBehaviour
     [SerializeField] private GameObject btninfo;
     [SerializeField] public GameObject menulogeo;
     [SerializeField] public GameObject btniniciarsesion;
-    [SerializeField] public GameObject btnfaccebook;
     [SerializeField] private GameObject menuregistro;
     [SerializeField] public GameObject menuajustes;
     [SerializeField] public GameObject menuinfo;
@@ -44,7 +43,6 @@ public class Sesiones : MonoBehaviour
         btnjugar.SetActive(false);
         menulogeo.SetActive(true);
         btniniciarsesion.SetActive(false);
-        btnfaccebook.SetActive(false);
     }
     public void anuncios()
     {
@@ -72,7 +70,6 @@ public class Sesiones : MonoBehaviour
         btnjugar.SetActive(true);
         menulogeo.SetActive(false);
         btniniciarsesion.SetActive(true);
-        btnfaccebook.SetActive(true);
         texto.SetActive(true);
     }
 

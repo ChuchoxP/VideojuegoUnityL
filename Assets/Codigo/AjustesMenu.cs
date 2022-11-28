@@ -18,7 +18,10 @@ public class AjustesMenu : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI txtvalidacion;
 
-    public int nivel = 1;
+    Ajustespergamino AP;
+
+    int nivel;
+
 
     AudioUI sonido;
     // Start is called before the first frame update
@@ -28,12 +31,18 @@ public class AjustesMenu : MonoBehaviour
     }
     private void Start()
     {
+        AP = FindObjectOfType<Ajustespergamino>();
         sonido.sonFond.Play();
+
+        nivel = PlayerPrefs.GetInt("nivel", 0);
+
     }
     // Update is called once per frame
     void Update()
     {
         niveles();
+
+        Debug.Log(nivel);
     }
 
     public void ajustes()
@@ -54,14 +63,14 @@ public class AjustesMenu : MonoBehaviour
 
     public void niveles()
     {
-        if(nivel==2)
+        if(PlayerPrefs.GetInt("nivel",0)==2)
         {
             btnnivel2bloqueado.SetActive(false);
             btnnivel2.SetActive(true);
             btnReiniciar.SetActive(true);
         }
 
-        if(nivel==3)
+        if(PlayerPrefs.GetInt("nivel", 0) == 3)
         {
             btnnivel3bloqueado.SetActive(false);
             btnnivel3.SetActive(true);
@@ -70,7 +79,8 @@ public class AjustesMenu : MonoBehaviour
 
     public void reiniciar()
     {
-        nivel = 1;
+        PlayerPrefs.SetInt("nivel", 1);
+        PlayerPrefs.Save();
         btnnivel2bloqueado.SetActive(true);
         btnnivel2.SetActive(false);
         btnnivel3bloqueado.SetActive(true);

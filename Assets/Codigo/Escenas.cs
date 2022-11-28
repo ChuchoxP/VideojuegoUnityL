@@ -29,14 +29,14 @@ public class Escenas : MonoBehaviour
     public void LoadScenenivel3()
     {
         sonido.sonSelect.Play();
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(3);
         Time.timeScale = 1;
     }
 
     public void LoadScenemenu()
     {
         sonido.sonSwitch.Play();
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void LoadScenelogin()

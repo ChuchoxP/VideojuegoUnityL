@@ -10,7 +10,7 @@ public class AnuncioVidaextra : MonoBehaviour
     private static AnuncioVidaextra instance; ///Para referenciar este script desde otros
 
     private RewardedAd rewardedAd;
-    private string RewardAD = "ca-app-pub-3940256099942544/5224354917"; ///Coloca tu ID de Anuncio Bonificado aqui
+    private string RewardAD = "ca-app-pub-4095913127544985/1936859709"; ///Coloca tu ID de Anuncio Bonificado aqui
 
 
     /// Para evitar que crashee

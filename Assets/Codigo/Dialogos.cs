@@ -28,6 +28,8 @@ public class Dialogos : MonoBehaviour
     public bool aux = true;
     public bool numdialogo = true;
 
+    public bool cualomitir =true;
+
     public int lineindex=0;
 
   
@@ -150,7 +152,6 @@ public class Dialogos : MonoBehaviour
 
     public void comenzarJuego()
     {
-        J.animator.SetBool("quieto", false);
         dialogaux = true;
         paneljueego.SetActive(true);
         confjuego.SetActive(true);
@@ -161,22 +162,28 @@ public class Dialogos : MonoBehaviour
 
     public void omitir()
     {
-        escribir.Pause();
-        sonido.sonSelect.Play();
-
-        lineindex = 6;
-
-
-        if (J.gameObject.transform.position.x>-4)
+        if(cualomitir==true)
         {
             escribir.Pause();
-            forastero.SetActive(false);
-            dialogaux = true;
-            paneljueego.SetActive(true);
-            confjuego.SetActive(true);
-            moneda.SetActive(true);
-            lineindex = 0;
+            sonido.sonSelect.Play();
+            btnsiguiente.SetActive(false);
+
+            lineindex = 6;
+
+
+            if (J.gameObject.transform.position.x > -4)
+            {
+                escribir.Pause();
+                dialogaux = true;
+                paneljueego.SetActive(true);
+                confjuego.SetActive(true);
+                moneda.SetActive(true);
+                lineindex = 0;
+                cualomitir = false;
+            }
+         
         }
+
 
     }
 }

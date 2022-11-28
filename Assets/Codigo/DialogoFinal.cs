@@ -37,6 +37,8 @@ public class DialogoFinal : MonoBehaviour
                     D.paneldialogo.SetActive(true);
 
                     A.animator.SetBool("hablapache", true);
+                    D.btnOmitir.SetActive(false);
+                    D.btnsiguiente.SetActive(false);
 
 
                 }
@@ -111,10 +113,13 @@ public class DialogoFinal : MonoBehaviour
 
     public void omitir()
     {
-        D.escribir.Pause();
-        D.sonido.sonSelect.Play();
 
-        lineindex = 5;
+        if(D.cualomitir==false)
+        {
+            J.salirfinal();
+
+            lineindex = 4;
+        }
 
     }
 }

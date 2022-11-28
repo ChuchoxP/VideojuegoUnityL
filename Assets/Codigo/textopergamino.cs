@@ -6,7 +6,8 @@ using UnityEngine;
 public class textopergamino : MonoBehaviour
 {
 
-    [SerializeField, TextArea(4, 12)] public string[] lineadialogo;
+    [SerializeField, TextArea(4, 3)] public string[] lineadialogo;
+    [SerializeField] public int lineindex=0;
     [SerializeField] public GameObject paneldpergamino;
     [SerializeField] public TextMeshProUGUI Txttexto; 
     [SerializeField] public GameObject Txtpanel;
@@ -20,10 +21,12 @@ public class textopergamino : MonoBehaviour
 
     public bool x=false;
 
+    Jugador J;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        J=FindObjectOfType<Jugador>();
     }
 
     // Update is called once per frame
@@ -34,11 +37,12 @@ public class textopergamino : MonoBehaviour
             if (!dialogaux)
             {
                 iniciardialogo();
+                
             }
 
         }
         
-        if (Txttexto.text == lineadialogo[0])
+        if (Txttexto.text == lineadialogo[lineindex])
         {
             btnOk.SetActive(true);
         }
@@ -55,10 +59,24 @@ public class textopergamino : MonoBehaviour
     {
         Txttexto.text = string.Empty;
 
-        foreach (char ch in lineadialogo[0])
+        foreach (char ch in lineadialogo[lineindex])
         {
             Txttexto.text += ch;
             yield return new WaitForSeconds(time);
         }
+    }
+
+    public void siguientedialogo()
+    {
+
+           
+
+            if (lineindex < lineadialogo.Length)
+            {
+                StartCoroutine(verlineas());
+            }
+            
+        
+
     }
 }
