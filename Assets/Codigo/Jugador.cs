@@ -17,6 +17,7 @@ public class Jugador : MonoBehaviour
 
     public GameObject dialogo;
     public GameObject confjuego;
+    public GameObject titulo;
 
     public bool dialogofinal=false;
 
@@ -244,9 +245,9 @@ public class Jugador : MonoBehaviour
         {
             case 1:
 
-                if (collision.CompareTag("T1"))
+                if (collision.CompareTag("X"))
                 {
-                    SNL.text = "T";
+                    SNL.text = "X";
 
                     N.contlt++;
 
@@ -257,9 +258,9 @@ public class Jugador : MonoBehaviour
 
 
                 }
-                if (collision.CompareTag("A1"))
+                if (collision.CompareTag("I1"))
                 {
-                    SNL.text = "TA";
+                    SNL.text = "XI";
 
                     N.contlt++;
 
@@ -269,9 +270,9 @@ public class Jugador : MonoBehaviour
                     }
 
                 }
-                if (collision.CompareTag("T2"))
+                if (collision.CompareTag("A1"))
                 {
-                    SNL.text = "TAT";
+                    SNL.text = "XIA";
 
                     N.contlt++;
 
@@ -280,9 +281,9 @@ public class Jugador : MonoBehaviour
                         N.LL3[c].transform.position = new Vector3(-13, 0, 0);
                     }
                 }
-                if (collision.CompareTag("A2"))
+                if (collision.CompareTag("J"))
                 {
-                    SNL.text = "TATA";
+                    SNL.text = "XIAJ";
 
                     N.contlt++;
 
@@ -298,9 +299,9 @@ public class Jugador : MonoBehaviour
 
             case 2:
 
-                if (collision.CompareTag("N1"))
+                if (collision.CompareTag("P"))
                 {
-                    SNL.text = "N";
+                    SNL.text = "P";
 
                     N.contlt++;
 
@@ -313,7 +314,7 @@ public class Jugador : MonoBehaviour
                 }
                 if (collision.CompareTag("A1"))
                 {
-                    SNL.text = "NA";
+                    SNL.text = "PA";
 
                     N.contlt++;
 
@@ -323,9 +324,9 @@ public class Jugador : MonoBehaviour
                     }
 
                 }
-                if (collision.CompareTag("N2"))
+                if (collision.CompareTag("N1"))
                 {
-                    SNL.text = "NAN";
+                    SNL.text = "PAN";
 
                     N.contlt++;
 
@@ -334,15 +335,11 @@ public class Jugador : MonoBehaviour
                         N.LL7[c].transform.position = new Vector3(-13, 0, 0);
                     }
                 }
-                if (collision.CompareTag("A2"))
+                if (collision.CompareTag("T1"))
                 {
-                    SNL.text = "NANA";
-
-
+                    SNL.text = "PANT";
 
                     N.contlt++;
-
-                    x = 4;
 
                     for (int c = 0; c < N.LL8.Count; c++)
                     {
@@ -350,13 +347,9 @@ public class Jugador : MonoBehaviour
                     }
                 }
 
-                break;
-
-            case 3:
-
-                if (collision.CompareTag("C1"))
+                if (collision.CompareTag("I1"))
                 {
-                    SNL.text = "C";
+                    SNL.text = "PANTI";
 
                     N.contlt++;
 
@@ -365,44 +358,77 @@ public class Jugador : MonoBehaviour
                     {
                         N.LL9[c].transform.position = new Vector3(-13, 0, 0);
                     }
-
-
                 }
-                if (collision.CompareTag("A1"))
+
+                if (collision.CompareTag("S"))
                 {
-                    SNL.text = "CA";
+                    SNL.text = "PANTIS";
 
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL10.Count; c++)
-                    {
-                        N.LL10[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-
-                }
-                if (collision.CompareTag("L1"))
-                {
-                    SNL.text = "CAL";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL11.Count; c++)
-                    {
-                        N.LL11[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-                }
-                if (collision.CompareTag("I1"))
-                {
-                    SNL.text = "CALI";
 
 
                     N.contlt++;
 
                     x = 4;
 
+                    for (int c = 0; c < N.LL10.Count; c++)
+                    {
+                        N.LL10[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
+
+                break;
+
+            case 3:
+
+                if (collision.CompareTag("O"))
+                {
+                    SNL.text = "O";
+
+                    N.contlt++;
+
+
+                    for (int c = 0; c < N.LL11.Count; c++)
+                    {
+                        N.LL11[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+
+
+                }
+                if (collision.CompareTag("J"))
+                {
+                    SNL.text = "OJ";
+
+                    N.contlt++;
+
                     for (int c = 0; c < N.LL12.Count; c++)
                     {
                         N.LL12[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+
+                }
+                if (collision.CompareTag("U"))
+                {
+                    SNL.text = "OJU";
+
+                    N.contlt++;
+
+                    for (int c = 0; c < N.LL13.Count; c++)
+                    {
+                        N.LL13[c].transform.position = new Vector3(-13, 0, 0);
+                    }
+                }
+                if (collision.CompareTag("I1"))
+                {
+                    SNL.text = "OJUI";
+
+
+                    N.contlt++;
+
+                    x = 4;
+
+                    for (int c = 0; c < N.LL14.Count; c++)
+                    {
+                        N.LL14[c].transform.position = new Vector3(-13, 0, 0);
                     }
                 }
 
@@ -469,12 +495,12 @@ public class Jugador : MonoBehaviour
 
         if (N.contplb == 1)
         {
-            textonahuatl.text = "TATA";
+            textonahuatl.text = "XIAJ";
         }
 
         if (N.contplb == 2)
         {
-            textonahuatl.text = "NANA";
+            textonahuatl.text = "PANTIS";
         }
 
         if (N.contplb == 3)
@@ -540,7 +566,8 @@ public class Jugador : MonoBehaviour
             TP.paneldpergamino.SetActive(false);
             D.escribir.Pause();
             sonido.sonDialogo.Pause();
-            
+            titulo.SetActive(false);
+
 
             if (A.gameObject.transform.position.x<11)
             {
@@ -634,7 +661,7 @@ public class Jugador : MonoBehaviour
 
     public void Final()
     {
-        if (N.contplb == 2)
+        if (N.contplb == 4)
         {
             D.numdialogo = false;
 

@@ -170,6 +170,8 @@ public class Dialogos : MonoBehaviour
 
             lineindex = 6;
 
+            
+
 
             if (J.gameObject.transform.position.x > -4)
             {

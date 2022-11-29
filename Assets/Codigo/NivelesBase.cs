@@ -31,11 +31,13 @@ public class NivelesBase : MonoBehaviour
     public GameObject L6;
     public GameObject L7;
     public GameObject L8;
-
     public GameObject L9;
     public GameObject L10;
+
     public GameObject L11;
     public GameObject L12;
+    public GameObject L13;
+    public GameObject L14;
 
 
     public List<GameObject> LL1;
@@ -47,11 +49,13 @@ public class NivelesBase : MonoBehaviour
     public List<GameObject> LL6;
     public List<GameObject> LL7;
     public List<GameObject> LL8;
-
     public List<GameObject> LL9;
     public List<GameObject> LL10;
+
     public List<GameObject> LL11;
     public List<GameObject> LL12;
+    public List<GameObject> LL13;
+    public List<GameObject> LL14;
 
     Jugador J;
 
@@ -87,11 +91,14 @@ public class NivelesBase : MonoBehaviour
         LL6.Add(Instantiate(L6, new Vector2(15, 0), Quaternion.identity));
         LL7.Add(Instantiate(L7, new Vector2(15, 0), Quaternion.identity));
         LL8.Add(Instantiate(L8, new Vector2(15, 0), Quaternion.identity));
-
         LL9.Add(Instantiate(L9, new Vector2(15, 0), Quaternion.identity));
         LL10.Add(Instantiate(L10, new Vector2(15, 0), Quaternion.identity));
+
         LL11.Add(Instantiate(L11, new Vector2(15, 0), Quaternion.identity));
         LL12.Add(Instantiate(L12, new Vector2(15, 0), Quaternion.identity));
+        LL13.Add(Instantiate(L13, new Vector2(15, 0), Quaternion.identity));
+        LL14.Add(Instantiate(L14, new Vector2(15, 0), Quaternion.identity));
+
 
 
     }
@@ -279,15 +286,7 @@ public class NivelesBase : MonoBehaviour
                                 }
                             };
                             break;
-
-                    }
-                };
-                break;
-            case 3:
-                {
-                    switch (contlt)
-                    {
-                        case 11:
+                        case 10:
                             {
                                 for (int i = 0; i < LL9.Count; i++)
                                 {
@@ -301,8 +300,7 @@ public class NivelesBase : MonoBehaviour
                                 }
                             };
                             break;
-
-                        case 12:
+                        case 11:
                             {
                                 for (int i = 0; i < LL10.Count; i++)
                                 {
@@ -316,6 +314,15 @@ public class NivelesBase : MonoBehaviour
                                 }
                             };
                             break;
+
+                    }
+                };
+                break;
+
+            case 3:
+                {
+                    switch (contlt)
+                    {
                         case 13:
                             {
                                 for (int i = 0; i < LL11.Count; i++)
@@ -342,6 +349,35 @@ public class NivelesBase : MonoBehaviour
                                     }
 
                                     LL12[i].transform.position = LL12[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+                        case 15:
+                            {
+                                for (int i = 0; i < LL13.Count; i++)
+                                {
+
+                                    if (LL13[i].transform.position.x <= -13)
+                                    {
+                                        LL13[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL13[i].transform.position = LL13[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                                }
+                            };
+                            break;
+
+                        case 16:
+                            {
+                                for (int i = 0; i < LL14.Count; i++)
+                                {
+
+                                    if (LL14[i].transform.position.x <= -13)
+                                    {
+                                        LL14[i].transform.position = new Vector3(13, 0, 0);
+                                    }
+
+                                    LL14[i].transform.position = LL14[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
                                 }
                             };
                             break;

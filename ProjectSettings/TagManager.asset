@@ -19,6 +19,12 @@ TagManager:
   - C1
   - N1
   - N2
+  - X
+  - J
+  - U
+  - S
+  - P
+  - O
   layers:
   - Default
   - TransparentFX
