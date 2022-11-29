@@ -45,7 +45,7 @@ public class textopergamino : MonoBehaviour
         if (Txttexto.text == lineadialogo[lineindex])
         {
             btnOk.SetActive(true);
-            J.titulo.SetActive(true);
+          
         }
 
     }
@@ -54,6 +54,8 @@ public class textopergamino : MonoBehaviour
     {
         StartCoroutine(verlineas());
         dialogaux = true;
+
+        J.titulo.SetActive(true);
     }
 
     private IEnumerator verlineas()

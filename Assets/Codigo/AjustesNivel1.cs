@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using System.Drawing;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class NivelesBase : MonoBehaviour
+public class AjustesNivel1 : MonoBehaviour
 {
+
+ 
+
     public Renderer fondo;
     public GameObject Columna;
     public List<GameObject> col;
 
-    private float velocidad = 4;
+    public float velocidad;
+    public float velocidad2;
 
     public GameObject moneda;
     public List<GameObject> mon;
 
     public GameObject murcielago;
     public List<GameObject> murci;
+
+    [SerializeField] private GameObject slime;
+    public List<GameObject> slim;
 
     public int contlt = 1;
 
@@ -60,6 +68,9 @@ public class NivelesBase : MonoBehaviour
     Jugador J;
 
     AudioUI sonido;
+    public int lvl;
+
+
     private void Awake()
     {
         sonido = GameObject.FindObjectOfType<AudioUI>();
@@ -67,7 +78,25 @@ public class NivelesBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        lvl = PlayerPrefs.GetInt("nivel", 0);
+
+        if(lvl==1)
+        {
+            velocidad = 4;
+            velocidad2 = 6;
+        }
+        else if(lvl==2)
+        {
+            velocidad = 6;
+            velocidad2 = 8;
+        }
+        else
+        {
+            velocidad = 8;
+            velocidad2 = 10;
+        }
+
         J = FindObjectOfType<Jugador>();
 
 
@@ -78,9 +107,11 @@ public class NivelesBase : MonoBehaviour
         }
 
         //crear monedas
-
         mon.Add(Instantiate(moneda, new Vector2(13, -2), Quaternion.identity));
+
+        //crear enemigos
         murci.Add(Instantiate(murcielago, new Vector2(18, -2), Quaternion.identity));
+        slim.Add(Instantiate(slime, new Vector2(30, -2), Quaternion.identity));
 
         LL1.Add(Instantiate(L1, new Vector2(15, 0), Quaternion.identity));
         LL2.Add(Instantiate(L2, new Vector2(15, 0), Quaternion.identity));
@@ -104,6 +135,7 @@ public class NivelesBase : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
 
@@ -134,6 +166,7 @@ public class NivelesBase : MonoBehaviour
             mon[i].transform.position = mon[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
         }
 
+        //mover enemigos
         for (int i = 0; i < murci.Count; i++)
         {
 
@@ -143,7 +176,18 @@ public class NivelesBase : MonoBehaviour
                 murci[i].transform.position = new Vector3(13, randomObs, 0);
             }
 
-            murci[i].transform.position = murci[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * 6;
+            murci[i].transform.position = murci[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad2;
+        }
+
+        for (int i = 0; i < slim.Count; i++)
+        {
+
+            if (slim[i].transform.position.x <= -13)
+            {
+                slim[i].transform.position = new Vector3(24, -2, 0);
+            }
+
+            slim[i].transform.position = slim[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad2;
         }
 
         //Mover Letras
@@ -392,6 +436,7 @@ public class NivelesBase : MonoBehaviour
         
 
     }
+
 
 
 

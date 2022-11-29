@@ -39,7 +39,8 @@ public class Jugador : MonoBehaviour
 
     public bool cualdiag=false;
 
-    NivelesBase N;
+    AjustesNivel1 N;
+
     Dialogos D;
     Apache A;
     textopergamino TP;
@@ -132,7 +133,7 @@ public class Jugador : MonoBehaviour
         Sonidodaño = objjsonidodaño.GetComponent<AudioSource>();
         Sonidorevivir = objjsonidorevivir.GetComponent<AudioSource>();
 
-        N = FindObjectOfType<NivelesBase>();
+        N = FindObjectOfType<AjustesNivel1>();
         D = FindObjectOfType<Dialogos>();
         A = FindObjectOfType<Apache>();
         TP = FindObjectOfType<textopergamino>();
@@ -505,7 +506,7 @@ public class Jugador : MonoBehaviour
 
         if (N.contplb == 3)
         {
-            textonahuatl.text = "CALI";
+            textonahuatl.text = "OJUI";
         }
         
 
@@ -676,6 +677,11 @@ public class Jugador : MonoBehaviour
                 N.murci[l].SetActive(false);
             }
 
+            for (int l = 0; l < N.slim.Count; l++)
+            {
+                N.slim[l].SetActive(false);
+            }
+
             for (int u = 0; u < N.mon.Count; u++)
             {
                 N.mon[u].SetActive(false);
@@ -743,10 +749,4 @@ public class Jugador : MonoBehaviour
 
 
     }
-
-
-
-
-
-
 }

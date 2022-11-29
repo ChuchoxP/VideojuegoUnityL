@@ -122,17 +122,21 @@ public class Dialogos : MonoBehaviour
             btnsiguiente.SetActive(false);
 
 
-            escribir.Play();
+            
 
 
             if (lineindex == 0 || lineindex == 2 || lineindex == 4)
             {
                 A.animator.SetBool("hablapache", true);
+
+                escribir.Play();
             }
 
             if (lineindex == 1 || lineindex == 3)
             {
                 J.animator.SetBool("estahablando", true);
+
+                escribir.Play();
             }
 
 
@@ -158,6 +162,7 @@ public class Dialogos : MonoBehaviour
         moneda.SetActive(true);
         lineindex = 0;
         aux = false;
+       
     }
 
     public void omitir()

@@ -85,17 +85,19 @@ public class DialogoFinal : MonoBehaviour
             D.btnsiguiente.SetActive(false);
 
 
-            D.escribir.Play();
+            
 
 
             if (lineindex == 0 || lineindex == 2)
             {
                 J.animator.SetBool("estahablando", true);
+                D.escribir.Play();
             }
 
             if (lineindex == 1)
             {
                 A.animator.SetBool("hablapache", true);
+                D.escribir.Play();
             }
 
 

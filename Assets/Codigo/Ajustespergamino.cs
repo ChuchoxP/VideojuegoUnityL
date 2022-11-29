@@ -54,16 +54,16 @@ public class Ajustespergamino : MonoBehaviour
 
     }
 
-    public void nivelesok()
-    {
-        if(TP.lineindex==2)
-        {
-            nivel++;
-        }
+    //public void nivelesok()
+    //{
+    //    if (TP.lineindex == 2)
+    //    {
+    //        nivel++;
+    //    }
 
-    }
+    //}
 
 
-  
+
 
 }
