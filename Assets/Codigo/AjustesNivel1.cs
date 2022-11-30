@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class AjustesNivel1 : MonoBehaviour
 {
 
- 
+    Enemigos enemies;
 
     public Renderer fondo;
     public GameObject Columna;
@@ -19,12 +19,6 @@ public class AjustesNivel1 : MonoBehaviour
 
     public GameObject moneda;
     public List<GameObject> mon;
-
-    public GameObject murcielago;
-    public List<GameObject> murci;
-
-    [SerializeField] private GameObject slime;
-    public List<GameObject> slim;
 
     public int contlt = 1;
 
@@ -65,6 +59,12 @@ public class AjustesNivel1 : MonoBehaviour
     public List<GameObject> LL13;
     public List<GameObject> LL14;
 
+    public GameObject objMurci;
+    public List<GameObject> murci;
+
+    //public GameObject objSlim;
+    //public List<GameObject> slim;
+
     Jugador J;
 
     AudioUI sonido;
@@ -88,17 +88,19 @@ public class AjustesNivel1 : MonoBehaviour
         }
         else if(lvl==2)
         {
+            velocidad = 5;
+            velocidad2 = 7;
+            //enemies.slim.Add(Instantiate(enemies.objSlim, new Vector2(30, -2), Quaternion.identity));
+        }
+        else if(lvl==3)
+        {
+            //enemies.slim.Add(Instantiate(enemies.objSlim, new Vector2(30, -2), Quaternion.identity));
             velocidad = 6;
             velocidad2 = 8;
         }
-        else
-        {
-            velocidad = 8;
-            velocidad2 = 10;
-        }
 
         J = FindObjectOfType<Jugador>();
-
+        enemies = FindObjectOfType<Enemigos>();
 
         //Crear mapa
         for (int  i = 0;  i < 29;  i++)
@@ -110,8 +112,8 @@ public class AjustesNivel1 : MonoBehaviour
         mon.Add(Instantiate(moneda, new Vector2(13, -2), Quaternion.identity));
 
         //crear enemigos
-        murci.Add(Instantiate(murcielago, new Vector2(18, -2), Quaternion.identity));
-        slim.Add(Instantiate(slime, new Vector2(30, -2), Quaternion.identity));
+        murci.Add(Instantiate(objMurci, new Vector2(18, -2), Quaternion.identity));
+        
 
         LL1.Add(Instantiate(L1, new Vector2(15, 0), Quaternion.identity));
         LL2.Add(Instantiate(L2, new Vector2(15, 0), Quaternion.identity));
@@ -176,19 +178,22 @@ public class AjustesNivel1 : MonoBehaviour
                 murci[i].transform.position = new Vector3(13, randomObs, 0);
             }
 
-            murci[i].transform.position = murci[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad2;
+           murci[i].transform.position = murci[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad2;
         }
+        //if (lvl == 2)
+        //{
+        //    for (int i = 0; i < enemies.slim.Count; i++)
+        //    {
 
-        for (int i = 0; i < slim.Count; i++)
-        {
+        //        if (enemies.slim[i].transform.position.x <= -13)
+        //        {
+        //            enemies.slim[i].transform.position = new Vector3(24, -2, 0);
+        //        }
 
-            if (slim[i].transform.position.x <= -13)
-            {
-                slim[i].transform.position = new Vector3(24, -2, 0);
-            }
+        //        enemies.slim[i].transform.position = enemies.slim[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad2;
+        //    }
+        //}
 
-            slim[i].transform.position = slim[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad2;
-        }
 
         //Mover Letras
 

@@ -10,10 +10,13 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class Jugador : MonoBehaviour
 {
+    Enemigos enemies;
     private Rigidbody2D rigidbody2D;
 
     public static Jugador instance;
     public Animator animator;
+
+    public SpriteRenderer Sprite;
 
     public GameObject dialogo;
     public GameObject confjuego;
@@ -126,6 +129,7 @@ public class Jugador : MonoBehaviour
 
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        Sprite = GetComponent<SpriteRenderer>();
 
 
         Sonidomoneda=objjsonidomoneda.GetComponent<AudioSource>();
@@ -149,6 +153,7 @@ public class Jugador : MonoBehaviour
         
         vidas();
         caminar();
+        caminarlvl2();
         Final();
         salirfinal();
         pergaminofinal();
@@ -535,90 +540,184 @@ public class Jugador : MonoBehaviour
         }
     }
 
-    public void caminar()
+    public void caminarlvl2()
     {
-        if (gameObject.transform.position.x < -6)
-        {
-            gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-        }
-        else
-        {
-            animator.SetBool("quieto", true);
-        }
 
-        if (D.lineindex == 6)
+        if(N.lvl==2)
         {
-            timertexto+=Time.deltaTime;
-
-            TP.paneldpergamino.SetActive(true);
-
-            if (timertexto > 1)
+            if (gameObject.transform.position.x < -4)
             {
-                TP.x = true;
-            }
-
-        }
-
-
-
-        if (timerpergamino>1)
-        {
-
-            TP.paneldpergamino.SetActive(false);
-            D.escribir.Pause();
-            sonido.sonDialogo.Pause();
-            titulo.SetActive(false);
-
-
-            if (A.gameObject.transform.position.x<11)
-            {
-                if(posapache==true)
-                {
-                    A.SpriteRenderer.flipX = false;
-                    posapache = false;
-                }
-
-
-                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-
-                A.animator.SetBool("caminapache", true);
+                gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
             }
             else
             {
+                Sprite.flipX = true;
+                animator.SetBool("quieto", true);
+            }
 
+            //if (A.gameObject.transform.position.x < -6)
+            //{
+            //    A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
+            //    A.animator.SetBool("caminapache", true);
+            //}
+            //else
+            //{
+
+            //    A.animator.SetBool("caminapache", false);
+            //}
+
+            //if (D.lineindex == 6)
+            //{
+            //    timertexto += Time.deltaTime;
+
+            //    TP.paneldpergamino.SetActive(true);
+
+            //    if (timertexto > 1)
+            //    {
+            //        TP.x = true;
+            //    }
+
+            //}
+
+
+
+            //if (timerpergamino > 1)
+            //{
+
+            //    TP.paneldpergamino.SetActive(false);
+            //    D.escribir.Pause();
+            //    sonido.sonDialogo.Pause();
+            //    titulo.SetActive(false);
+
+
+            //    if (A.gameObject.transform.position.x < 11)
+            //    {
+            //        if (posapache == true)
+            //        {
+            //            A.SpriteRenderer.flipX = false;
+            //            posapache = false;
+            //        }
+
+
+            //        A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
+            //        A.animator.SetBool("caminapache", true);
+            //    }
+            //    else
+            //    {
+
+            //        gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+
+            //        animator.SetBool("quieto", false);
+
+
+
+            //    }
+
+
+            //}
+
+
+
+            //if (gameObject.transform.position.x > -4)
+            //{
+
+            //    D.comenzarJuego();
+
+            //    timerpergamino = 0;
+
+            //    ok = false;
+
+            //    animator.SetBool("quieto", false);
+
+
+            //}
+        }
+
+
+    }
+    public void caminar()
+    {
+        if(N.lvl==1)
+        {
+            if (gameObject.transform.position.x < -6)
+            {
                 gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+            }
+            else
+            {
+                animator.SetBool("quieto", true);
+            }
 
-                animator.SetBool("quieto", false);
-             
+            if (D.lineindex == 6)
+            {
+                timertexto += Time.deltaTime;
 
-              
+                TP.paneldpergamino.SetActive(true);
+
+                if (timertexto > 1)
+                {
+                    TP.x = true;
+                }
+
             }
 
 
-        }
+
+            if (timerpergamino > 1)
+            {
+
+                TP.paneldpergamino.SetActive(false);
+                D.escribir.Pause();
+                sonido.sonDialogo.Pause();
+                titulo.SetActive(false);
 
 
-  
-        if (gameObject.transform.position.x > -4)
-        {
+                if (A.gameObject.transform.position.x < 11)
+                {
+                    if (posapache == true)
+                    {
+                        A.SpriteRenderer.flipX = false;
+                        posapache = false;
+                    }
 
-                    D.comenzarJuego();
 
-                    timerpergamino = 0;
+                    A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
 
-                    ok = false;
+                    A.animator.SetBool("caminapache", true);
+                }
+                else
+                {
+
+                    gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
 
                     animator.SetBool("quieto", false);
-            
 
+
+
+                }
+
+
+            }
+
+
+
+            if (gameObject.transform.position.x > -4)
+            {
+
+                D.comenzarJuego();
+
+                timerpergamino = 0;
+
+                ok = false;
+
+                animator.SetBool("quieto", false);
+
+
+            }
         }
-
-
-
-
-
-
-
+        
 
     }
 
@@ -677,10 +776,13 @@ public class Jugador : MonoBehaviour
                 N.murci[l].SetActive(false);
             }
 
-            for (int l = 0; l < N.slim.Count; l++)
-            {
-                N.slim[l].SetActive(false);
-            }
+            //if(N.lvl==2)
+            //{
+            //    for (int l = 0; l < enemies.slim.Count; l++)
+            //    {
+            //        enemies.slim[l].SetActive(false);
+            //    }
+            //}
 
             for (int u = 0; u < N.mon.Count; u++)
             {

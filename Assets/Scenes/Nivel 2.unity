@@ -1394,6 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  Sprite: {fileID: 0}
   dialogo: {fileID: 1613577249}
   confjuego: {fileID: 1816359707}
   titulo: {fileID: 1815290320}
@@ -1511,7 +1512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440026538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.640015, y: -1.460022, z: 0}
+  m_LocalPosition: {x: -10.17, y: -1.460022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3383,7 +3384,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 350393342, guid: c2c8df6e3a297e048bc11781d781337f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.84, y: 3.84}
@@ -3400,7 +3401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928361046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -1.46, z: 0}
+  m_LocalPosition: {x: -11.7, y: -1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7604,8 +7605,6 @@ MonoBehaviour:
   velocidad2: 0
   moneda: {fileID: 7651207131689774318, guid: 8768425e12c47504fa1a04408cfd8722, type: 3}
   mon: []
-  murcielago: {fileID: 3318811028325047636, guid: b91842c9a74bcdf41865dd84aa5b1d1c, type: 3}
-  murci: []
   contlt: 1
   contplb: 1
   L1: {fileID: 6597110098836886148, guid: e1821f900392d7a4aa3794c4a9146806, type: 3}
@@ -7636,6 +7635,8 @@ MonoBehaviour:
   LL12: []
   LL13: []
   LL14: []
+  objMurci: {fileID: 3318811028325047636, guid: b91842c9a74bcdf41865dd84aa5b1d1c, type: 3}
+  murci: []
   lvl: 0
 --- !u!4 &1816359709
 Transform:

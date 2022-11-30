@@ -36,6 +36,7 @@ public class Dialogos : MonoBehaviour
 
     Jugador J;
     Apache A;
+    AjustesNivel1 N;
     public AudioUI sonido;
     textopergamino TP;
 
@@ -51,6 +52,7 @@ public class Dialogos : MonoBehaviour
         J = FindObjectOfType<Jugador>();
         A = FindObjectOfType<Apache>();
         TP = FindObjectOfType<textopergamino>();
+        N = FindObjectOfType<AjustesNivel1>();
 
         escribir = objjsonidoescribir.GetComponent<AudioSource>();
 
