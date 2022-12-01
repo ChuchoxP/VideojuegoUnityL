@@ -115,22 +115,22 @@ public class AjustesNivel1 : MonoBehaviour
         murci.Add(Instantiate(objMurci, new Vector2(18, -2), Quaternion.identity));
         
 
-        LL1.Add(Instantiate(L1, new Vector2(15, 0), Quaternion.identity));
-        LL2.Add(Instantiate(L2, new Vector2(15, 0), Quaternion.identity));
-        LL3.Add(Instantiate(L3, new Vector2(15, 0), Quaternion.identity));
-        LL4.Add(Instantiate(L4, new Vector2(15, 0), Quaternion.identity));
+        LL1.Add(Instantiate(L1, new Vector2(90, 0), Quaternion.identity));
+        LL2.Add(Instantiate(L2, new Vector2(90, 0), Quaternion.identity));
+        LL3.Add(Instantiate(L3, new Vector2(90, 0), Quaternion.identity));
+        LL4.Add(Instantiate(L4, new Vector2(90, 0), Quaternion.identity));
 
-        LL5.Add(Instantiate(L5, new Vector2(15, 0), Quaternion.identity));
-        LL6.Add(Instantiate(L6, new Vector2(15, 0), Quaternion.identity));
-        LL7.Add(Instantiate(L7, new Vector2(15, 0), Quaternion.identity));
-        LL8.Add(Instantiate(L8, new Vector2(15, 0), Quaternion.identity));
-        LL9.Add(Instantiate(L9, new Vector2(15, 0), Quaternion.identity));
-        LL10.Add(Instantiate(L10, new Vector2(15, 0), Quaternion.identity));
+        LL5.Add(Instantiate(L5, new Vector2(90, 0), Quaternion.identity));
+        LL6.Add(Instantiate(L6, new Vector2(90, 0), Quaternion.identity));
+        LL7.Add(Instantiate(L7, new Vector2(90, 0), Quaternion.identity));
+        LL8.Add(Instantiate(L8, new Vector2(90, 0), Quaternion.identity));
+        LL9.Add(Instantiate(L9, new Vector2(90, 0), Quaternion.identity));
+        LL10.Add(Instantiate(L10, new Vector2(90, 0), Quaternion.identity));
 
-        LL11.Add(Instantiate(L11, new Vector2(15, 0), Quaternion.identity));
-        LL12.Add(Instantiate(L12, new Vector2(15, 0), Quaternion.identity));
-        LL13.Add(Instantiate(L13, new Vector2(15, 0), Quaternion.identity));
-        LL14.Add(Instantiate(L14, new Vector2(15, 0), Quaternion.identity));
+        LL11.Add(Instantiate(L11, new Vector2(90, 0), Quaternion.identity));
+        LL12.Add(Instantiate(L12, new Vector2(90, 0), Quaternion.identity));
+        LL13.Add(Instantiate(L13, new Vector2(90, 0), Quaternion.identity));
+        LL14.Add(Instantiate(L14, new Vector2(90, 0), Quaternion.identity));
 
 
 

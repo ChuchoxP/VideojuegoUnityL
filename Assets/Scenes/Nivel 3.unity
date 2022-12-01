@@ -288,13 +288,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineadialogo:
-  - ___ kuatitla uan tij ___ mo ___
+  - Kena ___ nia ___ no ___
   - '"Nahuatl"
 
-    Xiaj kuatitla uan tij pantis mo ojui
+    Kena neki nia temoua no nana
 
 '
-  - "\"Espa\xF1ol\"\nVe al bosque y encontrar\xE1s tu camino"
+  - "\"Espa\xF1ol\"\nSi quiero ir a buscar  mi mama"
   lineindex: 0
   paneldpergamino: {fileID: 1728908079}
   Txttexto: {fileID: 645812741}
@@ -1394,13 +1394,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  Sprite: {fileID: 0}
+  spriteX: 1
   dialogo: {fileID: 1613577249}
   confjuego: {fileID: 1816359707}
   titulo: {fileID: 1815290320}
   dialogofinal: 0
   posapache: 1
+  posapache2: 0
   jump: 0
   ok: 0
+  ok2: 1
   Comenzar: 1
   cualdiag: 1
   v1: {fileID: 667729128}
@@ -5406,10 +5410,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineadialogo:
-  - 'Kulkaan: Muy bien mi querido amigo, has desifrado el mensaje.'
-  - 'Sinti: Claro, y mucho me ha costado vamos a descubrir todo esto.'
-  - "Kulkaan:  Asi  es, y estoy dispuesto a ayudarte \xA1vamos!"
-  - "Sinti: Esta bien lo acompa\xF1o."
+  - 'Kulkaan: Al parecer todo esto tiene una provocacion'
+  - 'Sinti: Ahora entiendo'
+  - 'Kulkaan:  Si claro, pero  esto aun no acaba, son tantas cosas que debemos saber,
+    sigamos.'
+  - 'Sinti: SI, vamos a continuar'
   dialogaux: 0
   lineindex: 0
 --- !u!4 &1288474778
@@ -6897,14 +6902,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineadialogo:
-  - 'Sinti: Pero que es este lugar, como es que he llegado aqui...'
-  - 'Kulkaan: Bienvenido al nuevo mundo, el dia en que todo comenzo.'
-  - 'Sinti: Que es lo que estas diciendo, como es que todo esto sucedio.'
-  - 'Kulkaan: Todo esto es debido, a una alteracion en trayecto del tiempo.'
-  - 'Sinti: Pero y como se soluciona esto, que puedo hacer yo para poder regresar
-    a mi epoca.'
-  - 'Kulkaan: Toma este mensaje, te ayudara para poder resolver este gran problema
-    que causaron en tu presente.'
+  - 'Kulkaan: Has regresado amigo mio'
+  - 'Sinti: Si , pero como es que llegamos tan lejos'
+  - 'Kulkaan: Esto lleva tiempo, y es por eso que vamos a continuar'
+  - 'Sinti: Claro que esto de no saber lo que pasa a mi alrededor no esta bien'
+  - 'Kulkaan: Si , toma necesito que me ayudes con estos escritos'
+  - 'Sinti: Todo sea por arreglar las cosas, vamos !'
   paneldialogo: {fileID: 1515829165}
   Txtpanel: {fileID: 1578085585}
   objjsonidoescribir: {fileID: 718530310}
@@ -7606,20 +7609,20 @@ MonoBehaviour:
   mon: []
   contlt: 1
   contplb: 1
-  L1: {fileID: 6597110098836886148, guid: e1821f900392d7a4aa3794c4a9146806, type: 3}
-  L2: {fileID: 471835306773845950, guid: 39b25ff3a7875d847b3e6cc938f45532, type: 3}
-  L3: {fileID: 7760255037942563730, guid: dace0fb4b6f9ae147ac59c68d735dc4f, type: 3}
-  L4: {fileID: 1378967507797538118, guid: fa346fe38c843bc44bcbae71c5986262, type: 3}
-  L5: {fileID: 6907569657292528711, guid: 7fbdcf019222da3448b0373a49d002cf, type: 3}
-  L6: {fileID: 7760255037942563730, guid: dace0fb4b6f9ae147ac59c68d735dc4f, type: 3}
-  L7: {fileID: 8809887843519591734, guid: e6f6dd71e1877dc48829aa9e11226b82, type: 3}
-  L8: {fileID: 3922120577779826214, guid: e15d7b70cb1964141a0ecae0b3508d23, type: 3}
-  L9: {fileID: 471835306773845950, guid: 39b25ff3a7875d847b3e6cc938f45532, type: 3}
-  L10: {fileID: 4994881999685593984, guid: 2ae5b4d747190f2468eacd750220bdfe, type: 3}
-  L11: {fileID: 2569357632917560735, guid: dd408845201045c4f89184391ef8a1d8, type: 3}
-  L12: {fileID: 1378967507797538118, guid: fa346fe38c843bc44bcbae71c5986262, type: 3}
-  L13: {fileID: 7278093903756861130, guid: 18a455fa2b0d8eb4ebc9cb9458409bf7, type: 3}
-  L14: {fileID: 471835306773845950, guid: 39b25ff3a7875d847b3e6cc938f45532, type: 3}
+  L1: {fileID: 2549208230137845628, guid: 35560122d3b233345a0ce8384f62cf39, type: 3}
+  L2: {fileID: 2160685455142601611, guid: d0509f4a92ac9784086fad296bba8920, type: 3}
+  L3: {fileID: 8809887843519591734, guid: e6f6dd71e1877dc48829aa9e11226b82, type: 3}
+  L4: {fileID: 7760255037942563730, guid: dace0fb4b6f9ae147ac59c68d735dc4f, type: 3}
+  L5: {fileID: 3922120577779826214, guid: e15d7b70cb1964141a0ecae0b3508d23, type: 3}
+  L6: {fileID: 2160685455142601611, guid: 3081a450daaa44a4a8ecdb6b80a5c0da, type: 3}
+  L7: {fileID: 6853139099591370411, guid: 47a726c94e37b434bb6434962219b978, type: 3}
+  L8: {fileID: 2569357632917560735, guid: dd408845201045c4f89184391ef8a1d8, type: 3}
+  L9: {fileID: 7278093903756861130, guid: 18a455fa2b0d8eb4ebc9cb9458409bf7, type: 3}
+  L10: {fileID: 4757528456213191289, guid: 2d71f206b52c3a94d925949bb28ca450, type: 3}
+  L11: {fileID: 8809887843519591734, guid: 1a45c9e8e6c2aa841904551499d23f01, type: 3}
+  L12: {fileID: 4757528456213191289, guid: 539dbaaef656e744cacd2aa2d951a689, type: 3}
+  L13: {fileID: 8809887843519591734, guid: 969787bdc4b11524ca0a9becdda69682, type: 3}
+  L14: {fileID: 4757528456213191289, guid: 2613a23f4746ab34eb233f25032008ca, type: 3}
   LL1: []
   LL2: []
   LL3: []

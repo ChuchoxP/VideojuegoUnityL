@@ -18,6 +18,8 @@ public class Jugador : MonoBehaviour
 
     public SpriteRenderer Sprite;
 
+    public bool spriteX=true;
+
     public GameObject dialogo;
     public GameObject confjuego;
     public GameObject titulo;
@@ -25,11 +27,16 @@ public class Jugador : MonoBehaviour
     public bool dialogofinal=false;
 
     public bool posapache = false;
+    public bool posapache2 = false;
 
     bool poseniño = true;
+    bool poseniño3 = true;
+
 
 
     int vel = 1;
+
+    int vel2 = 1;
 
 
 
@@ -37,6 +44,8 @@ public class Jugador : MonoBehaviour
     public bool jump=false;
 
     public bool ok=false;
+    public bool ok2 = true;
+
 
     public bool Comenzar=true;
 
@@ -244,202 +253,599 @@ public class Jugador : MonoBehaviour
         }
 
 
-
-
-
-        switch (N.contplb)
+        if(N.lvl==1)
         {
-            case 1:
+            switch (N.contplb)
+            {
+                case 1:
 
-                if (collision.CompareTag("X"))
-                {
-                    SNL.text = "X";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL1.Count; c++)
+                    if (collision.CompareTag("X"))
                     {
-                        N.LL1[c].transform.position = new Vector3(-13, 0, 0);
+                        SNL.text = "X";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL1.Count; c++)
+                        {
+                            N.LL1[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("I1"))
+                    {
+                        SNL.text = "XI";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL2.Count; c++)
+                        {
+                            N.LL2[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("A1"))
+                    {
+                        SNL.text = "XIA";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL3.Count; c++)
+                        {
+                            N.LL3[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("J"))
+                    {
+                        SNL.text = "XIAJ";
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL4.Count; c++)
+                        {
+                            N.LL4[c].transform.position = new Vector3(-13, 0, 0);
+                        }
                     }
 
+                    break;
 
-                }
-                if (collision.CompareTag("I1"))
-                {
-                    SNL.text = "XI";
+                case 2:
 
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL2.Count; c++)
+                    if (collision.CompareTag("P"))
                     {
-                        N.LL2[c].transform.position = new Vector3(-13, 0, 0);
+                        SNL.text = "P";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL5.Count; c++)
+                        {
+                            N.LL5[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("A1"))
+                    {
+                        SNL.text = "PA";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL6.Count; c++)
+                        {
+                            N.LL6[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("N1"))
+                    {
+                        SNL.text = "PAN";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL7.Count; c++)
+                        {
+                            N.LL7[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("T1"))
+                    {
+                        SNL.text = "PANT";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL8.Count; c++)
+                        {
+                            N.LL8[c].transform.position = new Vector3(-13, 0, 0);
+                        }
                     }
 
-                }
-                if (collision.CompareTag("A1"))
-                {
-                    SNL.text = "XIA";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL3.Count; c++)
+                    if (collision.CompareTag("I1"))
                     {
-                        N.LL3[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-                }
-                if (collision.CompareTag("J"))
-                {
-                    SNL.text = "XIAJ";
+                        SNL.text = "PANTI";
 
-                    N.contlt++;
+                        N.contlt++;
 
-                    x = 4;
 
-                    for (int c = 0; c < N.LL4.Count; c++)
-                    {
-                        N.LL4[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-                }
-
-                break;
-
-            case 2:
-
-                if (collision.CompareTag("P"))
-                {
-                    SNL.text = "P";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL5.Count; c++)
-                    {
-                        N.LL5[c].transform.position = new Vector3(-13, 0, 0);
+                        for (int c = 0; c < N.LL9.Count; c++)
+                        {
+                            N.LL9[c].transform.position = new Vector3(-13, 0, 0);
+                        }
                     }
 
-
-                }
-                if (collision.CompareTag("A1"))
-                {
-                    SNL.text = "PA";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL6.Count; c++)
+                    if (collision.CompareTag("S"))
                     {
-                        N.LL6[c].transform.position = new Vector3(-13, 0, 0);
+                        SNL.text = "PANTIS";
+
+
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL10.Count; c++)
+                        {
+                            N.LL10[c].transform.position = new Vector3(-13, 0, 0);
+                        }
                     }
 
-                }
-                if (collision.CompareTag("N1"))
-                {
-                    SNL.text = "PAN";
+                    break;
 
-                    N.contlt++;
+                case 3:
 
-                    for (int c = 0; c < N.LL7.Count; c++)
+                    if (collision.CompareTag("O"))
                     {
-                        N.LL7[c].transform.position = new Vector3(-13, 0, 0);
+                        SNL.text = "O";
+
+                        N.contlt++;
+
+
+                        for (int c = 0; c < N.LL11.Count; c++)
+                        {
+                            N.LL11[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
                     }
-                }
-                if (collision.CompareTag("T1"))
-                {
-                    SNL.text = "PANT";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL8.Count; c++)
+                    if (collision.CompareTag("J"))
                     {
-                        N.LL8[c].transform.position = new Vector3(-13, 0, 0);
+                        SNL.text = "OJ";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL12.Count; c++)
+                        {
+                            N.LL12[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
                     }
-                }
-
-                if (collision.CompareTag("I1"))
-                {
-                    SNL.text = "PANTI";
-
-                    N.contlt++;
-
-
-                    for (int c = 0; c < N.LL9.Count; c++)
+                    if (collision.CompareTag("U"))
                     {
-                        N.LL9[c].transform.position = new Vector3(-13, 0, 0);
+                        SNL.text = "OJU";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL13.Count; c++)
+                        {
+                            N.LL13[c].transform.position = new Vector3(-13, 0, 0);
+                        }
                     }
-                }
-
-                if (collision.CompareTag("S"))
-                {
-                    SNL.text = "PANTIS";
-
-
-
-                    N.contlt++;
-
-                    x = 4;
-
-                    for (int c = 0; c < N.LL10.Count; c++)
+                    if (collision.CompareTag("I1"))
                     {
-                        N.LL10[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-                }
-
-                break;
-
-            case 3:
-
-                if (collision.CompareTag("O"))
-                {
-                    SNL.text = "O";
-
-                    N.contlt++;
+                        SNL.text = "OJUI";
 
 
-                    for (int c = 0; c < N.LL11.Count; c++)
-                    {
-                        N.LL11[c].transform.position = new Vector3(-13, 0, 0);
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL14.Count; c++)
+                        {
+                            N.LL14[c].transform.position = new Vector3(-13, 0, 0);
+                        }
                     }
 
-
-                }
-                if (collision.CompareTag("J"))
-                {
-                    SNL.text = "OJ";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL12.Count; c++)
-                    {
-                        N.LL12[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-
-                }
-                if (collision.CompareTag("U"))
-                {
-                    SNL.text = "OJU";
-
-                    N.contlt++;
-
-                    for (int c = 0; c < N.LL13.Count; c++)
-                    {
-                        N.LL13[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-                }
-                if (collision.CompareTag("I1"))
-                {
-                    SNL.text = "OJUI";
-
-
-                    N.contlt++;
-
-                    x = 4;
-
-                    for (int c = 0; c < N.LL14.Count; c++)
-                    {
-                        N.LL14[c].transform.position = new Vector3(-13, 0, 0);
-                    }
-                }
-
-                break;
+                    break;
+            }
         }
+
+        if(N.lvl==2)
+        {
+            switch (N.contplb)
+            {
+                case 1:
+
+                    if (collision.CompareTag("T1"))
+                    {
+                        SNL.text = "T";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL1.Count; c++)
+                        {
+                            N.LL1[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("A1"))
+                    {
+                        SNL.text = "TA";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL2.Count; c++)
+                        {
+                            N.LL2[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("L1"))
+                    {
+                        SNL.text = "TAL";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL3.Count; c++)
+                        {
+                            N.LL3[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("I1"))
+                    {
+                        SNL.text = "TALI";
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL4.Count; c++)
+                        {
+                            N.LL4[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    break;
+
+                case 2:
+
+                    if (collision.CompareTag("T2"))
+                    {
+                        SNL.text = "T";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL5.Count; c++)
+                        {
+                            N.LL5[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("E"))
+                    {
+                        SNL.text = "TE";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL6.Count; c++)
+                        {
+                            N.LL6[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("K1"))
+                    {
+                        SNL.text = "TEK";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL7.Count; c++)
+                        {
+                            N.LL7[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("I2"))
+                    {
+                        SNL.text = "TEKI";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL8.Count; c++)
+                        {
+                            N.LL8[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    if (collision.CompareTag("T3"))
+                    {
+                        SNL.text = "TEKIT";
+
+                        N.contlt++;
+
+
+                        for (int c = 0; c < N.LL9.Count; c++)
+                        {
+                            N.LL9[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    if (collision.CompareTag("L2"))
+                    {
+                        SNL.text = "TEKITL";
+
+
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL10.Count; c++)
+                        {
+                            N.LL10[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    break;
+
+                case 3:
+
+                    if (collision.CompareTag("K2"))
+                    {
+                        SNL.text = "K";
+
+                        N.contlt++;
+
+
+                        for (int c = 0; c < N.LL11.Count; c++)
+                        {
+                            N.LL11[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("O"))
+                    {
+                        SNL.text = "KO";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL12.Count; c++)
+                        {
+                            N.LL12[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("L2"))
+                    {
+                        SNL.text = "KOL";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL13.Count; c++)
+                        {
+                            N.LL13[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("I3"))
+                    {
+                        SNL.text = "KOLI";
+
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL14.Count; c++)
+                        {
+                            N.LL14[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    break;
+            }
+        }
+
+        if (N.lvl == 3)
+        {
+            switch (N.contplb)
+            {
+                case 1:
+
+                    if (collision.CompareTag("K1"))
+                    {
+                        SNL.text = "K";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL1.Count; c++)
+                        {
+                            N.LL1[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("E"))
+                    {
+                        SNL.text = "KE";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL2.Count; c++)
+                        {
+                            N.LL2[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("N1"))
+                    {
+                        SNL.text = "KEN";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL3.Count; c++)
+                        {
+                            N.LL3[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("A1"))
+                    {
+                        SNL.text = "KENA";
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL4.Count; c++)
+                        {
+                            N.LL4[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    break;
+
+                case 2:
+
+                    if (collision.CompareTag("T1"))
+                    {
+                        SNL.text = "T";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL5.Count; c++)
+                        {
+                            N.LL5[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("E2"))
+                    {
+                        SNL.text = "TE";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL6.Count; c++)
+                        {
+                            N.LL6[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("M"))
+                    {
+                        SNL.text = "TEM";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL7.Count; c++)
+                        {
+                            N.LL7[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("O"))
+                    {
+                        SNL.text = "TEMO";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL8.Count; c++)
+                        {
+                            N.LL8[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    if (collision.CompareTag("U"))
+                    {
+                        SNL.text = "TEMOU";
+
+                        N.contlt++;
+
+
+                        for (int c = 0; c < N.LL9.Count; c++)
+                        {
+                            N.LL9[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    if (collision.CompareTag("A2"))
+                    {
+                        SNL.text = "TEMOUA";
+
+
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL10.Count; c++)
+                        {
+                            N.LL10[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    break;
+
+                case 3:
+
+                    if (collision.CompareTag("N2"))
+                    {
+                        SNL.text = "N";
+
+                        N.contlt++;
+
+
+                        for (int c = 0; c < N.LL11.Count; c++)
+                        {
+                            N.LL11[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+
+                    }
+                    if (collision.CompareTag("A3"))
+                    {
+                        SNL.text = "NA";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL12.Count; c++)
+                        {
+                            N.LL12[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+
+                    }
+                    if (collision.CompareTag("N3"))
+                    {
+                        SNL.text = "NAN";
+
+                        N.contlt++;
+
+                        for (int c = 0; c < N.LL13.Count; c++)
+                        {
+                            N.LL13[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+                    if (collision.CompareTag("A4"))
+                    {
+                        SNL.text = "NANA";
+
+
+                        N.contlt++;
+
+                        x = 4;
+
+                        for (int c = 0; c < N.LL14.Count; c++)
+                        {
+                            N.LL14[c].transform.position = new Vector3(-13, 0, 0);
+                        }
+                    }
+
+                    break;
+            }
+        }
+
+
+
 
         if (collision.CompareTag("obstaculo"))
         {
@@ -498,24 +904,65 @@ public class Jugador : MonoBehaviour
 
         cartel.SetActive(true);
 
-
-        if (N.contplb == 1)
+        if(N.lvl==1)
         {
-            textonahuatl.text = "XIAJ";
+            if (N.contplb == 1)
+            {
+                textonahuatl.text = "XIAJ";
+            }
+
+            if (N.contplb == 2)
+            {
+                textonahuatl.text = "PANTIS";
+            }
+
+            if (N.contplb == 3)
+            {
+                textonahuatl.text = "OJUI";
+            }
         }
 
-        if (N.contplb == 2)
+
+        if (N.lvl == 2)
         {
-            textonahuatl.text = "PANTIS";
+            if (N.contplb == 1)
+            {
+                textonahuatl.text = "TALI";
+            }
+
+            if (N.contplb == 2)
+            {
+                textonahuatl.text = "TEKITL";
+            }
+
+            if (N.contplb == 3)
+            {
+                textonahuatl.text = "KOLI";
+            }
         }
 
-        if (N.contplb == 3)
-        {
-            textonahuatl.text = "OJUI";
-        }
-        
 
-        if(timercartel>0.2f)
+        if (N.lvl == 3)
+        {
+            if (N.contplb == 1)
+            {
+                textonahuatl.text = "KENA";
+            }
+
+            if (N.contplb == 2)
+            {
+                textonahuatl.text = "TEMOUI";
+            }
+
+            if (N.contplb == 3)
+            {
+                textonahuatl.text = "NANA";
+            }
+        }
+
+
+
+        if (timercartel>0.2f)
         {
             Time.timeScale = 1f;
 
@@ -547,24 +994,23 @@ public class Jugador : MonoBehaviour
         {
             if (gameObject.transform.position.x < -4)
             {
-                gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+                gameObject.transform.position = gameObject.transform.position + new Vector3(vel, 0, 0) * Time.deltaTime * 2;
             }
             else
             {
-                Sprite.flipX = true;
-                animator.SetBool("quieto", true);
+                Sprite.flipX = spriteX;
+                animator.SetBool("quieto", poseniño3);
             }
 
             if (A.gameObject.transform.position.x < -6)
             {
-                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(vel2, 0, 0) * Time.deltaTime * 2;
 
                 A.animator.SetBool("caminapache", true);
             }
             else
             {
-
-                A.animator.SetBool("caminapache", false);
+                A.animator.SetBool("caminapache", posapache2);
             }
 
             if (D.lineindex == 6)
@@ -601,40 +1047,28 @@ public class Jugador : MonoBehaviour
                 }
                 else
                 {
-                    Sprite.flipX = false;
+                    spriteX = false;
+
+                    vel2 = 0;
 
                     D.comenzarJuego();
+
+                    poseniño3 = false;
 
                     timerpergamino = 0;
 
                     ok = false;
 
-                    animator.SetBool("quieto", false);
                 }
             }
 
-
-
-            //if (gameObject.transform.position.x > -4)
-            //{
-
-            //    D.comenzarJuego();
-
-            //    timerpergamino = 0;
-
-            //    ok = false;
-
-            //    animator.SetBool("quieto", false);
-
-
-            //}
         }
 
 
     }
     public void caminar()
     {
-        if(N.lvl==1)
+        if(N.lvl==1||N.lvl==3)
         {
             if (gameObject.transform.position.x < -6)
             {
@@ -719,26 +1153,43 @@ public class Jugador : MonoBehaviour
 
     public void salirfinal()
     {
+
         if (DF.lineindex == 4)
         {
-            A.SpriteRenderer.flipX = false;
+               
+           A.animator.SetBool("caminapache", true);
+           D.paneldialogo.SetActive(false);
+           poseniño = false;
 
-            D.paneldialogo.SetActive(false);
+            if(N.lvl == 1||N.lvl==3)
+            {
+                A.SpriteRenderer.flipX = false;
+                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(2, 0, 0) * Time.deltaTime * 2;
+                vel = 1;
+            }
 
-            A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(2, 0, 0) * Time.deltaTime * 2;
 
-            A.animator.SetBool("caminapache", true);
+            if (N.lvl == 2)
+            {
+                A.SpriteRenderer.flipX = true;
+                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * 2;
+                vel = -1;
+                poseniño3=false;
+            }
 
-            vel = 1;
 
-            poseniño = false;
+
 
         }
-    }    
+
+    }
 
     public void Ok()
     {
-        ok= true;
+
+        ok = true;
+
+
         TP.Txtpanel.SetActive(false);
         TP.btnOk.SetActive(false);
         panelpergamino.SetActive(false);
@@ -746,9 +1197,14 @@ public class Jugador : MonoBehaviour
 
         timerpergaminofinal = 0;
 
+
         TP.lineindex++;
+        
+
 
         cualdiag = true;
+
+
 
 
 
@@ -771,74 +1227,124 @@ public class Jugador : MonoBehaviour
                 N.murci[l].SetActive(false);
             }
 
-            //if(N.lvl==2)
-            //{
-            //    for (int l = 0; l < enemies.slim.Count; l++)
-            //    {
-            //        enemies.slim[l].SetActive(false);
-            //    }
-            //}
-
             for (int u = 0; u < N.mon.Count; u++)
             {
                 N.mon[u].SetActive(false);
             }
 
-            if (gameObject.transform.position.x > 2)
+            if(N.lvl==1||N.lvl==3)
             {
-
-                    animator.SetBool("quieto", poseniño);
-
-                vel = 0;
-
-                if (A.gameObject.transform.position.x>5)
+                if (gameObject.transform.position.x > 2)
                 {
-                    if (posapache == false)
+                    animator.SetBool("quieto", poseniño);
+                    vel = 0;
+
+                    if (A.gameObject.transform.position.x > 5)
                     {
-                        A.SpriteRenderer.flipX = true;
-                        posapache = true;
+                        if (posapache == false)
+                        {
+                            A.SpriteRenderer.flipX = true;
+                            posapache = true;
+                        }
+
+                        A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * 2;
+                    }
+                    else
+                    {
+                        A.animator.SetBool("caminapache", false);
+                        dialogofinal = true;
                     }
 
-                    A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * 2;
-
-                    
-                }
-                else
-                {
-                    A.animator.SetBool("caminapache", false);
-                    dialogofinal = true;
-
-
 
                 }
-
-
             }
+
+            if (N.lvl == 2)
+            {
+                if (gameObject.transform.position.x > -2)
+                {
+
+                    animator.SetBool("quieto", poseniño);
+                    
+                    vel = 0;
+
+
+                    spriteX = true;
+
+
+                    if (A.gameObject.transform.position.x < -4)
+                    {
+                        posapache2= true;
+
+                        A.SpriteRenderer.flipX = false;
+
+                        A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+                    }
+                    else
+                    {
+                        A.animator.SetBool("caminapache", false);
+                        dialogofinal = true;
+                    }
+
+
+                }
+            }
+
+
+
 
         }
     }
 
     public void pergaminofinal()
     {
-        if(gameObject.transform.position.x >11)
+        if (N.lvl == 1 || N.lvl == 3)
         {
-            panelpergamino.SetActive(true);
-            TP.paneldpergamino.SetActive(true);
-            timerpergaminofinal += Time.deltaTime;
-
-
-            if(timerpergaminofinal > 1)
+            if (gameObject.transform.position.x > 11)
             {
-                TP.x = true;
-                TP.Txtpanel.SetActive(true);
+                panelpergamino.SetActive(true);
+                TP.paneldpergamino.SetActive(true);
+                timerpergaminofinal += Time.deltaTime;
 
-                if(cualdiag==true)
+
+                if (timerpergaminofinal > 1)
                 {
-                    TP.siguientedialogo();
-                    cualdiag = false;
-                }
-                
+                    TP.x = true;
+                    TP.Txtpanel.SetActive(true);
 
+                    if (cualdiag == true)
+                    {
+                        TP.siguientedialogo();
+                        cualdiag = false;
+                    }
+
+
+                }
+            }
+        }
+
+        if(N.lvl==2)
+        {
+            if (gameObject.transform.position.x < -11)
+            {
+                panelpergamino.SetActive(true);
+                TP.paneldpergamino.SetActive(true);
+                timerpergaminofinal += Time.deltaTime;
+
+
+                if (timerpergaminofinal > 2)
+                {
+                    TP.x = true;
+                    TP.Txtpanel.SetActive(true);
+
+                    if (cualdiag == true)
+                    {
+                        TP.siguientedialogo();
+                        cualdiag = false;
+                    }
+
+
+                }
             }
         }
 

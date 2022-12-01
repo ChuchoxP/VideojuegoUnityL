@@ -11,8 +11,6 @@ public class Ajustespergamino : MonoBehaviour
     textopergamino TP;
     AjustesMenu AM;
 
-    int nivel;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +18,6 @@ public class Ajustespergamino : MonoBehaviour
         J=FindObjectOfType<Jugador>();
         TP = FindObjectOfType<textopergamino>();
         AM = FindObjectOfType<AjustesMenu>();
-
-        nivel = PlayerPrefs.GetInt("nivel", 0);
 
     }
 
@@ -45,23 +41,12 @@ public class Ajustespergamino : MonoBehaviour
             {
                 SceneManager.LoadScene(4);
 
-                PlayerPrefs.SetInt("nivel", nivel);
-                PlayerPrefs.Save();
-
             }
 
         }
 
     }
 
-    //public void nivelesok()
-    //{
-    //    if (TP.lineindex == 2)
-    //    {
-    //        nivel++;
-    //    }
-
-    //}
 
 
 

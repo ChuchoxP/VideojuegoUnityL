@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -86,6 +87,8 @@ public class ScenelogManager : MonoBehaviour
             {
                 SceneManager.LoadScene(4);
                 ses.Sonidomenu.Pause();
+                PlayerPrefs.SetString("User", m_loginUserNameImput.text);
+                PlayerPrefs.Save();
             }
             
 

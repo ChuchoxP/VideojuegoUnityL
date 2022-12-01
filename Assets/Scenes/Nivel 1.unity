@@ -291,7 +291,7 @@ MonoBehaviour:
   - ___ kuatitla uan tij ___ mo ___
   - '"Nahuatl"
 
-    Xiaj kuatitla uan tij pantis mo ojui
+    Xiaj koatitla uan tij pantis mo ojui
 
 '
   - "\"Espa\xF1ol\"\nVe al bosque y encontrar\xE1s tu camino"
@@ -1394,13 +1394,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  Sprite: {fileID: 0}
+  spriteX: 1
   dialogo: {fileID: 1613577249}
   confjuego: {fileID: 1816359707}
   titulo: {fileID: 1815290320}
   dialogofinal: 0
   posapache: 1
+  posapache2: 0
   jump: 0
   ok: 0
+  ok2: 1
   Comenzar: 1
   cualdiag: 1
   v1: {fileID: 667729128}
@@ -5863,18 +5867,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1728908083}
-        m_TargetAssemblyTypeName: Ajustespergamino, Assembly-CSharp
-        m_MethodName: nivelesok
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1410363523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7636,8 +7628,6 @@ MonoBehaviour:
   LL14: []
   objMurci: {fileID: 3318811028325047636, guid: b91842c9a74bcdf41865dd84aa5b1d1c, type: 3}
   murci: []
-  objSlim: {fileID: 6297925354596212813, guid: 17cf09bd49dd54a40a0fca733d5f2f2b, type: 3}
-  slim: []
   lvl: 0
 --- !u!4 &1816359709
 Transform:
@@ -8198,8 +8188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000085831, y: -29.624}
-  m_SizeDelta: {x: 214.5319, y: 59.2476}
+  m_AnchoredPosition: {x: 13, y: -29.624}
+  m_SizeDelta: {x: 269.5457, y: 59.2476}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932355387
 MonoBehaviour:

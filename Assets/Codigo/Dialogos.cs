@@ -78,6 +78,20 @@ public class Dialogos : MonoBehaviour
                 }
             }
 
+            if (N.lvl == 3)
+            {
+                if (J.gameObject.transform.position.x > -6)
+                {
+                    iniciardialogo();
+                    escribir.Play();
+                    paneldialogo.SetActive(true);
+
+                    A.animator.SetBool("hablapache", true);
+
+
+                }
+            }
+
             if (N.lvl == 2) 
             {
                 if (J.gameObject.transform.position.x > -4)
@@ -86,7 +100,7 @@ public class Dialogos : MonoBehaviour
                     escribir.Play();
                     paneldialogo.SetActive(true);
 
-                    J.animator.SetBool("estahablando", true);
+                    A.animator.SetBool("hablapache", true);
 
 
                 }
@@ -134,42 +148,97 @@ public class Dialogos : MonoBehaviour
     
     public void siguientedialogo()
     {
-
-        if(numdialogo==true)
+        if(N.lvl==1)
         {
-            sonido.sonSelect.Play();
-            btnOmitir.SetActive(false);
-            btnsiguiente.SetActive(false);
-
-
-            
-
-
-            if (lineindex == 0 || lineindex == 2 || lineindex == 4)
+            if (numdialogo == true)
             {
-                A.animator.SetBool("hablapache", true);
+                sonido.sonSelect.Play();
+                btnOmitir.SetActive(false);
+                btnsiguiente.SetActive(false);
 
-                escribir.Play();
+                if (lineindex == 0 || lineindex == 2 || lineindex == 4)
+                {
+                    A.animator.SetBool("hablapache", true);
+
+                    escribir.Play();
+                }
+
+                if (lineindex == 1 || lineindex == 3)
+                {
+                    J.animator.SetBool("estahablando", true);
+
+                    escribir.Play();
+                }
+
+                lineindex++;
+
+                if (lineindex < lineadialogo.Length)
+                {
+                    StartCoroutine(verlineas());
+                }
             }
+        }
 
-            if (lineindex == 1 || lineindex == 3)
+        if (N.lvl == 2)
+        {
+            if (numdialogo == true)
             {
-                J.animator.SetBool("estahablando", true);
+                sonido.sonSelect.Play();
+                btnOmitir.SetActive(false);
+                btnsiguiente.SetActive(false);
 
-                escribir.Play();
+                if (lineindex == 0 || lineindex == 2 || lineindex == 4)
+                {
+                    
+                    J.animator.SetBool("estahablando", true);
+                    escribir.Play();
+                }
+
+                if (lineindex == 1 || lineindex == 3)
+                {
+
+                    A.animator.SetBool("hablapache", true);
+                    escribir.Play();
+                }
+
+                lineindex++;
+
+                if (lineindex < lineadialogo.Length)
+                {
+                    StartCoroutine(verlineas());
+                }
             }
+        }
 
-
-
-            lineindex++;
-
-
-
-            if (lineindex < lineadialogo.Length)
+        if (N.lvl == 3)
+        {
+            if (numdialogo == true)
             {
-                StartCoroutine(verlineas());
-            }
+                sonido.sonSelect.Play();
+                btnOmitir.SetActive(false);
+                btnsiguiente.SetActive(false);
 
+                if (lineindex == 0 || lineindex == 2 || lineindex == 4)
+                {
+                    J.animator.SetBool("estahablando", true);
+
+                    escribir.Play();
+                }
+
+                if (lineindex == 1 || lineindex == 3)
+                {
+                    A.animator.SetBool("hablapache", true);
+
+                    escribir.Play();
+                }
+
+                lineindex++;
+
+                if (lineindex < lineadialogo.Length)
+                {
+                    StartCoroutine(verlineas());
+                }
+            }
         }
 
     }
@@ -182,7 +251,7 @@ public class Dialogos : MonoBehaviour
         moneda.SetActive(true);
         lineindex = 0;
         aux = false;
-       
+        cualomitir = false;
     }
 
     public void omitir()
@@ -195,20 +264,6 @@ public class Dialogos : MonoBehaviour
 
             lineindex = 6;
 
-            
-
-
-            if (J.gameObject.transform.position.x > -4)
-            {
-                escribir.Pause();
-                dialogaux = true;
-                paneljueego.SetActive(true);
-                confjuego.SetActive(true);
-                moneda.SetActive(true);
-                lineindex = 0;
-                cualomitir = false;
-            }
-         
         }
 
 

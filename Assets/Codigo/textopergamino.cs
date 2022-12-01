@@ -36,8 +36,7 @@ public class textopergamino : MonoBehaviour
         {
             if (!dialogaux)
             {
-                iniciardialogo();
-                
+                iniciardialogo();               
             }
 
         }
@@ -71,14 +70,11 @@ public class textopergamino : MonoBehaviour
 
     public void siguientedialogo()
     {
-
            
             if (lineindex < lineadialogo.Length)
             {
                 StartCoroutine(verlineas());
             }
-            
-        
 
     }
 }

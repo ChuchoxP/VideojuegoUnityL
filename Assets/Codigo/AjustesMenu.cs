@@ -9,14 +9,14 @@ public class AjustesMenu : MonoBehaviour
     [SerializeField] public GameObject btnajustes;
     [SerializeField] private GameObject menuinicio;
     [SerializeField] public GameObject menuajustes;
-    //[SerializeField] private GameObject btnReiniciar;
+    [SerializeField] private TextMeshProUGUI user;
 
     //[SerializeField] private GameObject btnnivel2bloqueado;
     //[SerializeField] private GameObject btnnivel3bloqueado;
     //[SerializeField] private GameObject btnnivel2;
     //[SerializeField] private GameObject btnnivel3;
 
-    [SerializeField] private TextMeshProUGUI txtvalidacion;
+    //[SerializeField] private TextMeshProUGUI txtvalidacion;
 
     Ajustespergamino AP;
 
@@ -35,6 +35,7 @@ public class AjustesMenu : MonoBehaviour
         sonido.sonFond.Play();
 
         nivel = PlayerPrefs.GetInt("nivel", 0);
+        user.text = PlayerPrefs.GetString("User");
 
     }
     // Update is called once per frame
