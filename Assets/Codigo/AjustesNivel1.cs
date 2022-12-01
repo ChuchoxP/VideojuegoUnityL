@@ -149,7 +149,7 @@ public class AjustesNivel1 : MonoBehaviour
 
             if (col[i].transform.position.x <=-12)
             {
-                col[i].transform.position = new Vector3(12,-3,0);
+                col[i].transform.position = new Vector3(15,-3,0);
             }
 
             col[i].transform.position = col[i].transform.position + new Vector3 (-1,0,0) * Time.deltaTime * velocidad;

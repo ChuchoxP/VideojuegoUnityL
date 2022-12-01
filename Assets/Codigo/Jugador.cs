@@ -1037,7 +1037,7 @@ public class Jugador : MonoBehaviour
                 titulo.SetActive(false);
 
 
-                if (A.gameObject.transform.position.x > -11)
+                if (A.gameObject.transform.position.x > -12)
                 {
                     A.SpriteRenderer.flipX = true;
 
@@ -1103,7 +1103,7 @@ public class Jugador : MonoBehaviour
                 titulo.SetActive(false);
 
 
-                if (A.gameObject.transform.position.x < 11)
+                if (A.gameObject.transform.position.x < 14)
                 {
                     if (posapache == true)
                     {
