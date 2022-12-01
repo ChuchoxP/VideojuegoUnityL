@@ -555,68 +555,63 @@ public class Jugador : MonoBehaviour
                 animator.SetBool("quieto", true);
             }
 
-            //if (A.gameObject.transform.position.x < -6)
-            //{
-            //    A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
+            if (A.gameObject.transform.position.x < -6)
+            {
+                A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
 
-            //    A.animator.SetBool("caminapache", true);
-            //}
-            //else
-            //{
+                A.animator.SetBool("caminapache", true);
+            }
+            else
+            {
 
-            //    A.animator.SetBool("caminapache", false);
-            //}
+                A.animator.SetBool("caminapache", false);
+            }
 
-            //if (D.lineindex == 6)
-            //{
-            //    timertexto += Time.deltaTime;
+            if (D.lineindex == 6)
+            {
+                timertexto += Time.deltaTime;
 
-            //    TP.paneldpergamino.SetActive(true);
+                TP.paneldpergamino.SetActive(true);
 
-            //    if (timertexto > 1)
-            //    {
-            //        TP.x = true;
-            //    }
+                if (timertexto > 1)
+                {
+                    TP.x = true;
+                }
 
-            //}
-
-
-
-            //if (timerpergamino > 1)
-            //{
-
-            //    TP.paneldpergamino.SetActive(false);
-            //    D.escribir.Pause();
-            //    sonido.sonDialogo.Pause();
-            //    titulo.SetActive(false);
-
-
-            //    if (A.gameObject.transform.position.x < 11)
-            //    {
-            //        if (posapache == true)
-            //        {
-            //            A.SpriteRenderer.flipX = false;
-            //            posapache = false;
-            //        }
-
-
-            //        A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-
-            //        A.animator.SetBool("caminapache", true);
-            //    }
-            //    else
-            //    {
-
-            //        gameObject.transform.position = gameObject.transform.position + new Vector3(1, 0, 0) * Time.deltaTime * 2;
-
-            //        animator.SetBool("quieto", false);
+            }
 
 
 
-            //    }
+            if (timerpergamino > 1)
+            {
+
+                TP.paneldpergamino.SetActive(false);
+                D.escribir.Pause();
+                sonido.sonDialogo.Pause();
+                titulo.SetActive(false);
 
 
-            //}
+                if (A.gameObject.transform.position.x > -11)
+                {
+                    A.SpriteRenderer.flipX = true;
+
+                    A.gameObject.transform.position = A.gameObject.transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * 2;
+
+                    A.animator.SetBool("caminapache", true);
+                }
+                else
+                {
+                    Sprite.flipX = false;
+
+                    D.comenzarJuego();
+
+                    timerpergamino = 0;
+
+                    ok = false;
+
+                    animator.SetBool("quieto", false);
+                }
+            }
 
 
 

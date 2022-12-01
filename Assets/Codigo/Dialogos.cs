@@ -64,18 +64,36 @@ public class Dialogos : MonoBehaviour
         
         if (!dialogaux)
         {
-            if(J.gameObject.transform.position.x > -6)
+            if (N.lvl == 1) 
             {
-                iniciardialogo();
-                escribir.Play();
-                paneldialogo.SetActive(true);
+                if (J.gameObject.transform.position.x > -6)
+                {
+                    iniciardialogo();
+                    escribir.Play();
+                    paneldialogo.SetActive(true);
 
-                J.animator.SetBool("estahablando", true);
+                    J.animator.SetBool("estahablando", true);
 
 
+                }
             }
 
-            
+            if (N.lvl == 2) 
+            {
+                if (J.gameObject.transform.position.x > -4)
+                {
+                    iniciardialogo();
+                    escribir.Play();
+                    paneldialogo.SetActive(true);
+
+                    J.animator.SetBool("estahablando", true);
+
+
+                }
+            }
+
+
+
             paneljueego.SetActive(false);
             confjuego.SetActive(false);
             btnOmitir.SetActive(false);
